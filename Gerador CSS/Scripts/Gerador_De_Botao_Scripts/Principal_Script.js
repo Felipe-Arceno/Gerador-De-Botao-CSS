@@ -1,49 +1,48 @@
 
 // STATIC
 var border_radius = "10%";
-var border_color = "#37e9f6";
+var border_color = document.getElementById("color_selector").value;
 var padding = "10px";
-var background_color = "#04c3fd";
-var margin = "5px";
+var background_color = document.getElementById("background_color_selector").value;
 //// STATIC > FONT
-var font_size = "16px";
-var color= "#ffffff";
-var font_style = "normal";
-var font_weight = "0";
+var font_size = document.getElementById("static_font_size_range").value + "px";
+var color = document.getElementById("color_selector").value;
+var font_style = document.getElementById("select_font_style_hidden").value;
+var font_weight = document.getElementById("static_font_weight_range").value;
 //// STATIC > BORDERS    
-    var border_top_width = "2px";
-    var border_bottom_width = "2px";
-    var border_left_width = "2px";
-    var border_right_width = "2px";
-    var border_top_style = "solid";
-    var border_bottom_style = "solid";
-    var border_left_style = "solid";    
-    var border_right_style = "solid";
-    var border_top_color = "#37e9f6";
-    var border_bottom_color = "#37e9f6";
-    var border_left_color = "#37e9f6";
-    var border_right_color = "#37e9f6";
-    var border_top_left_radius = "8px";
-    var border_top_right_radius = "8px";
-    var border_bottom_left_radius = "8px";
-    var border_bottom_right_radius = "8px";
+    var border_top_width = document.getElementById("border_top_width_range").value + "px";
+    var border_bottom_width = document.getElementById("border_bottom_width_range").value + "px";
+    var border_left_width = document.getElementById("border_left_width_range").value + "px";
+    var border_right_width = document.getElementById("border_right_width_range").value + "px";
+    var border_top_style = document.getElementById("select_border_top_style_hidden").value;
+    var border_bottom_style = document.getElementById("select_border_bottom_style_hidden").value;
+    var border_left_style = document.getElementById("select_border_left_style_hidden").value;
+    var border_right_style = document.getElementById("select_border_right_style_hidden").value;
+    var border_top_color = document.getElementById("border_top_color_selector").value;
+    var border_bottom_color = document.getElementById("border_bottom_color_selector").value;
+    var border_left_color = document.getElementById("border_left_color_selector").value;
+    var border_right_color = document.getElementById("border_right_color_selector").value;
+    var border_top_left_radius = document.getElementById("border_top_left_radius_range").value + "px";
+    var border_top_right_radius = document.getElementById("border_top_right_radius_range").value + "px";
+    var border_bottom_left_radius = document.getElementById("border_bottom_left_radius_range").value + "px";
+    var border_bottom_right_radius = document.getElementById("border_bottom_right_radius_range").value + "px";
 //// STATIC > PADDING
-    var padding_top = "15px";
-    var padding_bottom = "15px";
-    var padding_left = "20px";
-    var padding_right = "20px";
+    var padding_top = document.getElementById("static_padding_top_range").value + "px";
+    var padding_bottom = document.getElementById("static_padding_bottom_range").value + "px";
+    var padding_left = document.getElementById("static_padding_left_range").value + "px";
+    var padding_right = document.getElementById("static_padding_right_range").value + "px";
 //// STATIC > SHADOW
-    var box_shadow_offset_x = "0px";
-    var box_shadow_offset_y = "0px";
-    var box_shadow_blur_radius = "0px";
-    var box_shadow_spread_radius = "0px";
-    var box_shadow_color = "#525757";
+    var box_shadow_offset_x = document.getElementById("range_box_shadow_offset_x").value + "px";
+    var box_shadow_offset_y = document.getElementById("range_box_shadow_offset_y").value + "px";
+    var box_shadow_blur_radius = document.getElementById("range_box_shadow_blur_radius").value + "px";
+    var box_shadow_spread_radius = document.getElementById("range_box_shadow_spread_radius").value + "px";
+    var box_shadow_color = document.getElementById("shadow_color_selector").value;
 //// STATIC > SHADOW INSET
-    var box_shadow_inset_offset_x = "2px";
-    var box_shadow_inset_offset_y = "3px";
-    var box_shadow_inset_blur_radius = "9px";
-    var box_shadow_inset_spread_radius = "0px";
-    var box_shadow_inset_color = "#525757";    
+    var box_shadow_inset_offset_x = document.getElementById("range_box_shadow_inset_offset_x").value + "px";
+    var box_shadow_inset_offset_y = document.getElementById("range_box_shadow_inset_offset_y").value + "px";
+    var box_shadow_inset_blur_radius = document.getElementById("range_box_shadow_inset_blur_radius").value + "px";
+    var box_shadow_inset_spread_radius = document.getElementById("range_box_shadow_inset_spread_radius").value + "px";
+    var box_shadow_inset_color = document.getElementById("shadow_inset_color_selector").value;
 //// STATIC > FONT SHADOW
     var font_shadow_offset_x = "0px";
     var font_shadow_offset_y = "0px";
@@ -126,6 +125,8 @@ $(window).on("load", function(){
     FontShadowEnable();
     //STATIC > SHADOW
     StaticShadowEnable();
+    //STATIC > SHADOW INSET
+    StaticShadowInsetEnable();
     //-------------------------------------------------------------//
     //:HOVER
     $("#border_color_selector_hover").val(border_color_hover);  
@@ -158,7 +159,6 @@ function ChangeCSS(param, value){
     border_color                               = param == "border_color"                               ? value : border_color;
     padding                                    = param == "padding"                                    ? value : padding;    
     background_color                           = param == "background_color"                           ? value : background_color    
-    margin                                     = param == "margin"                                     ? value : margin;  
     //STATIC > FONT
     font_size                                  = param == "font_size"                                  ? value : font_size;
     color                                      = param == "color"                                      ? value : color;
@@ -280,8 +280,7 @@ function ChangeCSS(param, value){
     "font-style: "+font_style+";\n"+
     "font-weight: "+font_weight+";\n"+
     "background-color: "+background_color+";\n"+
-    "color: "+color+";\n"+
-    "margin: "+margin+";\n"+
+    "color: "+color+";\n"+    
     "box-shadow: "+box_shadow_offset_x+" "+box_shadow_offset_y+" "+box_shadow_blur_radius+" "+box_shadow_spread_radius+" "+box_shadow_color+", inset "+box_shadow_inset_offset_x+" "+box_shadow_inset_offset_y+" "+box_shadow_inset_blur_radius+" "+box_shadow_inset_spread_radius+" "+box_shadow_inset_color+";\n"+
     "text-shadow: "+font_shadow_offset_x+" "+font_shadow_offset_y+" "+font_shadow_blur_radius+" "+font_shadow_color+";\n"+
 

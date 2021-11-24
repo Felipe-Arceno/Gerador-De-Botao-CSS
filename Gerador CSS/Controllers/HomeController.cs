@@ -10,7 +10,10 @@ namespace Gerador_CSS.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+
+            List<Models.Button> list_buttons = Class.Button.GetAllButtons();
+
+            return View(list_buttons);
         }
 
         public ActionResult About()
