@@ -1,0 +1,358 @@
+﻿
+
+<div>
+    <table>
+        <tr>
+            <td style="width: 133px;">Texto do Botão:</td>
+            <td><input type="text" class="my_input" onchange="ChangeButtonInnerText(this)" value="Button" /></td>
+        </tr>
+    </table>
+</div>
+
+
+<div id="div_static_options" align="center" class="primary_menu" onclick="OpenStaticButtonOptions()">
+    <span >Botão Estático &#9652;</span>
+</div>
+
+<table id="static_options" style="display: none;">
+
+    <tbody>
+        <tr>
+            <td>Cor de Fundo:</td>
+            <td> <input id="background_color_selector" style="width: 100px; height: 30px;" onchange="BackgroundColorSelector(this)" type="color" /> </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+<div id="div_static_font_options" align="center" class="secondary_menu" onclick="OpenStaticFontButtonOptions()">
+    <span>Fonte &#9652;</span>
+</div>
+<table id="static_font_options" style="display: none;">
+    <tr>
+        <td>Cor:</td>
+        <td> <input id="color_selector" style="width: 100px; height: 30px;" onchange="ColorSelector(this)" type="color" /> </td>
+    </tr>
+    <tr>
+        <td>Tamanho:</td>
+        <td> <input id="static_font_size_range" type="range" class="range" value="16" min="1" max="100" onchange="FontSize(this)" /> </td>
+        <td><input id="font_size_number" onchange="FontSizeNumberChanged(this)" min="0" max="100" value="16" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
+    </tr>
+    <tr>
+        <td>Negrito:</td>
+        <td> <input id="static_font_weight_range" type="range" class="range" value="0" min="0" max="1000" step="100" onchange="FontWeight(this)" /> </td>
+        <td><input id="font_weight_number" step="100" min="0" max="1000" onchange="FontWeightNumberChanged(this)" value="0" class="input-number" type="number" /></td>
+
+    </tr>
+    <tr>
+        <td>Estilo:</td>
+        <td>
+            <select class="select" id="select_font_style" onchange="FontStyle(this)">
+                <option value="normal">Normal</option>
+                <option value="italic">Itálico</option>
+                <option value="oblique">Oblíquo</option>
+                <option value="initial">Inícial</option>
+                <option value="inherit">Herdar</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>SOMBRAS</td>
+    </tr>
+    <tr>
+        <td>Habilitar Sombras:</td>
+        <td> <input id="checkbox_font_shadow_enable" type="checkbox" onchange="FontShadowEnable(this)" /> </td>
+    </tr>
+
+    <tr>
+        <td>Deslocamento Horizontal:</td>
+        <td> <input id="range_font_shadow_offset_x" type="range" class="range" value="0" min="0" max="100" onchange="FontShadowOffsetX(this)" /> </td>
+        <td><input id="font_shadow_offset_x_number" onchange="FontShadowOffsetXNumberChanged(this)" min="0" max="100" value="0" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
+    </tr>
+    <tr>
+        <td>Deslocamento Vertical:</td>
+        <td> <input id="range_font_shadow_offset_y" type="range" class="range" value="0" min="0" max="100" onchange="FontShadowOffsetY(this)" /> </td>
+        <td><input id="font_shadow_offset_y_number" onchange="FontShadowOffsetYNumberChanged(this)" min="0" max="100" value="0" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
+    </tr>
+    <tr>
+        <td>Raio de Borrão:</td>
+        <td> <input id="range_font_shadow_blur_radius" type="range" class="range" value="0" min="0" max="100" onchange="FontShadowBlurRadius(this)" /> </td>
+        <td><input id="font_shadow_blur_radius_number" onchange="FontShadowBlurRadiusNumberChanged(this)" min="0" max="100" value="0" class="input-number" type="number" /></td>
+        <td><span id="">px</span></td>
+    </tr>
+    <tr>
+        <td>Cor da Sombra:</td>
+        <td> <input id="font_shadow_color_selector" style="width: 100px; height: 30px;" onchange="FontShadowColorSelector(this)" type="color" /> </td>
+    </tr>
+</table>
+        </table>
+
+
+
+
+<div id="div_static_padding_options" align="center" class="secondary_menu" onclick="OpenStaticPaddingButtonOptions()">
+    <span>Preenchimento &#9652;</span>
+</div>
+<table id="static_padding_options" style="display: none;">
+    <tr>
+        <td>Preenchimento Superior:</td>
+        <td> <input type="range" class="range" value="15" min="1" max="100" onchange="PaddingTop(this)" /> </td>
+        <td><span id="padding_top_number">15px</span></td>
+    </tr>
+    <tr>
+        <td>Preenchimento Inferior:</td>
+        <td> <input type="range" class="range" value="15" min="1" max="100" onchange="PaddingBottom(this)" /> </td>
+        <td><span id="padding_bottom_number">15px</span></td>
+    </tr>
+    <tr>
+        <td>Preenchimento Esquerdo:</td>
+        <td> <input type="range" class="range" value="20" min="1" max="100" onchange="PaddingLeft(this)" /> </td>
+        <td><span id="padding_left_number">20px</span></td>
+    </tr>
+    <tr>
+        <td>Preenchimento Direito:</td>
+        <td> <input type="range" class="range" value="20" min="1" max="100" onchange="PaddingRight(this)" /> </td>
+        <td><span id="padding_right_number">20px</span></td>
+    </tr>
+</table>
+
+
+
+
+
+<div id="div_static_border_options" align="center" class="secondary_menu" onclick="OpenStaticBorderButtonOptions()">
+    <span>Bordas &#9652;</span>
+</div>
+<table id="static_border_options" style="display: none;">
+    <tr>
+        <td style="text-align: center;" colspan="4">TODAS</td>
+    </tr>
+    <tr>
+        <td>Cor das Bordas:</td>
+        <td> <input id="border_color_selector" style="width: 100px; height: 30px;" onchange="BorderColorSelector(this)" type="color" /> </td>
+    </tr>
+    <tr>
+        <td>Espessura das Bordas:</td>
+        <td> <input type="range" class="range" value="2" min="0" max="100" onchange="BorderWidth(this)" /> </td>
+        <td><span id="border_width_number">2px</span></td>
+    </tr>
+    <tr>
+        <td>Raio das Bordas:</td>
+        <td> <input type="range" class="range" value="2" min="0" max="100" onchange="BorderRadius(this)" /> </td>
+        <td><span id="border_radius_number">2px</span></td>
+    </tr>
+    <tr>
+        <td style="text-align: center;" colspan="4">BORDA SUPERIOR</td>
+    </tr>
+    <tr>
+        <td>Cor:</td>
+        <td> <input id="border_top_color_selector" style="width: 100px; height: 30px;" onchange="BorderTopColorSelector(this)" type="color" /> </td>
+    </tr>
+    <tr>
+        <td>Espessura:</td>
+        <td> <input id="border_top_width_range" type="range" class="range" value="2" min="1" max="100" onchange="BorderTopWidth(this)" /> </td>
+        <td><span id="border_top_width_number">2px</span></td>
+    </tr>
+    <tr>
+        <td>Raio Esquerda:</td>
+        <td> <input type="range" id="border_top_left_radius_range" class="range" value="8" min="1" max="100" onchange="BorderTopLeftRadiusWidth(this)" /> </td>
+        <td><span id="border_top_left_radius_number">8px</span></td>
+    </tr>
+    <tr>
+        <td>Raio Direita:</td>
+        <td> <input type="range" id="border_top_right_radius_range" class="range" value="8" min="1" max="100" onchange="BorderTopRightRadiusWidth(this)" /> </td>
+        <td><span id="border_top_right_radius_number">8px</span></td>
+    </tr>
+    <tr>
+        <td>Estilo:</td>
+        <td>
+            <select class="select" id="select_border_top_style" onchange="BorderTopStyle(this)">
+                <option value="none">Nenhuma</option>
+                <option value="dotted">Pontilhada</option>
+                <option value="dashed">Tracejada</option>
+                <option value="solid">Sólida</option>
+                <option value="double">Dupla</option>
+                <option value="groove">Entalhe</option>
+                <option value="ridged">Cume</option>
+                <option value="inset">Encaixada</option>
+                <option value="outset">Começo</option>
+                <option value="hidden">Escondida</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center;" colspan="4">BORDA INFERIOR</td>
+    </tr>
+    <tr>
+        <td>Cor:</td>
+        <td> <input id="border_bottom_color_selector" style="width: 100px; height: 30px;" onchange="BorderBottomColorSelector(this)" type="color" /> </td>
+    </tr>
+    <tr>
+        <td>Espessura:</td>
+        <td> <input id="border_bottom_width_range" type="range" class="range" value="2" min="1" max="100" onchange="BorderBottomWidth(this)" /> </td>
+        <td><span id="border_bottom_width_number">2px</span></td>
+    </tr>
+    <tr>
+        <td>Raio Esquerda:</td>
+        <td> <input type="range" id="border_bottom_left_radius_range" class="range" value="8" min="1" max="100" onchange="BorderBottomLeftRadiusWidth(this)" /> </td>
+        <td><span id="border_bottom_left_radius_number">8px</span></td>
+    </tr>
+    <tr>
+        <td>Raio Direita:</td>
+        <td> <input type="range" id="border_bottom_right_radius_range" class="range" value="8" min="1" max="100" onchange="BorderBottomRightRadiusWidth(this)" /> </td>
+        <td><span id="border_bottom_right_radius_number">8px</span></td>
+    </tr>
+    <tr>
+        <td>Estilo:</td>
+        <td>
+            <select class="select" id="select_border_bottom_style" onchange="BorderBottomStyle(this)">
+                <option value="none">Nenhuma</option>
+                <option value="dotted">Pontilhada</option>
+                <option value="dashed">Tracejada</option>
+                <option value="solid">Sólida</option>
+                <option value="double">Dupla</option>
+                <option value="groove">Entalhe</option>
+                <option value="ridged">Cume</option>
+                <option value="inset">Encaixada</option>
+                <option value="outset">Começo</option>
+                <option value="hidden">Escondida</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center;" colspan="4">BORDA ESQUERDA</td>
+    </tr>
+    <tr>
+        <td>Cor:</td>
+        <td> <input id="border_left_color_selector" style="width: 100px; height: 30px;" onchange="BorderLeftColorSelector(this)" type="color" /> </td>
+    </tr>
+    <tr>
+        <td>Espessura:</td>
+        <td> <input id="border_left_width_range" type="range" class="range" value="2" min="1" max="100" onchange="BorderLeftWidth(this)" /> </td>
+        <td><span id="border_left_width_number">2px</span></td>
+    </tr>
+    <tr>
+        <td>Estilo:</td>
+        <td>
+            <select class="select" id="select_border_left_style" onchange="BorderLeftStyle(this)">
+                <option value="none">Nenhuma</option>
+                <option value="dotted">Pontilhada</option>
+                <option value="dashed">Tracejada</option>
+                <option value="solid">Sólida</option>
+                <option value="double">Dupla</option>
+                <option value="groove">Entalhe</option>
+                <option value="ridged">Cume</option>
+                <option value="inset">Encaixada</option>
+                <option value="outset">Começo</option>
+                <option value="hidden">Escondida</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center; box-shadow: inset 2px 2px 9px black;" colspan="4">BORDA DIREITA</td>
+    </tr>
+    <tr>
+        <td>Cor:</td>
+        <td> <input id="border_right_color_selector" style="width: 100px; height: 30px;" onchange="BorderRightColorSelector(this)" type="color" /> </td>
+    </tr>
+    <tr>
+        <td>Espessura:</td>
+        <td> <input id="border_right_width_range" type="range" class="range" value="2" min="1" max="100" onchange="BorderRightWidth(this)" /> </td>
+        <td><span id="border_right_width_number">2px</span></td>
+    </tr>
+    <tr>
+        <td>Estilo:</td>
+        <td>
+            <select class="select" id="select_border_right_style" onchange="BorderRightStyle(this)">
+                <option value="none">Nenhuma</option>
+                <option value="dotted">Pontilhada</option>
+                <option value="dashed">Tracejada</option>
+                <option value="solid">Sólida</option>
+                <option value="double">Dupla</option>
+                <option value="groove">Entalhe</option>
+                <option value="ridged">Cume</option>
+                <option value="inset">Encaixada</option>
+                <option value="outset">Começo</option>
+                <option value="hidden">Escondida</option>
+            </select>
+        </td>
+    </tr>
+</table>
+
+
+
+
+<div id="div_static_shadow_options" align="center" class="secondary_menu" onclick="OpenStaticShadowButtonOptions()">
+    <span>Sombra Externa &#9652;</span>
+</div>
+<table id="static_shadow_options" style="display: none;">
+    <tr>
+        <td>Habilitar Sombras:</td>
+        <td> <input id="checkbox_static_shadow_enable" type="checkbox" onchange="StaticShadowEnable(this)" /> </td>
+    </tr>
+    <tr>
+        <td>Deslocamento Horizontal:</td>
+        <td> <input id="range_box_shadow_offset_x" type="range" class="range" value="0" min="0" max="100" onchange="BoxShadowOffsetX(this)" /> </td>
+        <td><span id="span_box_shadow_offset_x">0px</span></td>
+    </tr>
+    <tr>
+        <td>Deslocamento Vertical:</td>
+        <td> <input id="range_box_shadow_offset_y" type="range" class="range" value="0" min="0" max="100" onchange="BoxShadowOffsetY(this)" /> </td>
+        <td><span id="span_box_shadow_offset_y">0px</span></td>
+    </tr>
+    <tr>
+        <td>Raio de Borrão:</td>
+        <td> <input id="range_box_shadow_blur_radius" type="range" class="range" value="0" min="0" max="100" onchange="BoxShadowBlurRadius(this)" /> </td>
+        <td><span id="span_box_shadow_blur_radius">0px</span></td>
+    </tr>
+    <tr>
+        <td>Raio de Propagação:</td>
+        <td> <input id="range_box_shadow_spread_radius" type="range" class="range" value="0" min="0" max="100" onchange="BoxShadowSpreadRadius(this)" /> </td>
+        <td><span id="span_box_shadow_spread_radius">0px</span></td>
+    </tr>
+    <tr>
+        <td>Cor da Sombra:</td>
+        <td> <input id="shadow_color_selector" style="width: 100px; height: 30px;" onchange="BoxShadowColorSelector(this)" type="color" /> </td>
+    </tr>
+</table>
+
+
+
+<div id="div_static_shadow_inset_options" align="center" class="secondary_menu" onclick="OpenStaticShadowInsetButtonOptions()">
+    <span>Sombra Interna &#9652;</span>
+</div>
+<table id="static_shadow_inset_options" style="display: none;">
+    <tr>
+        <td>Habilitar Sombras:</td>
+        <td> <input id="checkbox_static_inset_shadow_enable" type="checkbox" onchange="StaticShadowInsetEnable(this)" checked /> </td>
+    </tr>
+    <tr>
+        <td>Deslocamento Horizontal:</td>
+        <td> <input id="range_box_shadow_inset_offset_x" type="range" class="range" value="2" min="0" max="100" onchange="BoxShadowInsetOffsetX(this)" /> </td>
+        <td><span id="span_box_shadow_inset_offset_x">2px</span></td>
+    </tr>
+    <tr>
+        <td>Deslocamento Vertical:</td>
+        <td> <input id="range_box_shadow_inset_offset_y" type="range" class="range" value="3" min="0" max="100" onchange="BoxShadowInsetOffsetY(this)" /> </td>
+        <td><span id="span_box_shadow_inset_offset_y">3px</span></td>
+    </tr>
+    <tr>
+        <td>Raio de Borrão:</td>
+        <td> <input id="range_box_shadow_inset_blur_radius" type="range" class="range" value="9" min="0" max="100" onchange="BoxShadowInsetBlurRadius(this)" /> </td>
+        <td><span id="span_box_shadow_inset_blur_radius">9px</span></td>
+    </tr>
+    <tr>
+        <td>Raio de Propagação:</td>
+        <td> <input id="range_box_shadow_inset_spread_radius" type="range" class="range" value="0" min="0" max="100" onchange="BoxShadowInsetSpreadRadius(this)" /> </td>
+        <td><span id="span_box_shadow_inset_spread_radius">0px</span></td>
+    </tr>
+    <tr>
+        <td>Cor da Sombra:</td>
+        <td> <input id="shadow_inset_color_selector" style="width: 100px; height: 30px;" onchange="BoxShadowInsetColorSelector(this)" type="color" /> </td>
+    </tr>
+</table>

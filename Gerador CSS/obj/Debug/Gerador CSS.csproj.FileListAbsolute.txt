@@ -1,0 +1,86 @@
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\Gerador CSS.dll.config
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\Gerador CSS.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\Gerador CSS.pdb
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\csc.exe
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\csc.exe.config
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\csc.rsp
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\csi.exe
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\csi.exe.config
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\csi.rsp
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.AppContext.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Collections.Immutable.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Console.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Globalization.Calendars.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.IO.Compression.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.IO.FileSystem.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Net.Http.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Net.Sockets.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Reflection.Metadata.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.ValueTuple.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Xml.XPath.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\vbc.exe
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\vbc.exe.config
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\vbc.rsp
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\VBCSCompiler.exe
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\roslyn\VBCSCompiler.exe.config
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\Antlr3.Runtime.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\Microsoft.Web.Infrastructure.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\Newtonsoft.Json.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\System.Web.Helpers.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\System.Web.Mvc.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\System.Web.Optimization.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\System.Web.Razor.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\System.Web.WebPages.Deployment.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\System.Web.WebPages.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\System.Web.WebPages.Razor.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\WebGrease.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\System.Web.Helpers.xml
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\System.Web.Mvc.xml
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\System.Web.Optimization.xml
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\System.Web.Razor.xml
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\System.Web.WebPages.xml
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\System.Web.WebPages.Deployment.xml
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\System.Web.WebPages.Razor.xml
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\Newtonsoft.Json.xml
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\Antlr3.Runtime.pdb
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\pt-br\System.Web.Helpers.resources.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\pt-br\System.Web.Mvc.resources.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\pt-br\System.Web.Optimization.resources.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\pt-br\System.Web.Razor.resources.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\pt-br\System.Web.WebPages.resources.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\bin\pt-br\System.Web.WebPages.Razor.resources.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\obj\Debug\Gerador CSS.csproj.AssemblyReference.cache
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\obj\Debug\Gerador CSS.csproj.CoreCompileInputs.cache
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\obj\Debug\Gerador CSS.csproj.CopyComplete
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\obj\Debug\Gerador CSS.dll
+C:\Program Files\Projetos\Gerador CSS\Gerador CSS\obj\Debug\Gerador CSS.pdb

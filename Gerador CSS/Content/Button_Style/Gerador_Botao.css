@@ -1,0 +1,186 @@
+﻿
+body {
+    margin: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+
+tr {
+    height: 40px;
+}
+
+.range {
+    width: 220px;
+}
+
+
+#div-button {
+    margin-bottom: 20px;    
+    padding: 10px 10px 20px;
+    border: white solid 2px;
+    box-shadow: gray 2px 2px 2px;
+}
+
+
+
+.btn-copy {
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+    border-left-color: #ffffff;
+    border-right-color: #ffffff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 0;
+    background-color: #89f47b;
+    color: #ffffff;
+    margin: 5px;
+    box-shadow: 0px 0px 0px 0px #525757, inset 3px 3px 15px 0px #09c31f;
+    text-shadow: 0px 0px 0px #525757;
+}
+
+    .btn-copy:hover {
+        background-color: #63f866;
+        font-size: 18px;
+        color: #ffffff;
+        font-weight: 0;
+        font-style: normal;
+        text-shadow: 0px 0px 0px #525757;
+        padding-top: 13px;
+        padding-bottom: 13px;
+        padding-left: 25px;
+        padding-right: 25px;
+        border-top-width: 2px;
+        border-bottom-width: 2px;
+        border-left-width: 2px;
+        border-right-width: 2px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-right-style: solid;
+        border-top-color: #ffffff;
+        border-bottom-color: #ffffff;
+        border-left-color: #ffffff;
+        border-right-color: #ffffff;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        box-shadow: 0px 0px 0px 0px #525757, inset 2px 3px 9px 0px #07ab1a;
+    }
+
+.my_text_area {
+    box-shadow: inset 2px 2px 20px 10px #423f3f;
+    width: 70%;
+    height: 150px;
+    resize: none;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    font-size: 10px;
+}
+
+.my_input {
+    height: 25px;
+    border-radius: 3px;
+    border-color: #abaaaa;
+    border-width: 1px;
+    font-size: 16px;
+    width: 300px;
+}
+
+    .my_input:focus {
+        border-width: 1px;
+    }
+
+
+.primary_menu {
+    background-color: #add8e6;
+    padding: 5px;
+    height: 30px;
+    width: 90%;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-style: dashed;
+    cursor: pointer;
+}
+
+.secondary_menu {
+    display: none;
+    background-color: #fafb90;
+    padding: 5px;
+    width: 90%;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-style: dashed;
+    cursor: pointer;
+}
+
+
+.meubotao {
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-color: #37e9f6;
+    border-bottom-color: #37e9f6;
+    border-left-color: #37e9f6;
+    border-right-color: #37e9f6;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 200;
+    background-color: #ec5555;
+    color: #ffffff;
+    margin: 5px;
+    box-shadow: 0px 0px 0px 0px #525757, inset 2px 3px 9px 0px #525757;
+    text-shadow: 6px 2px 2px #525757;
+}
+
+    .meubotao:hover {
+        background-color: #4ee7e9;
+        font-size: 18px;
+        color: #ffffff;
+        border-color: #37e9f6;
+        border-radius: 10%;
+        border-width: 1px;
+    }
+
+
+.select {
+    width: 220px;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: gray;
+}
+
+.input-number {
+    width: 50px;
+}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerador CSS", "Gerador CSS\Gerador CSS.csproj", "{EDD090CD-44FD-4B1A-9B85-2E5DCF8C9595}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDD090CD-44FD-4B1A-9B85-2E5DCF8C9595}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDD090CD-44FD-4B1A-9B85-2E5DCF8C9595}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDD090CD-44FD-4B1A-9B85-2E5DCF8C9595}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDD090CD-44FD-4B1A-9B85-2E5DCF8C9595}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CAFC0934-ECCB-4840-A993-5E6BD243ECFE}
+	EndGlobalSection
+EndGlobal

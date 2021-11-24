@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "GeradorDeBotao";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+    <style id="hover">
+    </style>
+
+</head>
+
+<body>
+    @*<div id="div-button" align="center">
+        <div align="center">
+            <h2>Gerador de Botão em CSS</h2>
+        </div>
+        <div style="text-align: -webkit-right;">
+             <input title="Mudar Cor de Fundo" style="width: 30px; height: 30px;" onchange="BackgroundDivColorSelector(this)" value="#ffffff" type="color" /> 
+        </div>
+        <div>
+            <button id="mybtn" class="mybtn">Button</button>
+        </div>
+
+    </div>*@
+    <div style="width: 40%; float: left; position: fixed;" align="center">
+        
+
+        <div style="padding: 10px; border-color: black; border-width: 1px; border-style: solid; border-radius: 5px;">
+            <div align="center">
+                <h3>CSS do seu botão aqui</h3>
+            </div>
+            <div>
+                <textarea spellcheck="false" id="css_code" class="my_text_area" readonly></textarea>
+            </div>
+            <div>
+                <button class="btn-copy" onclick="CopyToClipboardCSS()">Copiar CSS</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div style=" width: 50%; float: right; ">
+
+
+        @Html.Partial("_Static_Button_Partial")
+
+        @Html.Partial("_Hover_Button_Partial")
+
+
+    </div>
+
+
+</body>
+</html>
