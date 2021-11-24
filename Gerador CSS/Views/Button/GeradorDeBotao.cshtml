@@ -1,34 +1,29 @@
-﻿
+﻿@model Gerador_CSS.Models.Button
+@using Gerador_CSS.Models;
+
+
+
 @{
-    ViewBag.Title = "GeradorDeBotao";
+    ViewBag.Title = "Gerador de Botão CSS";
 }
 
-
-
 <!DOCTYPE html>
+
 <html>
 <head>
-    
 
-    
     <style id="hover">
     </style>
-
 </head>
-
 <body>
-
-
-   
-
-    <div  style="width: 40%; float: left; z-index: 2; margin-top: 50px" align="center">
+    <div style="width: 40%; float: left; z-index: 2; margin-top: 50px" align="center">
 
         <div id="div-button" align="center">
-            <div>
+            <div style="margin: 10px">
                 <button id="mybtn" class="mybtn">Button</button>
                 <input title="Mudar Cor de Fundo" style="width: 30px; height: 30px; float: right" onchange="BackgroundDivColorSelector(this)" value="#ffffff" type="color" />
-            </div>           
-            
+            </div>
+
         </div>
 
         <div style="padding: 10px; border-color: black; border-width: 1px; border-style: solid; border-radius: 5px;">
@@ -47,16 +42,12 @@
     </div>
 
 
-    <div  style=" width: 50%; float: right; z-index: 2; margin-top: 50px; max-height: 450px; overflow: auto ">
+    <div style=" width: 50%; float: right; z-index: 2; margin-top: 50px; max-height: 450px; overflow: auto ">
 
 
-        @Html.Partial("_Static_Button_Partial")
+        @Html.Partial("_Static_Button_Partial", Model)
 
         @Html.Partial("_Hover_Button_Partial")
-
-
     </div>
-
-
 </body>
 </html>

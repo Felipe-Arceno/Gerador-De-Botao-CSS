@@ -534,38 +534,71 @@ function BorderWidth(input){
 
 //CHANGE PADDING TOP
 function PaddingTop(input){
- let span_paddding_top = document.getElementById("padding_top_number"); 
- let width = input.value + "px";
+     let padding_top_number = document.getElementById("padding_top_number"); 
+     let width = input.value + "px";
 
- span_paddding_top.innerText = width;
- ChangeCSS("padding_top", width);      
+    padding_top_number.value = input.value;
+     ChangeCSS("padding_top", width);      
 }
+
+function PaddingTopNumberChanged(input) {
+    let padding_top_range = document.getElementById("static_padding_top_range")
+    let width = input.value + "px";
+
+    padding_top_range.value = input.value;
+    ChangeCSS("padding_top", width);
+}
+
 
 //CHANGE PADDING BOTTOM
 function PaddingBottom(input){
-    let span_paddding_bottom = document.getElementById("padding_bottom_number"); 
+    let padding_bottom_number = document.getElementById("padding_bottom_number"); 
     let width = input.value + "px";
    
-    span_paddding_bottom.innerText = width;
+    padding_bottom_number.value = input.value;
     ChangeCSS("padding_bottom", width);      
+}
+
+function PaddingBottomNumberChanged(input) {
+    let padding_bottom_range = document.getElementById("static_padding_bottom_range")
+    let width = input.value + "px";
+
+    padding_bottom_range.value = input.value;
+    ChangeCSS("padding_bottom", width);
 }
 
 //CHANGE PADDING LEFT
 function PaddingLeft(input){
-    let span_paddding_left = document.getElementById("padding_left_number"); 
+    let padding_left_number = document.getElementById("padding_left_number"); 
     let width = input.value + "px";
    
-    span_paddding_left.innerText = width;
+    padding_left_number.value = input.value;
     ChangeCSS("padding_left", width);      
+}
+
+function PaddingLeftNumberChanged(input) {
+    let padding_left_range = document.getElementById("static_padding_left_range")
+    let width = input.value + "px";
+
+    padding_left_range.value = input.value;
+    ChangeCSS("padding_left", width);
 }
 
 //CHANGE PADDING RIGHT
 function PaddingRight(input){
-    let span_paddding_right = document.getElementById("padding_right_number"); 
+    let padding_right_number = document.getElementById("padding_right_number"); 
     let width = input.value + "px";
    
-    span_paddding_right.innerText = width;
+    padding_right_number.value = input.value;
     ChangeCSS("padding_right", width);      
+}
+
+function PaddingRightNumberChanged(input) {
+    let padding_right_range = document.getElementById("static_padding_right_range")
+    let width = input.value + "px";
+
+    padding_right_range.value = input.value;
+    ChangeCSS("padding_right", width);
 }
 
 

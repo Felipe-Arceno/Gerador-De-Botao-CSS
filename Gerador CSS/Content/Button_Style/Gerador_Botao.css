@@ -184,4 +184,80 @@ tr {
 
 .input-number {
     width: 50px;
+    margin-left: 5px;
 }
+
+
+
+.btn-criar-novo {
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+    border-left-color: #ffffff;
+    border-right-color: #ffffff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 0;
+    background-color: #2cfc03;
+    color: #ffffff;
+    margin: 5px;
+    box-shadow: 0px 4px 5px 0px #7cfb13, inset 0px 0px 0px 0px #525757;
+    text-shadow: 0px 0px 0px #525757;
+}
+
+    .btn-criar-novo:hover {
+        background-color: #44b706;
+        font-size: 19px;
+        color: #ffffff;
+        font-weight: 200;
+        font-style: normal;
+        text-shadow: 0px 0px 0px #525757;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-top-width: 2px;
+        border-bottom-width: 2px;
+        border-left-width: 2px;
+        border-right-width: 2px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-right-style: solid;
+        border-top-color: #ffffff;
+        border-bottom-color: #ffffff;
+        border-left-color: #ffffff;
+        border-right-color: #ffffff;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        box-shadow: 0px 4px 5px 0px #0db701, inset 0px 0px 0px 0px #525757;
+        /* Thanks for using my generator! 
+ by Felipe Arceno */
+    }
+
+
+.div-recomends {    
+    padding: 20px;
+    box-shadow: inset black 2px 2px 2px
+}
+
+
+
+

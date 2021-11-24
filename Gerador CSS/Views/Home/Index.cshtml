@@ -1,31 +1,114 @@
-﻿@{
+﻿@model List<Gerador_CSS.Models.Button>
+@using Gerador_CSS.Models;
+
+
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div align="center">
+    <h2>Crie seu botão em CSS Agora Mesmo !</h2>
+    <h4>Rápido e Fácil</h4>
+    <button class="btn-criar-novo" onclick="GoToGerarBotao()">Criar Novo !</button>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+
+<div style="margin-top: 70px">
+    <h4>Veja algumas recomendções</h4>
+    <div class="div-recomends">
+
+        @{ 
+            int contador = 1;
+
+            foreach (var Button in Model)
+            {
+
+
+                <style>
+                    .btn-@contador {
+                    border-top-width: @Button.Static_Border_Top_Width;
+                    border-bottom-width: @Button.Static_Border_Bottom_Width;
+                    border-left-width: @Button.Static_Border_Left_Width;
+                    border-right-width: @Button.Static_Border_Right_Width;
+                    border-top-style: @Button.Static_Border_Top_Style;
+                    border-bottom-style: @Button.Static_Border_Bottom_Style;
+                    border-left-style: @Button.Static_Border_Left_Style;
+                    border-right-style: @Button.Static_Border_Right_Style;
+                    border-top-color: @Button.Static_Border_Top_Color;
+                    border-bottom-color: @Button.Static_Border_Bottom_Color;
+                    border-left-color: @Button.Static_Border_Left_Color;
+                    border-right-color: @Button.Static_Border_Right_Color;
+                    border-top-left-radius: @Button.Static_Border_Top_Left_Radius;
+                    border-top-right-radius: @Button.Static_Border_Top_Right_Radius;
+                    border-bottom-right-radius: @Button.Static_Border_Bottom_Left_Radius;
+                    border-bottom-left-radius: @Button.Static_Border_Bottom_Right_Radius;
+                    padding-top: @Button.Static_Padding_Top;
+                    padding-bottom: @Button.Static_Padding_Bottom;
+                    padding-left: @Button.Static_Padding_Left;
+                    padding-right: @Button.Static_Padding_Right;
+                    font-size: @Button.Static_Font_Size;
+                    font-style: @Button.Static_Font_Style;
+                    font-weight: @Button.Static_Font_Weight;
+                    background-color: @Button.Static_Background_Color;
+                    color: @Button.Static_Color;
+                    box-shadow: @Button.Static_Box_Shadow;
+                    text-shadow: @Button.Static_Text_Shadow;
+                    }
+
+                        .btn-@contador:hover {
+                            background-color: @Button.Hover_Background_Color;
+                            font-size: @Button.Hover_Font_Size;
+                            color: @Button.Hover_Color;
+                            font-weight: @Button.Hover_Font_Weight;
+                            font-style: @Button.Hover_Font_Style;
+                            text-shadow:@Button.Hover_Text_Shadow;
+                            padding-top: @Button.Hover_Padding_Top;
+                            padding-bottom: @Button.Hover_Padding_Bottom;
+                            padding-left: @Button.Hover_Padding_Left;
+                            padding-right: @Button.Hover_Padding_Right;
+                            border-top-width: @Button.Hover_Border_Top_Width;
+                            border-bottom-width: @Button.Hover_Border_Bottom_Width;
+                            border-left-width: @Button.Hover_Border_Left_Width;
+                            border-right-width: @Button.Hover_Border_Right_Width;
+                            border-top-style: @Button.Hover_Border_Top_Style;
+                            border-bottom-style: @Button.Hover_Border_Bottom_Style;
+                            border-left-style: @Button.Hover_Border_Left_Style;
+                            border-right-style: @Button.Hover_Border_Right_Style;
+                            border-top-color: @Button.Hover_Border_Top_Color;
+                            border-bottom-color: @Button.Hover_Border_Bottom_Color;
+                            border-left-color: @Button.Hover_Border_Left_Color;
+                            border-right-color: @Button.Hover_Border_Right_Color;
+                            border-top-left-radius: @Button.Hover_Border_Top_Left_Radius;
+                            border-top-right-radius: @Button.Hover_Border_Top_Right_Radius;
+                            border-bottom-right-radius: @Button.Hover_Border_Bottom_Left_Radius;
+                            border-bottom-left-radius: @Button.Hover_Border_Bottom_Right_Radius;
+                            box-shadow:@Button.Hover_Box_Shadow;
+                        }
+                </style>
+
+                <button onclick="GoToGerarBotao('@Button.Button_id')" class="btn-@contador">
+                    Exemplo
+                </button>
+
+                contador++;
+            }
+
+        }
+                
     </div>
 </div>
+
+
+<script>
+    function GoToGerarBotao(idButton) {
+        if (idButton == null) {
+            location.href = "/Button/GeradorDeBotao"
+        }
+        else {
+            location.href = "/Button/GeradorDeBotao?idButton=" + idButton;
+        }
+        
+    }
+
+</script>
