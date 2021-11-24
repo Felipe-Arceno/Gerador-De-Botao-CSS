@@ -11,35 +11,33 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: white">
         <div class="container">
             <div class="navbar-header">
+                
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                @Html.ActionLink("Gerador De Botão CSS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "background-color: red; color: white; margin: 5px" })
+
+
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
-                </ul>
-            </div>
-            <div>
-                <button id="mybtn" class="mybtn">Button</button>
-            </div>
-            <div style="text-align: -webkit-right;">
-                <input title="Mudar Cor de Fundo" style="width: 30px; height: 30px;" onchange="BackgroundDivColorSelector(this)" value="#ffffff" type="color" />
-            </div>
+
         </div>
     </div>
+
+
+    
+
+
     <div class="container body-content">
+       
         @RenderBody()
         <hr />
-        
+
     </div>
 
     @Scripts.Render("~/bundles/jquery")
