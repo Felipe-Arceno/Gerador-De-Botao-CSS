@@ -98,8 +98,22 @@ namespace Gerador_CSS.Models
         //BACKGROUND
         public string Hover_Background_Color { get; set; }
         //SHADOW
+        public bool Hover_Box_Shadow_Enable { get; set; }
+        public bool Hover_Box_Shadow_Inset_Enable { get; set; }
+        public string Hover_Box_Shadow_Offset_X { get; set; }
+        public string Hover_Box_Shadow_Offset_Y { get; set; }
+        public string Hover_Box_Shadow_Blur_Radius { get; set; }
+        public string Hover_Box_Shadow_Spread_Radius { get; set; }
+        public string Hover_Box_Shadow_Color { get; set; }
+        public string Hover_Box_Shadow_Inset_Offset_X { get; set; }
+        public string Hover_Box_Shadow_Inset_Offset_Y { get; set; }
+        public string Hover_Box_Shadow_Inset_Blur_Radius { get; set; }
+        public string Hover_Box_Shadow_Inset_Spread_Radius { get; set; }
+        public string Hover_Box_Shadow_Inset_Color { get; set; }
         public string Hover_Box_Shadow { get; set; }
+
         //TEXT SHADOW
+        public bool Hover_Text_Shadow_Enable { get; set; }
         public string Hover_Text_Shadow { get; set; }
         public string Hover_Text_Shadow_Offset_X { get; set; }
         public string Hover_Text_Shadow_Offset_Y { get; set; }
