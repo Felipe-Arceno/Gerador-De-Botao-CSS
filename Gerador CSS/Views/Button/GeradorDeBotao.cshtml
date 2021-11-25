@@ -43,11 +43,18 @@
 
 
     <div style=" width: 50%; float: right; z-index: 2; margin-top: 50px; max-height: 450px; overflow: auto ">
+        <form action="@Url.Action("InsertButtonToSuggestionBox", "Button")" method="post">
 
+            @Html.Partial("_Static_Button_Partial", Model)
 
-        @Html.Partial("_Static_Button_Partial", Model)
+            @Html.Partial("_Hover_Button_Partial", Model)
 
-        @Html.Partial("_Hover_Button_Partial")
+            <div>
+                <button type="submit">Inserir</button>
+            </div>
+        </form>
+
+        
     </div>
 </body>
 </html>

@@ -266,7 +266,21 @@ namespace Gerador_CSS.Class
 									BTH.Hover_Color,
 									BTH.Hover_Background_Color,
 									BTH.Hover_Box_Shadow,
-									BTH.Hover_Text_Shadow
+									BTH.Hover_Text_Shadow,
+									BTH.Hover_Box_Shadow_Offset_X,
+									BTH.Hover_Box_Shadow_Offset_Y,
+									BTH.Hover_Box_Shadow_Blur_Radius,
+									BTH.Hover_Box_Shadow_Spread_Radius,
+									BTH.Hover_Box_Shadow_Color,
+									BTH.Hover_Box_Shadow_Inset_Offset_X,
+									BTH.Hover_Box_Shadow_Inset_Offset_Y,
+									BTH.Hover_Box_Shadow_Inset_Blur_Radius,
+									BTH.Hover_Box_Shadow_Inset_Spread_Radius,
+									BTH.Hover_Box_Shadow_Inset_Color,
+									BTH.Hover_Text_Shadow_Offset_X,
+									BTH.Hover_Text_Shadow_Offset_Y,
+									BTH.Hover_Text_Shadow_Blur_Radius,
+									BTH.Hover_Text_Shadow_Color
 									FROM 
 									dbo.Button AS BT 
 									JOIN dbo.Button_Static_Properties AS BTS 
@@ -355,7 +369,21 @@ namespace Gerador_CSS.Class
 					Button.Hover_Color = table.Rows[0]["Hover_Color"].ToString();
 					Button.Hover_Background_Color = table.Rows[0]["Hover_Background_Color"].ToString();
 					Button.Hover_Box_Shadow = table.Rows[0]["Hover_Box_Shadow"].ToString();
+					Button.Hover_Box_Shadow_Offset_X = table.Rows[0]["Hover_Box_Shadow_Offset_X"].ToString();
+					Button.Hover_Box_Shadow_Offset_Y = table.Rows[0]["Hover_Box_Shadow_Offset_Y"].ToString();
+					Button.Hover_Box_Shadow_Blur_Radius = table.Rows[0]["Hover_Box_Shadow_Blur_Radius"].ToString();
+					Button.Hover_Box_Shadow_Spread_Radius = table.Rows[0]["Hover_Box_Shadow_Spread_Radius"].ToString();
+					Button.Hover_Box_Shadow_Color = table.Rows[0]["Hover_Box_Shadow_Color"].ToString();
+					Button.Hover_Box_Shadow_Inset_Offset_X = table.Rows[0]["Hover_Box_Shadow_Inset_Offset_X"].ToString();
+					Button.Hover_Box_Shadow_Inset_Offset_Y = table.Rows[0]["Hover_Box_Shadow_Inset_Offset_Y"].ToString();
+					Button.Hover_Box_Shadow_Inset_Blur_Radius = table.Rows[0]["Hover_Box_Shadow_Inset_Blur_Radius"].ToString();
+					Button.Hover_Box_Shadow_Inset_Spread_Radius = table.Rows[0]["Hover_Box_Shadow_Inset_Spread_Radius"].ToString();
+					Button.Hover_Box_Shadow_Inset_Color = table.Rows[0]["Hover_Box_Shadow_Inset_Color"].ToString();
 					Button.Hover_Text_Shadow = table.Rows[0]["Hover_Text_Shadow"].ToString();
+					Button.Hover_Text_Shadow_Offset_X = table.Rows[0]["Hover_Text_Shadow_Offset_X"].ToString();
+					Button.Hover_Text_Shadow_Offset_Y = table.Rows[0]["Hover_Text_Shadow_Offset_Y"].ToString();
+					Button.Hover_Text_Shadow_Blur_Radius = table.Rows[0]["Hover_Text_Shadow_Blur_Radius"].ToString();
+					Button.Hover_Text_Shadow_Color = table.Rows[0]["Hover_Text_Shadow_Color"].ToString();
 
 					int Static_Box_Shadow_Offset_X = Convert.ToInt32(Button.Static_Box_Shadow_Offset_X.Replace("px", string.Empty));
 					int Static_Box_Shadow_Offset_Y = Convert.ToInt32(Button.Static_Box_Shadow_Offset_Y.Replace("px", string.Empty));
@@ -398,6 +426,50 @@ namespace Gerador_CSS.Class
 					else
 					{
 						Button.Static_Text_Shadow_Enable = false;
+					}
+
+					//------------------------------------------------------HOVER------------------------------------------------------------
+
+					int Hover_Box_Shadow_Offset_X = Convert.ToInt32(Button.Hover_Box_Shadow_Offset_X.Replace("px", string.Empty));
+					int Hover_Box_Shadow_Offset_Y = Convert.ToInt32(Button.Hover_Box_Shadow_Offset_Y.Replace("px", string.Empty));
+					int Hover_Box_Shadow_Blur_Radius = Convert.ToInt32(Button.Hover_Box_Shadow_Blur_Radius.Replace("px", string.Empty));
+					int Hover_Box_Shadow_Spread_Radius = Convert.ToInt32(Button.Hover_Box_Shadow_Spread_Radius.Replace("px", string.Empty));
+
+					if (Hover_Box_Shadow_Offset_X > 0 || Hover_Box_Shadow_Offset_Y > 0 || Hover_Box_Shadow_Blur_Radius > 0 || Hover_Box_Shadow_Spread_Radius > 0)
+					{
+						Button.Hover_Box_Shadow_Enable = true;
+					}
+					else
+					{
+						Button.Hover_Box_Shadow_Enable = false;
+					}
+
+
+					int Hover_Box_Shadow_Inset_Offset_X = Convert.ToInt32(Button.Hover_Box_Shadow_Inset_Offset_X.Replace("px", string.Empty));
+					int Hover_Box_Shadow_Inset_Offset_Y = Convert.ToInt32(Button.Hover_Box_Shadow_Inset_Offset_Y.Replace("px", string.Empty));
+					int Hover_Box_Shadow_Inset_Blur_Radius = Convert.ToInt32(Button.Hover_Box_Shadow_Inset_Blur_Radius.Replace("px", string.Empty));
+					int Hover_Box_Shadow_Inset_Spread_Radius = Convert.ToInt32(Button.Hover_Box_Shadow_Inset_Spread_Radius.Replace("px", string.Empty));
+
+					if (Hover_Box_Shadow_Inset_Offset_X > 0 || Hover_Box_Shadow_Inset_Offset_Y > 0 || Hover_Box_Shadow_Inset_Blur_Radius > 0 || Hover_Box_Shadow_Inset_Spread_Radius > 0)
+					{
+						Button.Hover_Box_Shadow_Inset_Enable = true;
+					}
+					else
+					{
+						Button.Hover_Box_Shadow_Inset_Enable = false;
+					}
+
+					int Hover_Text_Shadow_Offset_X = Convert.ToInt32(Button.Hover_Text_Shadow_Offset_X.Replace("px", string.Empty));
+					int Hover_Text_Shadow_Offset_Y = Convert.ToInt32(Button.Hover_Text_Shadow_Offset_Y.Replace("px", string.Empty));
+					int Hover_Text_Shadow_Blur_Radius = Convert.ToInt32(Button.Hover_Text_Shadow_Blur_Radius.Replace("px", string.Empty));
+
+					if (Hover_Text_Shadow_Offset_X > 0 || Hover_Text_Shadow_Offset_Y > 0 || Hover_Text_Shadow_Blur_Radius > 0)
+					{
+						Button.Hover_Text_Shadow_Enable = true;
+					}
+					else
+					{
+						Button.Hover_Text_Shadow_Enable = false;
 					}
 
 				}						

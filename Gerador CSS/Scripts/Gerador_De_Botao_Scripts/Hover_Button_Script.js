@@ -68,7 +68,7 @@ function OpenHoverButtonOptions(){
         //CLOSE TABLE SHADOW INSET HOVER TOO
         div_hover_shadow_inset_options.style.display = 'none';  
         table_shadow_inset.style.display = 'none';
-        div_hover_shadow_inset_options.innerHTML = "<span>Sombra Externa &#9652;</span>";
+        div_hover_shadow_inset_options.innerHTML = "<span>Sombra Interna &#9652;</span>";
         div_hover_shadow_inset_options.style.backgroundColor = '#fafb90'; 
     }        
 }
@@ -169,12 +169,19 @@ function BackgroundColorSelectorHover(input){
 
 //CHANGE FONT SIZE HOVER
 function FontSizeHover(input){    
-    let span_font_size_hover = document.getElementById("font_size_number_hover"); 
+    let font_size_hover_number = document.getElementById("font_size_number_hover"); 
     let size = input.value + "px";
 
-    span_font_size_hover.innerText = size;
-    ChangeCSS("font_size_hover", size);    
+    font_size_hover_number.value = input.value;
+    ChangeCSS("font_size_hover", size);  
+}
 
+function FontSizeHoverNumberChanged(input) {
+    let font_size_hover_range = document.getElementById("font_size_hover_range");
+    let size = input.value + "px";
+
+    font_size_hover_range.value = input.value;
+    ChangeCSS("font_size_hover", size);
 }
 
 // CHANGE FONT COLOR HOVER
@@ -185,10 +192,18 @@ function ColorSelectorHover(input){
 
 //CHANGE FONT WEIGHT HOVER
 function FontWeightHover(input){
-    let span_hover_font_weight = document.getElementById("hover_font_weight_number"); 
+    let hover_font_weight_number = document.getElementById("hover_font_weight_number"); 
     let weight = input.value;
 
-    span_hover_font_weight.innerText = weight;
+    hover_font_weight_number.value = weight;
+    ChangeCSS("font_weight_hover", weight);
+}
+
+function FontWeightHoverNumberChanged(input) {
+    let font_weight_hover_range = document.getElementById("font_weight_hover_range");
+    let weight = input.value;
+
+    font_weight_hover_range.value = weight;
     ChangeCSS("font_weight_hover", weight);
 }
 
@@ -254,7 +269,11 @@ function FontShadowEnableHover(){
         $("#range_font_shadow_offset_x_hover").attr("disabled", false);
         $("#range_font_shadow_offset_y_hover").attr("disabled", false);
         $("#range_font_shadow_blur_radius_hover").attr("disabled", false);
-        $("#font_shadow_color_selector_hover").attr("disabled", false);       
+        $("#shadow_color_selector_hover").attr("disabled", false);
+
+        $("#font_shadow_offset_x_hover_number").attr("disabled", false);
+        $("#font_shadow_offset_y_hover_number").attr("disabled", false);
+        $("#font_shadow_blur_radius_hover_number").attr("disabled", false);
     }
     else{
         ChangeCSS("font_shadow_offset_x_hover", "0px"); 
@@ -264,45 +283,74 @@ function FontShadowEnableHover(){
         $("#range_font_shadow_offset_x_hover").attr("disabled", true);
         $("#range_font_shadow_offset_y_hover").attr("disabled", true);
         $("#range_font_shadow_blur_radius_hover").attr("disabled", true);
-        $("#font_shadow_color_selector_hover").attr("disabled", true);  
+        $("#shadow_color_selector_hover").attr("disabled", true);
+
+        $("#font_shadow_offset_x_hover_number").attr("disabled", true);
+        $("#font_shadow_offset_y_hover_number").attr("disabled", true);
+        $("#font_shadow_blur_radius_hover_number").attr("disabled", true);
         
         $("#range_font_shadow_offset_x_hover").val(0);
         $("#range_font_shadow_offset_y_hover").val(0);
         $("#range_font_shadow_blur_radius_hover").val(0);
-        $("#font_shadow_color_selector_hover").val("black");
+        $("#shadow_color_selector_hover").val("black");
 
-        $("#span_font_shadow_offset_x_hover").text("0px");
-        $("#span_font_shadow_offset_y_hover").text("0px");
-        $("#span_font_shadow_blur_radius_hover").text("0px");
+        $("#font_shadow_offset_x_hover_number").val(0);
+        $("#font_shadow_offset_y_hover_number").val(0);
+        $("#font_shadow_blur_radius_hover_number").val(0);
     }
    
 }
 
 //CHANGE FONT SHADOW OFFSET X HOVER
 function FontShadowOffsetXHover(input){
-    let span_font_shadow_offset_x_hover = document.getElementById("span_font_shadow_offset_x_hover"); 
+    let font_shadow_offset_x_hover_number = document.getElementById("font_shadow_offset_x_hover_number"); 
     let offset = input.value + "px";
 
-    span_font_shadow_offset_x_hover.innerText = offset;
+    font_shadow_offset_x_hover_number.value = input.value;
     ChangeCSS("font_shadow_offset_x_hover", offset); 
+}
+
+function FontShadowOffsetXHoverNumberChanged(input) {
+    let font_shadow_offset_x_hover_range = document.getElementById("range_font_shadow_offset_x_hover");
+    let offset = input.value + "px";
+
+    font_shadow_offset_x_hover_range.value = input.value;
+    ChangeCSS("font_shadow_offset_x_hover", offset);
 }
 
 //CHANGE FONT SHADOW OFFSET Y HOVER
 function FontShadowOffsetYHover(input){
-    let span_font_shadow_offset_y_hover = document.getElementById("span_font_shadow_offset_y_hover"); 
+    let font_shadow_offset_y_hover_number= document.getElementById("font_shadow_offset_y_hover_number"); 
     let offset = input.value + "px";
     
-    span_font_shadow_offset_y_hover.innerText = offset;
+    font_shadow_offset_y_hover_number.value = input.value;
     ChangeCSS("font_shadow_offset_y_hover", offset); 
 }
 
+function FontShadowOffsetYHoverNumberChanged(input) {
+    let font_shadow_offset_y_hover_range = document.getElementById("range_font_shadow_offset_y_hover");
+    let offset = input.value + "px";
+
+    font_shadow_offset_y_hover_range.value = input.value;
+    ChangeCSS("font_shadow_offset_y_hover", offset);
+}
+
+
 // CHANGE FONT SHADOW BLUR RADIUS HOVER
 function FontShadowBlurRadiusHover(input){
-    let span_font_shadow_blur_radius_hover = document.getElementById("span_font_shadow_blur_radius_hover");
+    let font_shadow_blur_radius_hover_number = document.getElementById("font_shadow_blur_radius_hover_number");
     let blur = input.value + "px";
 
-    span_font_shadow_blur_radius_hover.innerText = blur;
+    font_shadow_blur_radius_hover_number.value = input.value;
     ChangeCSS("font_shadow_blur_radius_hover", blur); 
+}
+
+function FontShadowBlurRadiusHoverNumberChanged(input) {
+    let font_shadow_blur_radius_hover_range = document.getElementById("range_font_shadow_blur_radius_hover");
+    let blur = input.value + "px";
+
+    font_shadow_blur_radius_hover_range.value = input.value;
+    ChangeCSS("font_shadow_blur_radius_hover", blur);
 }
 
 
@@ -320,39 +368,73 @@ function FontShadowColorSelectorHover(input){
 
 //CHANGE PADDING TOP HOVER
 function PaddingTopHover(input){
-    let span_paddding_top_hover = document.getElementById("padding_top_number_hover"); 
+    let paddding_top_hover_number = document.getElementById("padding_top_number_hover_number"); 
     let width = input.value + "px";
    
-    span_paddding_top_hover.innerText = width;
+    paddding_top_hover_number.value = input.value;
     ChangeCSS("padding_top_hover", width);      
-   }
+}
+
+function PaddingTopHoverNumberChanged(input) {
+    let paddding_top_hover_range = document.getElementById("padding_top_hover_range");
+    let width = input.value + "px";
+
+    paddding_top_hover_range.value = input.value;
+    ChangeCSS("padding_top_hover", width);
+}
    
-   //CHANGE PADDING BOTTOM HOVER
-   function PaddingBottomHover(input){
-       let span_paddding_bottom_hover = document.getElementById("padding_bottom_number_hover"); 
-       let width = input.value + "px";
-      
-       span_paddding_bottom_hover.innerText = width;
-       ChangeCSS("padding_bottom_hover", width);      
-   }
+//CHANGE PADDING BOTTOM HOVER
+function PaddingBottomHover(input){
+    let paddding_bottom_hover_number = document.getElementById("padding_bottom_number_hover_number"); 
+    let width = input.value + "px";
+
+    paddding_bottom_hover_number.value = input.value;
+    ChangeCSS("padding_bottom_hover", width);      
+}
+
+function PaddingBottomHoverNumberChanged(input) {
+    let paddding_bottom_hover_range = document.getElementById("padding_bottom_hover_range");
+    let width = input.value + "px";
+
+    paddding_bottom_hover_range.value = input.value;
+    ChangeCSS("padding_bottom_hover", width);
+}
    
-   //CHANGE PADDING LEFT HOVER
-   function PaddingLeftHover(input){
-       let span_paddding_left_hover = document.getElementById("padding_left_number_hover"); 
-       let width = input.value + "px";
-      
-       span_paddding_left_hover.innerText = width;
-       ChangeCSS("padding_left_hover", width);      
-   }
+//CHANGE PADDING LEFT HOVER
+function PaddingLeftHover(input){
+    let paddding_left_hover_number = document.getElementById("padding_left_number_hover_number"); 
+    let width = input.value + "px";
+
+    paddding_left_hover_number.value = input.value;
+    ChangeCSS("padding_left_hover", width);      
+}
+
+
+function PaddingLeftHoverNumberChanged(input) {
+    let paddding_left_hover_range = document.getElementById("padding_left_hover_range");
+    let width = input.value + "px";
+
+    paddding_left_hover_range.value = input.value;
+    ChangeCSS("padding_left_hover", width);
+}
    
-   //CHANGE PADDING RIGHT HOVER
-   function PaddingRightHover(input){
-       let span_paddding_right_hover = document.getElementById("padding_right_number_hover"); 
-       let width = input.value + "px";
+//CHANGE PADDING RIGHT HOVER
+function PaddingRightHover(input){
+    let paddding_right_hover_number = document.getElementById("padding_right_number_hover_number"); 
+    let width = input.value + "px";
       
-       span_paddding_right_hover.innerText = width;
-       ChangeCSS("padding_right_hover", width);      
-   }
+    paddding_right_hover_number.value = input.value;
+    ChangeCSS("padding_right_hover", width);      
+}
+
+
+function PaddingRightHoverNumberChanged(input) {
+    let paddding_right_hover_range = document.getElementById("padding_right_hover_range");
+    let width = input.value + "px";
+
+    paddding_right_hover_range.value = input.value;
+    ChangeCSS("padding_right_hover", width);
+}
 
 //--------------------------------------------------------------------
 //----------------HOVER BORDER OPTIONS-------------------------------
@@ -384,11 +466,19 @@ function BorderTopColorSelectorHover(input){
 
 //CHANGE BORDER TOP WIDTH HOVER
 function BorderTopWidthHover(input){
-    let span_border_top_width_hover = document.getElementById("border_top_width_number_hover"); 
+    let border_top_width_hover_number = document.getElementById("border_top_width_number_hover"); 
     let width = input.value + "px";
 
-    span_border_top_width_hover.innerText = width;
+    border_top_width_hover_number.value = input.value;
     ChangeCSS("border_top_width_hover", width);      
+}
+
+function BorderTopWidthHoverNumberChanged(input) {
+    let border_top_width_hover_range = document.getElementById("border_top_width_range_hover");
+    let width = input.value + "px";
+
+    border_top_width_hover_range.value = input.value;
+    ChangeCSS("border_top_width_hover", width);
 }
 
 //CHANGE BORDER TOP STYLE HOVER
@@ -400,20 +490,36 @@ function BorderTopStyleHover(input){
 
 //CHANGE BORDER TOP LEFT RADIUS HOVER
 function BorderTopLeftRadiusWidthHover(input){
-    let span_border_top_left_radius_hover = document.getElementById("border_top_left_radius_number_hover"); 
+    let border_top_left_radius_hover_number = document.getElementById("border_top_left_radius_number_hover"); 
     let radius = input.value + "px";
 
-    span_border_top_left_radius_hover.innerText = radius;
+    border_top_left_radius_hover_number.value = input.value;
     ChangeCSS("border_top_left_radius_hover", radius)
+}
+
+function BorderTopLeftRadiusHoverNumberChanged(input) {
+    let border_top_left_radius_hover_range = document.getElementById("border_top_left_radius_range_hover");
+    let radius = input.value + "px";
+
+    border_top_left_radius_hover_range.value = input.value;
+    ChangeCSS("border_top_left_radius_hover", radius);
 }
 
 //CHANGE BORDER TOP RIGHT RADIUS HOVER
 function BorderTopRightRadiusWidthHover(input){
-    let span_border_top_right_radius_hover = document.getElementById("border_top_right_radius_number_hover"); 
+    let border_top_right_radius_hover_number = document.getElementById("border_top_right_radius_number_hover"); 
     let radius = input.value + "px";
 
-    span_border_top_right_radius_hover.innerText = radius;
+    border_top_right_radius_hover_number.value = input.value;
     ChangeCSS("border_top_right_radius_hover", radius)
+}
+
+function BorderTopRightRadiusHoverNumberChanged(input) {
+    let border_top_right_radius_hover_range = document.getElementById("border_top_right_radius_range_hover");
+    let radius = input.value + "px";
+
+    border_top_right_radius_hover_range.value = input.value;
+    ChangeCSS("border_top_right_radius_hover", radius);
 }
 
 //CHANGE BORDER BOTTOM COLOR HOVER
@@ -425,11 +531,19 @@ function BorderBottomColorSelectorHover(input){
 
 //CHANGE BORDER BOTTOM WIDTH HOVER
 function BorderBottomWidthHover(input){
-    let span_border_bottom_width_hover = document.getElementById("border_bottom_width_number_hover"); 
+    let border_bottom_width_hover_number = document.getElementById("border_bottom_width_number_hover"); 
     let width = input.value + "px";
 
-    span_border_bottom_width_hover.innerText = width;
+    border_bottom_width_hover_number.value = input.value;
     ChangeCSS("border_bottom_width_hover", width);      
+}
+
+function BorderBottomWidthHoverNumberChanged(input) {
+    let border_bottom_width_hover_range = document.getElementById("border_bottom_width_range_hover");
+    let width = input.value + "px";
+
+    border_bottom_width_hover_range.value = input.value;
+    ChangeCSS("border_bottom_width_hover", width);
 }
 
 //CHANGE BORDER BOTTOM STYLE HOVER
@@ -441,20 +555,36 @@ function BorderBottomStyleHover(input){
 
 //CHANGE BORDER BOTTOM LEFT RADIUS HOVER
 function BorderBottomLeftRadiusWidthHover(input){
-    let span_border_bottom_left_radius_hover = document.getElementById("border_bottom_left_radius_number_hover"); 
+    let border_bottom_left_radius_hover_number = document.getElementById("border_bottom_left_radius_number_hover"); 
     let radius = input.value + "px";
 
-    span_border_bottom_left_radius_hover.innerText = radius;
+    border_bottom_left_radius_hover_number.value = input.value;
     ChangeCSS("border_bottom_left_radius_hover", radius)
+}
+
+function BorderBottomLeftRadiusHoverNumberChanged(input) {
+    let border_bottom_left_radius_hover_range = document.getElementById("border_bottom_left_radius_range_hover");
+    let radius = input.value + "px";
+
+    border_bottom_left_radius_hover_range.value = input.value;
+    ChangeCSS("border_bottom_left_radius_hover", radius);
 }
 
 //CHANGE BORDER BOTTOM RIGHT RADIUS HOVER
 function BorderBottomRightRadiusWidthHover(input){
-    let span_border_bottom_right_radius_hover = document.getElementById("border_bottom_right_radius_number_hover"); 
+    let border_bottom_right_radius_hover_number = document.getElementById("border_bottom_right_radius_number_hover"); 
     let radius = input.value + "px";
 
-    span_border_bottom_right_radius_hover.innerText = radius;
+    border_bottom_right_radius_hover_number.value = input.value;
     ChangeCSS("border_bottom_right_radius_hover", radius)
+}
+
+function BorderBottomRightRadiusHoverNumberChanged(input) {
+    let border_bottom_right_radius_hover_range = document.getElementById("border_bottom_right_radius_range_hover");
+    let radius = input.value + "px";
+
+    border_bottom_right_radius_hover_range.value = input.value;
+    ChangeCSS("border_bottom_right_radius_hover", radius);
 }
 
 //CHANGE BORDER LEFT COLOR HOVER
@@ -466,11 +596,19 @@ function BorderLeftColorSelectorHover(input){
 
 //CHANGE BORDER LEFT WIDTH HOVER
 function BorderLeftWidthHover(input){
-    let span_border_top_width_hover = document.getElementById("border_left_width_number_hover"); 
+    let border_top_width_hover_number = document.getElementById("border_left_width_number_hover"); 
     let width = input.value + "px";
 
-    span_border_top_width_hover.innerText = width;
+    border_top_width_hover_number.value = input.value;
     ChangeCSS("border_left_width_hover", width);      
+}
+
+function BorderLeftWidthHoverNumberChanged(input) {
+    let border_left_width_hover_range = document.getElementById("border_left_width_range_hover");
+    let width = input.value + "px";
+
+    border_left_width_hover_range.value = input.value;
+    ChangeCSS("border_left_width_hover", width);
 }
 
 //CHANGE BORDER LEFT STYLE HOVER
@@ -489,11 +627,19 @@ function BorderRightColorSelectorHover(input){
 
 //CHANGE BORDER RIGHT WIDTH HOVER
 function BorderRightWidthHover(input){
-    let span_border_right_width_hover = document.getElementById("border_right_width_number_hover"); 
+    let border_right_width_hover_number = document.getElementById("border_right_width_number_hover"); 
     let width = input.value + "px";
 
-    span_border_right_width_hover.innerText = width;
+    border_right_width_hover_number.value = input.value;
     ChangeCSS("border_right_width_hover", width);      
+}
+
+function BorderRightWidthHoverNumberChanged(input) {
+    let border_right_width_hover_range = document.getElementById("border_right_width_range_hover");
+    let width = input.value + "px";
+
+    border_right_width_hover_range.value = input.value;
+    ChangeCSS("border_right_width_hover", width);
 }
 
 //CHANGE BORDER RIGHT STYLE HOVER
@@ -540,7 +686,12 @@ function HoverShadowEnable(){
         $("#range_box_shadow_offset_y_hover").attr("disabled", false);
         $("#range_box_shadow_blur_radius_hover").attr("disabled", false);
         $("#range_box_shadow_spread_radius_hover").attr("disabled", false); 
-        $("#shadow_color_selector_hover").attr("disabled", false);       
+        $("#shadow_color_selector_hover").attr("disabled", false);
+
+        $("#box_shadow_offset_x_hover_number").attr("disabled", false);
+        $("#box_shadow_offset_y_hover_number").attr("disabled", false);
+        $("#box_shadow_blur_radius_hover_number").attr("disabled", false);
+        $("#box_shadow_spread_radius_hover_number").attr("disabled", false);
     }
     else{
         ChangeCSS("box_shadow_offset_x_hover", "0px"); 
@@ -553,7 +704,12 @@ function HoverShadowEnable(){
         $("#range_box_shadow_blur_radius_hover").attr("disabled", true);
         $("#range_box_shadow_spread_radius_hover").attr("disabled", true); 
         $("#shadow_color_selector_hover").attr("disabled", true);   
-        
+
+        $("#box_shadow_offset_x_hover_number").attr("disabled", true);
+        $("#box_shadow_offset_y_hover_number").attr("disabled", true);
+        $("#box_shadow_blur_radius_hover_number").attr("disabled", true);
+        $("#box_shadow_spread_radius_hover_number").attr("disabled", true);
+
         $("#range_box_shadow_offset_x_hover").val(0);
         $("#range_box_shadow_offset_y_hover").val(0);
         $("#range_box_shadow_blur_radius_hover").val(0);
@@ -561,10 +717,10 @@ function HoverShadowEnable(){
         $("#shadow_color_selector_hover").val("#525757");       
 
 
-        $("#span_box_shadow_offset_x_hover").text("0px");
-        $("#span_box_shadow_offset_y_hover").text("0px");
-        $("#span_box_shadow_blur_radius_hover").text("0px");
-        $("#span_box_shadow_spread_radius_hover").text("0px");
+        $("#box_shadow_offset_x_hover_number").val(0);
+        $("#box_shadow_offset_y_hover_number").val(0);
+        $("#box_shadow_blur_radius_hover_number").val(0);
+        $("#box_shadow_spread_radius_hover_number").val(0);
     
     }
    
@@ -573,39 +729,71 @@ function HoverShadowEnable(){
 
 //CHANGE BOX SHADOW OFFSET X HOVER
 function BoxShadowOffsetXHover(input){
-    let span_box_shadow_offset_x_hover = document.getElementById("span_box_shadow_offset_x_hover"); 
+    let box_shadow_offset_x_hover_number = document.getElementById("box_shadow_offset_x_hover_number"); 
     let offset = input.value + "px";
 
-    span_box_shadow_offset_x_hover.innerText = offset;
+    box_shadow_offset_x_hover_number.value = input.value;
     ChangeCSS("box_shadow_offset_x_hover", offset); 
+}
+
+function BoxShadowOffsetXHoverNumberChanged(input) {
+    let box_shadow_offset_x_hover_range = document.getElementById("range_box_shadow_offset_x_hover");
+    let offset = input.value + "px";
+
+    box_shadow_offset_x_hover_range.value = input.value;
+    ChangeCSS("box_shadow_offset_x_hover", offset);
 }
 
 //CHANGE BOX SHADOW OFFSET Y HOVER
 function BoxShadowOffsetYHover(input){
-    let span_box_shadow_offset_y_hover = document.getElementById("span_box_shadow_offset_y_hover"); 
+    let box_shadow_offset_y_hover_number = document.getElementById("box_shadow_offset_y_hover_number"); 
     let offset = input.value + "px";
-    
-    span_box_shadow_offset_y_hover.innerText = offset;
+
+    box_shadow_offset_y_hover_number.value = input.value;
     ChangeCSS("box_shadow_offset_y_hover", offset); 
+}
+
+function BoxShadowOffsetYHoverNumberChanged(input) {
+    let box_shadow_offset_y_hover_range = document.getElementById("range_box_shadow_offset_y_hover");
+    let offset = input.value + "px";
+
+    box_shadow_offset_y_hover_range.value = input.value;
+    ChangeCSS("box_shadow_offset_y_hover", offset);
 }
 
 // CHANGE BOX SHADOW BLUR RADIUS HOVER
 function BoxShadowBlurRadiusHover(input){
-    let span_box_shadow_blur_radius_hover = document.getElementById("span_box_shadow_blur_radius_hover");
+    let box_shadow_blur_radius_hover_number = document.getElementById("box_shadow_blur_radius_hover_number");
     let blur = input.value + "px";
 
-    span_box_shadow_blur_radius_hover.innerText = blur;
+    box_shadow_blur_radius_hover_number.value = input.value;
     ChangeCSS("box_shadow_blur_radius_hover", blur); 
+}
+
+function BoxShadowBlurRadiusHoverNumberChanged(input) {
+    let box_shadow_blur_radius_hover_range = document.getElementById("range_box_shadow_blur_radius_hover");
+    let blur = input.value + "px";
+
+    box_shadow_blur_radius_hover_range.value = input.value;
+    ChangeCSS("box_shadow_blur_radius_hover", blur);
 }
 
 
 // CHANGE BOX SHADOW SPREAD RADIUS HOVER
 function BoxShadowSpreadRadiusHover(input){
-    let span_box_shadow_spread_radius_hover = document.getElementById("span_box_shadow_spread_radius_hover");
+    let box_shadow_spread_radius_hover_number = document.getElementById("box_shadow_spread_radius_hover_number");
     let spread = input.value + "px";
 
-    span_box_shadow_spread_radius_hover.innerText = spread;
+    box_shadow_spread_radius_hover_number.value = input.value;
     ChangeCSS("box_shadow_spread_radius_hover", spread); 
+}
+
+function BoxShadowSpreadRadiusHoverNumberChanged(input) {
+    let box_shadow_spread_radius_hover_range = document.getElementById("range_box_shadow_spread_radius_hover");
+    let spread = input.value + "px";
+
+    box_shadow_spread_radius_hover_range.value = input.value;
+    ChangeCSS("box_shadow_spread_radius_hover", spread);
 }
 
 // CHANGE BOX SHADOW COLOR HOVER
@@ -631,7 +819,12 @@ function HoverShadowInsetEnable(){
         $("#range_box_shadow_inset_offset_y_hover").attr("disabled", false);
         $("#range_box_shadow_inset_blur_radius_hover").attr("disabled", false);
         $("#range_box_shadow_inset_spread_radius_hover").attr("disabled", false); 
-        $("#shadow_inset_color_selector_hover").attr("disabled", false);       
+        $("#shadow_inset_color_selector_hover").attr("disabled", false);
+
+        $("#box_shadow_inset_offset_x_hover_number").attr("disabled", false);
+        $("#box_shadow_inset_offset_y_hover_number").attr("disabled", false);
+        $("#box_shadow_inset_blur_radius_hover_number").attr("disabled", false);
+        $("#box_shadow_inset_spread_radius_hover_number").attr("disabled", false);
     }
     else{
         ChangeCSS("box_shadow_inset_offset_x_hover", "0px"); 
@@ -643,7 +836,12 @@ function HoverShadowInsetEnable(){
         $("#range_box_shadow_inset_offset_y_hover").attr("disabled", true);
         $("#range_box_shadow_inset_blur_radius_hover").attr("disabled", true);
         $("#range_box_shadow_inset_spread_radius_hover").attr("disabled", true); 
-        $("#shadow_inset_color_selector_hover").attr("disabled", true);   
+        $("#shadow_inset_color_selector_hover").attr("disabled", true);
+
+        $("#box_shadow_inset_offset_x_hover_number").attr("disabled", true);
+        $("#box_shadow_inset_offset_y_hover_number").attr("disabled", true);
+        $("#box_shadow_inset_blur_radius_hover_number").attr("disabled", true);
+        $("#box_shadow_inset_spread_radius_hover_number").attr("disabled", true);
         
         $("#range_box_shadow_inset_offset_x_hover").val(0);
         $("#range_box_shadow_inset_offset_y_hover").val(0);
@@ -651,10 +849,10 @@ function HoverShadowInsetEnable(){
         $("#range_box_shadow_inset_spread_radius_hover").val(0);       
         $("#shadow_inset_color_selector_hover").val("#525757");       
 
-        $("#span_box_shadow_inset_offset_x_hover").text("0px");
-        $("#span_box_shadow_inset_offset_y_hover").text("0px");
-        $("#span_box_shadow_inset_blur_radius_hover").text("0px");
-        $("#span_box_shadow_inset_spread_radius_hover").text("0px");
+        $("#box_shadow_inset_offset_x_hover_number").val(0);
+        $("#box_shadow_inset_offset_y_hover_number").val(0);
+        $("#box_shadow_inset_blur_radius_hover_number").val(0);
+        $("#box_shadow_inset_spread_radius_hover_number").val(0);
     
     }
    
@@ -663,39 +861,71 @@ function HoverShadowInsetEnable(){
 
 //CHANGE BOX SHADOW INSET OFFSET X HOVER
 function BoxShadowInsetOffsetXHover(input){
-    let span_box_shadow_inset_offset_x_hover = document.getElementById("span_box_shadow_inset_offset_x_hover"); 
+    let box_shadow_inset_offset_x_hover_number = document.getElementById("box_shadow_inset_offset_x_hover_number"); 
     let offset = input.value + "px";
 
-    span_box_shadow_inset_offset_x_hover.innerText = offset;
+    box_shadow_inset_offset_x_hover_number.value = input.value;
     ChangeCSS("box_shadow_inset_offset_x_hover", offset); 
+}
+
+function BoxShadowInsetOffsetXHoverNumberChanged(input) {
+    let box_shadow_inset_offset_x_hover_range = document.getElementById("range_box_shadow_inset_offset_x_hover");
+    let offset = input.value + "px";
+
+    box_shadow_inset_offset_x_hover_range.value = input.value;
+    ChangeCSS("box_shadow_inset_offset_x_hover", offset);
 }
 
 //CHANGE BOX SHADOW INSET OFFSET Y HOVER
 function BoxShadowInsetOffsetYHover(input){
-    let span_box_shadow_inset_offset_y_hover = document.getElementById("span_box_shadow_inset_offset_y_hover"); 
+    let box_shadow_inset_offset_y_hover_number = document.getElementById("box_shadow_inset_offset_y_hover_number"); 
     let offset = input.value + "px";
     
-    span_box_shadow_inset_offset_y_hover.innerText = offset;
+    box_shadow_inset_offset_y_hover_number.value = input.value;
     ChangeCSS("box_shadow_inset_offset_y_hover", offset); 
+}
+
+function BoxShadowInsetOffsetYHoverNumberChanged(input) {
+    let box_shadow_inset_offset_y_hover_range = document.getElementById("range_box_shadow_inset_offset_y_hover");
+    let offset = input.value + "px";
+
+    box_shadow_inset_offset_y_hover_range.value = input.value;
+    ChangeCSS("box_shadow_inset_offset_y_hover", offset);
 }
 
 // CHANGE BOX SHADOW INSET BLUR RADIUS HOVER
 function BoxShadowInsetBlurRadiusHover(input){
-    let span_box_shadow_inset_blur_radius_hover = document.getElementById("span_box_shadow_inset_blur_radius_hover");
+    let box_shadow_inset_blur_radius_hover_number = document.getElementById("box_shadow_inset_blur_radius_hover_number");
     let blur = input.value + "px";
 
-    span_box_shadow_inset_blur_radius_hover.innerText = blur;
+    box_shadow_inset_blur_radius_hover_number.value = input.value;
     ChangeCSS("box_shadow_inset_blur_radius_hover", blur); 
+}
+
+function BoxShadowInsetBlurRadiusHoverNumberChanged(input) {
+    let box_shadow_inset_blur_radius_hover_range = document.getElementById("range_box_shadow_inset_blur_radius_hover");
+    let blur = input.value + "px";
+
+    box_shadow_inset_blur_radius_hover_range.value = input.value;
+    ChangeCSS("box_shadow_inset_blur_radius_hover", blur);
 }
 
 
 // CHANGE BOX SHADOW INSET SPREAD RADIUS HOVER
 function BoxShadowInsetSpreadRadiusHover(input){
-    let span_box_shadow_inset_spread_radius_hover = document.getElementById("span_box_shadow_inset_spread_radius_hover");
+    let box_shadow_inset_spread_radius_hover_number = document.getElementById("box_shadow_inset_spread_radius_hover_number");
     let spread = input.value + "px";
 
-    span_box_shadow_inset_spread_radius_hover.innerText = spread;
+    box_shadow_inset_spread_radius_hover_number.value = input.value;
     ChangeCSS("box_shadow_inset_spread_radius_hover", spread); 
+}
+
+function BoxShadowInsetSpreadRadiusHoverNumberChanged(input) {
+    let box_shadow_inset_spread_radius_hover_range = document.getElementById("range_box_shadow_inset_spread_radius_hover");
+    let spread = input.value + "px";
+
+    box_shadow_inset_spread_radius_hover_range.value = input.value;
+    ChangeCSS("box_shadow_inset_spread_radius_hover", spread);
 }
 
 // CHANGE BOX SHADOW INSET COLOR HOVER

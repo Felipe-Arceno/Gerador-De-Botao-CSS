@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gerador_CSS.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -41,6 +42,12 @@ namespace Gerador_CSS.Controllers
                 
             }           
             
+        }
+
+        [HttpPost]
+        public ActionResult InsertButtonToSuggestionBox(Button button)
+        {
+            return RedirectToAction("Index", "Home");
         }
     }
 }

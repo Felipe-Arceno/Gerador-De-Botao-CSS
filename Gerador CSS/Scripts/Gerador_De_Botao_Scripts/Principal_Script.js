@@ -52,54 +52,54 @@ var font_weight = document.getElementById("static_font_weight_range").value;
 //-----------------------------------------//    
 
 //// :HOVER
-var background_color_hover = "#4ee7e9";
+var background_color_hover = document.getElementById("background_color_selector_hover").value;
 var border_color_hover = "#37e9f6";
 var border_radius_hover = "10%";
 var border_width_hover = "1px";
 //// :HOVER > FONT
-    var font_size_hover = "18px";
-    var color_hover = "#ffffff";
-    var font_weight_hover = "0";
-    var font_style_hover = "normal";
+    var font_size_hover = document.getElementById("font_size_hover_range").value + "px";
+    var color_hover = document.getElementById("color_selector_hover").value;
+    var font_weight_hover = document.getElementById("font_weight_hover_range").value + "px";
+    var font_style_hover = document.getElementById("select_font_style_hover_hidden").value;
 //// :HOVER > FONT SHADOW
-    var font_shadow_offset_x_hover = "0px";
-    var font_shadow_offset_y_hover = "0px";
-    var font_shadow_blur_radius_hover = "0px";    
-    var font_shadow_color_hover = "#525757";    
+    var font_shadow_offset_x_hover = document.getElementById("range_font_shadow_offset_x_hover").value + "px";
+    var font_shadow_offset_y_hover = document.getElementById("range_font_shadow_offset_y_hover").value + "px";
+    var font_shadow_blur_radius_hover = document.getElementById("range_font_shadow_blur_radius_hover").value + "px";
+    var font_shadow_color_hover = document.getElementById("shadow_color_selector_hover").value;
 //// :HOVER > PADDING
-    var padding_top_hover = "15px";
-    var padding_bottom_hover = "15px";
-    var padding_left_hover = "20px";
-    var padding_right_hover = "20px";
+    var padding_top_hover = document.getElementById("padding_top_hover_range").value + "px";
+    var padding_bottom_hover = document.getElementById("padding_bottom_hover_range").value + "px";
+    var padding_left_hover = document.getElementById("padding_left_hover_range").value + "px";
+    var padding_right_hover = document.getElementById("padding_right_hover_range").value + "px";
 //// :HOVER > BORDERS    
-    var border_top_width_hover = "2px";
-    var border_bottom_width_hover = "2px";
-    var border_left_width_hover = "2px";
-    var border_right_width_hover = "2px";
-    var border_top_style_hover = "solid";
-    var border_bottom_style_hover = "solid";
-    var border_left_style_hover = "solid";    
-    var border_right_style_hover = "solid";
-    var border_top_color_hover = "#37e9f6";
-    var border_bottom_color_hover = "#37e9f6";
-    var border_left_color_hover = "#37e9f6";
-    var border_right_color_hover = "#37e9f6";
-    var border_top_left_radius_hover = "8px";
-    var border_top_right_radius_hover = "8px";
-    var border_bottom_left_radius_hover = "8px";
-    var border_bottom_right_radius_hover = "8px";
+    var border_top_width_hover = document.getElementById("border_top_width_range_hover").value + "px";
+    var border_bottom_width_hover = document.getElementById("border_bottom_width_range_hover").value + "px";
+    var border_left_width_hover = document.getElementById("border_left_width_range_hover").value + "px";
+    var border_right_width_hover = document.getElementById("border_right_width_range_hover").value + "px";
+    var border_top_style_hover = document.getElementById("select_border_top_style_hover_hidden").value;
+    var border_bottom_style_hover = document.getElementById("select_border_bottom_style_hover_hidden").value;
+    var border_left_style_hover = document.getElementById("select_border_left_style_hover_hidden").value;
+    var border_right_style_hover = document.getElementById("select_border_right_style_hover_hidden").value; 
+    var border_top_color_hover = document.getElementById("border_top_color_selector_hover").value;
+    var border_bottom_color_hover = document.getElementById("border_bottom_color_selector_hover").value;
+    var border_left_color_hover = document.getElementById("border_left_color_selector_hover").value;
+    var border_right_color_hover = document.getElementById("border_right_color_selector_hover").value;
+    var border_top_left_radius_hover = document.getElementById("border_top_left_radius_range_hover").value + "px";
+    var border_top_right_radius_hover = document.getElementById("border_top_right_radius_range_hover").value + "px";
+    var border_bottom_left_radius_hover = document.getElementById("border_bottom_left_radius_range_hover").value + "px";
+    var border_bottom_right_radius_hover = document.getElementById("border_bottom_right_radius_range_hover").value + "px";
 //// :HOVER > SHADOW
-    var box_shadow_offset_x_hover = "0px";
-    var box_shadow_offset_y_hover = "0px";
-    var box_shadow_blur_radius_hover = "0px";
-    var box_shadow_spread_radius_hover = "0px";
-    var box_shadow_color_hover = "#525757";
+    var box_shadow_offset_x_hover = document.getElementById("range_box_shadow_offset_x_hover").value + "px";
+    var box_shadow_offset_y_hover = document.getElementById("range_box_shadow_offset_y_hover").value + "px";
+    var box_shadow_blur_radius_hover = document.getElementById("range_box_shadow_blur_radius_hover").value + "px";
+    var box_shadow_spread_radius_hover = document.getElementById("range_box_shadow_spread_radius_hover").value + "px";
+    var box_shadow_color_hover = document.getElementById("shadow_color_selector_hover").value;
 //// :HOVER > SHADOW INSET
-    var box_shadow_inset_offset_x_hover = "2px";
-    var box_shadow_inset_offset_y_hover = "3px";
-    var box_shadow_inset_blur_radius_hover = "9px";
-    var box_shadow_inset_spread_radius_hover = "0px";
-    var box_shadow_inset_color_hover = "#525757";
+    var box_shadow_inset_offset_x_hover = document.getElementById("range_box_shadow_inset_offset_x_hover").value + "px";
+    var box_shadow_inset_offset_y_hover = document.getElementById("range_box_shadow_inset_offset_y_hover").value + "px";
+    var box_shadow_inset_blur_radius_hover = document.getElementById("range_box_shadow_inset_blur_radius_hover").value + "px";
+    var box_shadow_inset_spread_radius_hover = document.getElementById("range_box_shadow_inset_spread_radius_hover").value + "px";
+    var box_shadow_inset_color_hover = document.getElementById("shadow_inset_color_selector_hover").value;
 
 
 
@@ -130,7 +130,7 @@ $(window).on("load", function(){
     //-------------------------------------------------------------//
     //:HOVER
     $("#border_color_selector_hover").val(border_color_hover);  
-    $("#background_color_selector_hover").val(background_color_hover);    
+    $("#background_color_selector_hover").val(background_color_hover);
     $("#color_selector_hover").val(color_hover);
     //:HOVER > FONT SHADOW
     FontShadowEnableHover();
@@ -145,7 +145,8 @@ $(window).on("load", function(){
     $("#border_right_color_selector_hover").val(border_right_color_hover);
     //:HOVER > SHADOW
     HoverShadowEnable();
-
+    //STATIC > SHADOW INSET
+    HoverShadowInsetEnable();
     
     
    ChangeCSS();   
