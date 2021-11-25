@@ -13,15 +13,16 @@ namespace Gerador_CSS.Class
     {
         public static List<Models.Button> GetAllButtons()
         {
-            
-            string SystemPath = ConfigurationManager.AppSettings.Get("SystemPath").ToString();
+			string button_default_id = Class.Util.GetParam_Button_Default();
+
+			string SystemPath = ConfigurationManager.AppSettings.Get("SystemPath").ToString();
             string StrConn = ConfigurationManager.AppSettings.Get("SqlServerConn").ToString();
 
             List<Models.Button> List_Buttons = new List<Models.Button>();
 
             ConnectionSQLServer conexao = new ConnectionSQLServer(StrConn);
 
-			string sql = @"SELECT	BT.Button_Id,								
+			string sql = $@"SELECT	BT.Button_Id,								
 									BTS.Static_Border_Top_Width,
 									BTS.Static_Border_Bottom_Width,
 									BTS.Static_Border_Left_Width,
@@ -93,6 +94,10 @@ namespace Gerador_CSS.Class
 									JOIN dbo.Button_Hover_Properties AS BTH 
 									ON(BT.Button_Hover_Id = BTH.Hover_Button_Id)";
 
+				if (!string.IsNullOrEmpty(button_default_id))
+				{
+					sql += $@"WHERE BT.Button_Id != '{button_default_id}'";
+				}
 
 			try
 			{
@@ -231,6 +236,10 @@ namespace Gerador_CSS.Class
 									BTS.Static_Box_Shadow_Inset_Blur_Radius,
 									BTS.Static_Box_Shadow_Inset_Spread_Radius,
 									BTS.Static_Box_Shadow_Inset_Color,
+									BTS.Static_Text_Shadow_Offset_X,
+									BTS.Static_Text_Shadow_Offset_Y,
+									BTS.Static_Text_Shadow_Blur_Radius,
+									BTS.Static_Text_Shadow_Color,
 									BTH.Hover_Border_Top_Width,
 									BTH.Hover_Border_Bottom_Width,
 									BTH.Hover_Border_Left_Width,
@@ -301,20 +310,25 @@ namespace Gerador_CSS.Class
 					Button.Static_Font_Weight = table.Rows[0]["Static_Font_Weight"].ToString();
 					Button.Static_Background_Color = table.Rows[0]["Static_Background_Color"].ToString();
 					Button.Static_Color = table.Rows[0]["Static_Color"].ToString();
-					Button.Static_Box_Shadow = table.Rows[0]["Static_Box_Shadow"].ToString();
-					Button.Static_Text_Shadow = table.Rows[0]["Static_Text_Shadow"].ToString();
+					Button.Static_Box_Shadow = table.Rows[0]["Static_Box_Shadow"].ToString();					
 					Button.Static_Box_Shadow_Offset_X = table.Rows[0]["Static_Box_Shadow_Offset_X"].ToString();
 					Button.Static_Box_Shadow_Offset_Y = table.Rows[0]["Static_Box_Shadow_Offset_Y"].ToString();
 					Button.Static_Box_Shadow_Blur_Radius = table.Rows[0]["Static_Box_Shadow_Blur_Radius"].ToString();
 					Button.Static_Box_Shadow_Spread_Radius = table.Rows[0]["Static_Box_Shadow_Spread_Radius"].ToString();
-					Button.Static_Box_Shadow_Color = table.Rows[0]["Static_Box_Shadow_Color"].ToString();
+					Button.Static_Box_Shadow_Color = table.Rows[0]["Static_Box_Shadow_Color"].ToString();					
 					Button.Static_Box_Shadow_Inset_Offset_X = table.Rows[0]["Static_Box_Shadow_Inset_Offset_X"].ToString();
 					Button.Static_Box_Shadow_Inset_Offset_Y = table.Rows[0]["Static_Box_Shadow_Inset_Offset_Y"].ToString();
 					Button.Static_Box_Shadow_Inset_Blur_Radius = table.Rows[0]["Static_Box_Shadow_Inset_Blur_Radius"].ToString();
 					Button.Static_Box_Shadow_Inset_Spread_Radius = table.Rows[0]["Static_Box_Shadow_Inset_Spread_Radius"].ToString();
-					Button.Static_Box_Shadow_Inset_Color = table.Rows[0]["Static_Box_Shadow_Inset_Color"].ToString();
+					Button.Static_Box_Shadow_Inset_Color = table.Rows[0]["Static_Box_Shadow_Inset_Color"].ToString();					
+					Button.Static_Text_Shadow = table.Rows[0]["Static_Text_Shadow"].ToString();
+					Button.Static_Text_Shadow_Offset_X = table.Rows[0]["Static_Text_Shadow_Offset_X"].ToString();
+					Button.Static_Text_Shadow_Offset_Y = table.Rows[0]["Static_Text_Shadow_Offset_Y"].ToString();
+					Button.Static_Text_Shadow_Blur_Radius= table.Rows[0]["Static_Text_Shadow_Blur_Radius"].ToString();
+					Button.Static_Text_Shadow_Color = table.Rows[0]["Static_Text_Shadow_Color"].ToString();
 
-					//HOVER
+
+					//----------------------------------------- HOVER----------------------------------------------------
 					Button.Hover_Border_Top_Width = table.Rows[0]["Hover_Border_Top_Width"].ToString();
 					Button.Hover_Border_Bottom_Width = table.Rows[0]["Hover_Border_Bottom_Width"].ToString();
 					Button.Hover_Border_Left_Width = table.Rows[0]["Hover_Border_Left_Width"].ToString();
@@ -370,6 +384,20 @@ namespace Gerador_CSS.Class
 					else
 					{
 						Button.Static_Box_Shadow_Inset_Enable = false;
+					}
+
+
+					int Static_Text_Shadow_Offset_X = Convert.ToInt32(Button.Static_Text_Shadow_Offset_X.Replace("px", string.Empty));
+					int Static_Text_Shadow_Offset_Y = Convert.ToInt32(Button.Static_Text_Shadow_Offset_Y.Replace("px", string.Empty));
+					int Static_Text_Shadow_Blur_Radius= Convert.ToInt32(Button.Static_Text_Shadow_Blur_Radius.Replace("px", string.Empty));					
+
+					if (Static_Text_Shadow_Offset_X > 0 || Static_Text_Shadow_Offset_Y > 0 || Static_Text_Shadow_Blur_Radius > 0)
+					{
+						Button.Static_Text_Shadow_Enable = true;
+					}
+					else
+					{
+						Button.Static_Text_Shadow_Enable = false;
 					}
 
 				}						

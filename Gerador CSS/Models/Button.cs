@@ -34,7 +34,7 @@ namespace Gerador_CSS.Models
         public string Static_Padding_Bottom { get; set; }
         public string Static_Padding_Left { get; set; }
         public string Static_Padding_Right { get; set; }
-        //FONT
+        //FONT       
         public string Static_Font_Size { get; set; }
         public string Static_Font_Style { get; set; }
         public string Static_Font_Weight { get; set; }
@@ -56,7 +56,12 @@ namespace Gerador_CSS.Models
         public string Static_Box_Shadow_Inset_Color { get; set; }              
         public string Static_Box_Shadow { get; set; }
         //TEXT SHADOW
+        public bool Static_Text_Shadow_Enable { get; set; }
         public string Static_Text_Shadow { get; set; }
+        public string Static_Text_Shadow_Offset_X { get; set; }
+        public string Static_Text_Shadow_Offset_Y { get; set; }
+        public string Static_Text_Shadow_Blur_Radius { get; set; }
+        public string Static_Text_Shadow_Color { get; set; }
 
         //HOVER
 
@@ -96,6 +101,10 @@ namespace Gerador_CSS.Models
         public string Hover_Box_Shadow { get; set; }
         //TEXT SHADOW
         public string Hover_Text_Shadow { get; set; }
+        public string Hover_Text_Shadow_Offset_X { get; set; }
+        public string Hover_Text_Shadow_Offset_Y { get; set; }
+        public string Hover_Text_Shadow_Blur_Radius { get; set; }
+        public string Hover_Text_Shadow_Color { get; set; }
     }
 
 }

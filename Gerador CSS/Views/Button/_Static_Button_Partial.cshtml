@@ -66,7 +66,17 @@
     </tr>
     <tr>
         <td>Habilitar Sombras:</td>
-        <td> <input id="checkbox_font_shadow_enable" type="checkbox" onchange="FontShadowEnable(this)" /> </td>
+        <td>
+            @if (Model.Static_Text_Shadow_Enable == true)
+            {
+                <input id="checkbox_font_shadow_enable" type="checkbox" onchange="FontShadowEnable(this)" checked />
+            }
+            else
+            {
+                <input id="checkbox_font_shadow_enable" type="checkbox" onchange="FontShadowEnable(this)" />
+            }
+
+        </td>
     </tr>
 
     <tr>
@@ -162,17 +172,20 @@
     <tr>
         <td>Espessura:</td>
         <td> <input id="border_top_width_range" type="range" class="range" value="@Model.Static_Border_Top_Width.Replace("px", string.Empty)" min="1" max="100" onchange="BorderTopWidth(this)" /> </td>
-        <td><span id="border_top_width_number">2px</span></td>
+        <td><input id="border_top_width_number" onchange="BorderTopWidthNumberChanged(this)" min="0" max="100" value="@Model.Static_Border_Top_Width.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td>Raio Esquerda:</td>
         <td> <input type="range" id="border_top_left_radius_range" class="range" value="@Model.Static_Border_Top_Left_Radius.Replace("px", string.Empty)" min="1" max="100" onchange="BorderTopLeftRadiusWidth(this)" /> </td>
-        <td><span id="border_top_left_radius_number">8px</span></td>
+        <td><input id="border_top_left_radius_number" onchange="BorderTopLeftRadiusWidthNumberChanged(this)" min="0" max="100" value="@Model.Static_Border_Top_Left_Radius.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td>Raio Direita:</td>
         <td> <input type="range" id="border_top_right_radius_range" class="range" value="@Model.Static_Border_Top_Right_Radius.Replace("px", string.Empty)" min="1" max="100" onchange="BorderTopRightRadiusWidth(this)" /> </td>
-        <td><span id="border_top_right_radius_number">8px</span></td>
+        <td><input id="border_top_right_radius_number" onchange="BorderTopRightRadiusWidthNumberChanged(this)" min="0" max="100" value="@Model.Static_Border_Top_Right_Radius.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td>Estilo:</td>
@@ -202,17 +215,20 @@
     <tr>
         <td>Espessura:</td>
         <td> <input id="border_bottom_width_range" type="range" class="range" value="@Model.Static_Border_Bottom_Width.Replace("px", string.Empty)" min="1" max="100" onchange="BorderBottomWidth(this)" /> </td>
-        <td><span id="border_bottom_width_number">2px</span></td>
+        <td><input id="border_bottom_width_number" onchange="BorderBottomWidthNumberChanged(this)" min="0" max="100" value="@Model.Static_Border_Bottom_Width.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td>Raio Esquerda:</td>
         <td> <input type="range" id="border_bottom_left_radius_range" class="range" value="@Model.Static_Border_Bottom_Left_Radius.Replace("px", string.Empty)" min="1" max="100" onchange="BorderBottomLeftRadiusWidth(this)" /> </td>
-        <td><span id="border_bottom_left_radius_number">8px</span></td>
+        <td><input id="border_bottom_left_radius_number" onchange="BorderBottomLeftRadiusWidthNumberChanged(this)" min="0" max="100" value="@Model.Static_Border_Bottom_Left_Radius.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td>Raio Direita:</td>
         <td> <input type="range" id="border_bottom_right_radius_range" class="range" value="@Model.Static_Border_Bottom_Right_Radius.Replace("px", string.Empty)" min="1" max="100" onchange="BorderBottomRightRadiusWidth(this)" /> </td>
-        <td><span id="border_bottom_right_radius_number">8px</span></td>
+        <td><input id="border_bottom_right_radius_number" onchange="BorderBottomRightRadiusWidthNumberChanged(this)" min="0" max="100" value="@Model.Static_Border_Bottom_Right_Radius.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td>Estilo:</td>
@@ -242,7 +258,8 @@
     <tr>
         <td>Espessura:</td>
         <td> <input id="border_left_width_range" type="range" class="range" value="@Model.Static_Border_Left_Width.Replace("px", string.Empty)" min="1" max="100" onchange="BorderLeftWidth(this)" /> </td>
-        <td><span id="border_left_width_number">2px</span></td>
+        <td><input id="border_left_width_number" onchange="BorderLeftWidthNumberChanged(this)" min="0" max="100" value="@Model.Static_Border_Left_Width.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td>Estilo:</td>
@@ -272,7 +289,8 @@
     <tr>
         <td>Espessura:</td>
         <td> <input id="border_right_width_range" type="range" class="range" value="@Model.Static_Border_Right_Width.Replace("px", string.Empty)" min="1" max="100" onchange="BorderRightWidth(this)" /> </td>
-        <td><span id="border_right_width_number">2px</span></td>
+        <td><input id="border_right_width_number" onchange="BorderRightWidthNumberChanged(this)" min="0" max="100" value="@Model.Static_Border_Right_Width.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td>Estilo:</td>
@@ -320,22 +338,26 @@
     <tr>
         <td>Deslocamento Horizontal:</td>
         <td> <input id="range_box_shadow_offset_x" type="range" class="range" value="@Model.Static_Box_Shadow_Offset_X.Replace("px", string.Empty)" min="0" max="100" onchange="BoxShadowOffsetX(this)" /> </td>
-        <td><span id="span_box_shadow_offset_x">0px</span></td>
+        <td><input id="box_shadow_offset_x_number" onchange="BoxShadowOffsetXNumberChanged(this)" min="0" max="100" value="@Model.Static_Box_Shadow_Offset_X.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td>Deslocamento Vertical:</td>
         <td> <input id="range_box_shadow_offset_y" type="range" class="range" value="@Model.Static_Box_Shadow_Offset_Y.Replace("px", string.Empty)" min="0" max="100" onchange="BoxShadowOffsetY(this)" /> </td>
-        <td><span id="span_box_shadow_offset_y">0px</span></td>
+        <td><input id="box_shadow_offset_y_number" onchange="BoxShadowOffsetYNumberChanged(this)" min="0" max="100" value="@Model.Static_Box_Shadow_Offset_Y.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td>Raio de Borrão:</td>
         <td> <input id="range_box_shadow_blur_radius" type="range" class="range" value="@Model.Static_Box_Shadow_Blur_Radius.Replace("px", string.Empty)" min="0" max="100" onchange="BoxShadowBlurRadius(this)" /> </td>
-        <td><span id="span_box_shadow_blur_radius">0px</span></td>
+        <td><input id="box_shadow_blur_radius_number" onchange="BoxShadowBlurRadiusNumberChanged(this)" min="0" max="100" value="@Model.Static_Box_Shadow_Blur_Radius.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td>Raio de Propagação:</td>
         <td> <input id="range_box_shadow_spread_radius" type="range" class="range" value="@Model.Static_Box_Shadow_Spread_Radius.Replace("px", string.Empty)" min="0" max="100" onchange="BoxShadowSpreadRadius(this)" /> </td>
-        <td><span id="span_box_shadow_spread_radius">0px</span></td>
+        <td><input id="box_shadow_spread_radius_number" onchange="BoxShadowSpreadRadiusNumberChanged(this)" min="0" max="100" value="@Model.Static_Box_Shadow_Spread_Radius.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td>Cor da Sombra:</td>
@@ -366,22 +388,26 @@
     <tr>
         <td>Deslocamento Horizontal:</td>
         <td> <input id="range_box_shadow_inset_offset_x" type="range" class="range" value="@Model.Static_Box_Shadow_Inset_Offset_X.Replace("px", string.Empty)" min="0" max="100" onchange="BoxShadowInsetOffsetX(this)" /> </td>
-        <td><span id="span_box_shadow_inset_offset_x">2px</span></td>
+        <td><input id="box_shadow_inset_offset_x_number" onchange="BoxShadowInsetOffsetXNumberChanged(this)" min="0" max="100" value="@Model.Static_Box_Shadow_Inset_Offset_X.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span >px</span></td>
     </tr>
     <tr>
         <td>Deslocamento Vertical:</td>
         <td> <input id="range_box_shadow_inset_offset_y" type="range" class="range" value="@Model.Static_Box_Shadow_Inset_Offset_Y.Replace("px", string.Empty)" min="0" max="100" onchange="BoxShadowInsetOffsetY(this)" /> </td>
-        <td><span id="span_box_shadow_inset_offset_y">3px</span></td>
+        <td><input id="box_shadow_inset_offset_y_number" onchange="BoxShadowInsetOffsetYNumberChanged(this)" min="0" max="100" value="@Model.Static_Box_Shadow_Inset_Offset_Y.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td>Raio de Borrão:</td>
         <td> <input id="range_box_shadow_inset_blur_radius" type="range" class="range" value="@Model.Static_Box_Shadow_Inset_Blur_Radius.Replace("px", string.Empty)" min="0" max="100" onchange="BoxShadowInsetBlurRadius(this)" /> </td>
-        <td><span id="span_box_shadow_inset_blur_radius">9px</span></td>
+        <td><input id="box_shadow_inset_blur_radius_number" onchange="BoxShadowInsetBlurRadiusNumberChanged(this)" min="0" max="100" value="@Model.Static_Box_Shadow_Inset_Blur_Radius.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td>Raio de Propagação:</td>
         <td> <input id="range_box_shadow_inset_spread_radius" type="range" class="range" value="@Model.Static_Box_Shadow_Inset_Spread_Radius.Replace("px", string.Empty)" min="0" max="100" onchange="BoxShadowInsetSpreadRadius(this)" /> </td>
-        <td><span id="span_box_shadow_inset_spread_radius">0px</span></td>
+        <td><input id="box_shadow_inset_spread_radius_number" onchange="BoxShadowInsetSpreadRadiusNumberChanged(this)" min="0" max="100" value="@Model.Static_Box_Shadow_Inset_Spread_Radius.Replace("px", string.Empty)" class="input-number" type="number" /></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td>Cor da Sombra:</td>

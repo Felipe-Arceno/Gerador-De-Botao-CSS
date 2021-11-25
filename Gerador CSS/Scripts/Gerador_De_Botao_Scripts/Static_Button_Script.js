@@ -363,11 +363,19 @@ function BorderTopColorSelector(input){
 
 //CHANGE BORDER TOP WIDTH
 function BorderTopWidth(input){
-    let span_border_top_width = document.getElementById("border_top_width_number"); 
+    let border_top_width_number = document.getElementById("border_top_width_number"); 
     let width = input.value + "px";
 
-    span_border_top_width.innerText = width;
+    border_top_width_number.value = input.value;
     ChangeCSS("border_top_width", width);      
+}
+
+function BorderTopWidthNumberChanged(input) {
+    let border_top_width_range = document.getElementById("border_top_width_range");
+    let width = input.value + "px";
+
+    border_top_width_range.value = input.value;
+    ChangeCSS("border_top_width", width);
 }
 
 //CHANGE BORDER TOP STYLE
@@ -379,20 +387,36 @@ function BorderTopStyle(input){
 
 //CHANGE BORDER TOP LEFT RADIUS
 function BorderTopLeftRadiusWidth(input){
-    let span_border_top_left_radius = document.getElementById("border_top_left_radius_number"); 
+    let border_top_left_radius_number = document.getElementById("border_top_left_radius_number"); 
     let radius = input.value + "px";
 
-    span_border_top_left_radius.innerText = radius;
+    border_top_left_radius_number.value = input.value;
     ChangeCSS("border_top_left_radius", radius)
+}
+
+function BorderTopLeftRadiusWidthNumberChanged(input) {
+    let border_top_left_range = document.getElementById("border_top_left_radius_range");
+    let radius = input.value + "px";
+
+    border_top_left_range.value = input.value;
+    ChangeCSS("border_top_left_radius", radius);
 }
 
 //CHANGE BORDER TOP RIGHT RADIUS
 function BorderTopRightRadiusWidth(input){
-    let span_border_top_right_radius = document.getElementById("border_top_right_radius_number"); 
+    let border_top_right_radius_number = document.getElementById("border_top_right_radius_number"); 
     let radius = input.value + "px";
 
-    span_border_top_right_radius.innerText = radius;
+    border_top_right_radius_number.value = input.value;
     ChangeCSS("border_top_right_radius", radius)
+}
+
+function BorderTopRightRadiusWidthNumberChanged(input) {
+    let border_top_right_range = document.getElementById("border_top_right_radius_range");
+    let radius = input.value + "px";
+
+    border_top_right_range.value = input.value;
+    ChangeCSS("border_top_right_radius", radius);
 }
 
 //CHANGE BORDER BOTTOM COLOR
@@ -404,11 +428,19 @@ function BorderBottomColorSelector(input){
 
 //CHANGE BORDER BOTTOM WIDTH
 function BorderBottomWidth(input){
-    let span_border_bottom_width = document.getElementById("border_bottom_width_number"); 
+    let border_bottom_width_number = document.getElementById("border_bottom_width_number"); 
     let width = input.value + "px";
 
-    span_border_bottom_width.innerText = width;
+    border_bottom_width_number.value = input.value ;
     ChangeCSS("border_bottom_width", width);      
+}
+
+function BorderBottomWidthNumberChanged(input) {
+    let border_bottom_width_range = document.getElementById("border_bottom_width_range");
+    let width = input.value + "px";
+
+    border_bottom_width_range.value = input.value;
+    ChangeCSS("border_bottom_width", width);
 }
 
 //CHANGE BORDER BOTTOM STYLE
@@ -420,20 +452,36 @@ function BorderBottomStyle(input){
 
 //CHANGE BORDER BOTTOM LEFT RADIUS
 function BorderBottomLeftRadiusWidth(input){
-    let span_border_bottom_left_radius = document.getElementById("border_bottom_left_radius_number"); 
+    let border_bottom_left_radius_number = document.getElementById("border_bottom_left_radius_number"); 
     let radius = input.value + "px";
 
-    span_border_bottom_left_radius.innerText = radius;
+    border_bottom_left_radius_number.value = input.value;
     ChangeCSS("border_bottom_left_radius", radius)
+}
+
+function BorderBottomLeftRadiusWidthNumberChanged(input) {
+    let border_bottom_left_range = document.getElementById("border_bottom_left_radius_range");
+    let radius = input.value + "px";
+
+    border_bottom_left_range.value = input.value;
+    ChangeCSS("border_bottom_left_radius", radius);
 }
 
 //CHANGE BORDER BOTTOM RIGHT RADIUS
 function BorderBottomRightRadiusWidth(input){
-    let span_border_bottom_right_radius = document.getElementById("border_bottom_right_radius_number"); 
+    let border_bottom_right_radius_number = document.getElementById("border_bottom_right_radius_number"); 
     let radius = input.value + "px";
 
-    span_border_bottom_right_radius.innerText = radius;
+    border_bottom_right_radius_number.value = input.value;
     ChangeCSS("border_bottom_right_radius", radius)
+}
+
+function BorderBottomRightRadiusWidthNumberChanged(input) {
+    let border_bottom_right_range = document.getElementById("border_bottom_right_radius_range");
+    let radius = input.value + "px";
+
+    border_bottom_right_range.value = input.value;
+    ChangeCSS("border_bottom_right_radius", radius);
 }
 
 //CHANGE BORDER LEFT COLOR
@@ -445,11 +493,19 @@ function BorderLeftColorSelector(input){
 
 //CHANGE BORDER LEFT WIDTH
 function BorderLeftWidth(input){
-    let span_border_top_width = document.getElementById("border_left_width_number"); 
+    let border_top_width_number = document.getElementById("border_left_width_number"); 
     let width = input.value + "px";
 
-    span_border_top_width.innerText = width;
+    border_top_width_number.value = input.value;
     ChangeCSS("border_left_width", width);      
+}
+
+function BorderLeftWidthNumberChanged(input) {
+    let border_left_width_range = document.getElementById("border_left_width_range");
+    let width = input.value + "px";
+
+    border_left_width_range.value = input.value;
+    ChangeCSS("border_left_width", width);
 }
 
 //CHANGE BORDER LEFT STYLE
@@ -468,11 +524,19 @@ function BorderRightColorSelector(input){
 
 //CHANGE BORDER RIGHT WIDTH
 function BorderRightWidth(input){
-    let span_border_right_width = document.getElementById("border_right_width_number"); 
+    let border_right_width_number = document.getElementById("border_right_width_number"); 
     let width = input.value + "px";
 
-    span_border_right_width.innerText = width;
+    border_right_width_number.value = input.value;
     ChangeCSS("border_right_width", width);      
+}
+
+function BorderRightWidthNumberChanged(input) {
+    let border_right_width_range = document.getElementById("border_right_width_range");
+    let width = input.value + "px";
+
+    border_right_width_range.value = input.value;
+    ChangeCSS("border_right_width", width);
 }
 
 //CHANGE BORDER RIGHT STYLE
@@ -616,7 +680,12 @@ function StaticShadowEnable(){
         $("#range_box_shadow_offset_y").attr("disabled", false);
         $("#range_box_shadow_blur_radius").attr("disabled", false);
         $("#range_box_shadow_spread_radius").attr("disabled", false); 
-        $("#shadow_color_selector").attr("disabled", false);       
+        $("#shadow_color_selector").attr("disabled", false);
+
+        $("#box_shadow_offset_x_number").attr("disabled", false);
+        $("#box_shadow_offset_y_number").attr("disabled", false);
+        $("#box_shadow_blur_radius_number").attr("disabled", false);
+        $("#box_shadow_spread_radius_number").attr("disabled", false);
     }
     else{
         ChangeCSS("box_shadow_offset_x", "0px"); 
@@ -629,7 +698,12 @@ function StaticShadowEnable(){
         $("#range_box_shadow_blur_radius").attr("disabled", true);
         $("#range_box_shadow_spread_radius").attr("disabled", true); 
         $("#shadow_color_selector").attr("disabled", true);   
-        
+
+        $("#box_shadow_offset_x_number").attr("disabled", true);
+        $("#box_shadow_offset_y_number").attr("disabled", true);
+        $("#box_shadow_blur_radius_number").attr("disabled", true);
+        $("#box_shadow_spread_radius_number").attr("disabled", true);
+
         $("#range_box_shadow_offset_x").val(0);
         $("#range_box_shadow_offset_y").val(0);
         $("#range_box_shadow_blur_radius").val(0);
@@ -637,10 +711,10 @@ function StaticShadowEnable(){
         $("#shadow_color_selector").val("#525757");       
 
 
-        $("#span_box_shadow_offset_x").text("0px");
-        $("#span_box_shadow_offset_y").text("0px");
-        $("#span_box_shadow_blur_radius").text("0px");
-        $("#span_box_shadow_spread_radius").text("0px");
+        $("#box_shadow_offset_x_number").val(0);
+        $("#box_shadow_offset_y_number").val(0);
+        $("#box_shadow_blur_radius_number").val(0);
+        $("#box_shadow_spread_radius_number").val(0);
     
     }
    
@@ -649,39 +723,71 @@ function StaticShadowEnable(){
 
 //CHANGE BOX SHADOW OFFSET X
 function BoxShadowOffsetX(input){
-    let span_box_shadow_offset_x = document.getElementById("span_box_shadow_offset_x"); 
+    let box_shadow_offset_x_number = document.getElementById("box_shadow_offset_x_number"); 
     let offset = input.value + "px";
 
-    span_box_shadow_offset_x.innerText = offset;
+    box_shadow_offset_x_number.value = input.value;
     ChangeCSS("box_shadow_offset_x", offset); 
+}
+
+function BoxShadowOffsetXNumberChanged(input){
+    let box_shadow_offset_x_range = document.getElementById("range_box_shadow_offset_x");
+    let offset = input.value + "px";
+
+    box_shadow_offset_x_range.value = input.value;
+    ChangeCSS("box_shadow_offset_x", offset);
 }
 
 //CHANGE BOX SHADOW OFFSET Y
 function BoxShadowOffsetY(input){
-    let span_box_shadow_offset_y = document.getElementById("span_box_shadow_offset_y"); 
+    let box_shadow_offset_y_number = document.getElementById("box_shadow_offset_y_number"); 
     let offset = input.value + "px";
     
-    span_box_shadow_offset_y.innerText = offset;
+    box_shadow_offset_y_number.value = input.value;
     ChangeCSS("box_shadow_offset_y", offset); 
+}
+
+function BoxShadowOffsetYNumberChanged(input){
+    let box_shadow_offset_y_range = document.getElementById("range_box_shadow_offset_y");
+    let offset = input.value + "px";
+
+    box_shadow_offset_y_range.value = input.value;
+    ChangeCSS("box_shadow_offset_y", offset);
 }
 
 // CHANGE BOX SHADOW BLUR RADIUS
 function BoxShadowBlurRadius(input){
-    let span_box_shadow_blur_radius = document.getElementById("span_box_shadow_blur_radius");
+    let box_shadow_blur_radius_number = document.getElementById("box_shadow_blur_radius_number");
     let blur = input.value + "px";
 
-    span_box_shadow_blur_radius.innerText = blur;
+    box_shadow_blur_radius_number.value = input.value;
     ChangeCSS("box_shadow_blur_radius", blur); 
+}
+
+function BoxShadowBlurRadiusNumberChanged(input){
+    let box_shadow_blur_radius_range = document.getElementById("range_box_shadow_blur_radius");
+    let offset = input.value + "px";
+
+    box_shadow_blur_radius_range.value = input.value;
+    ChangeCSS("box_shadow_blur_radius", offset);
 }
 
 
 // CHANGE BOX SHADOW SPREAD RADIUS
 function BoxShadowSpreadRadius(input){
-    let span_box_shadow_spread_radius = document.getElementById("span_box_shadow_spread_radius");
+    let box_shadow_spread_radius_number = document.getElementById("box_shadow_spread_radius_number");
     let spread = input.value + "px";
 
-    span_box_shadow_spread_radius.innerText = spread;
+    box_shadow_spread_radius_number.value = input.value;
     ChangeCSS("box_shadow_spread_radius", spread); 
+}
+
+function BoxShadowSpreadRadiusNumberChanged(input){
+    let box_shadow_spread_radius_range = document.getElementById("range_box_shadow_spread_radius");
+    let offset = input.value + "px";
+
+    box_shadow_spread_radius_range.value = input.value;
+    ChangeCSS("box_shadow_spread_radius", offset);
 }
 
 // CHANGE BOX SHADOW COLOR
@@ -706,7 +812,12 @@ function StaticShadowInsetEnable(){
         $("#range_box_shadow_inset_offset_y").attr("disabled", false);
         $("#range_box_shadow_inset_blur_radius").attr("disabled", false);
         $("#range_box_shadow_inset_spread_radius").attr("disabled", false); 
-        $("#shadow_inset_color_selector").attr("disabled", false);       
+        $("#shadow_inset_color_selector").attr("disabled", false);
+
+        $("#box_shadow_inset_offset_x_number").attr("disabled", false);
+        $("#box_shadow_inset_offset_y_number").attr("disabled", false);
+        $("#box_shadow_inset_blur_radius_number").attr("disabled", false);
+        $("#box_shadow_inset_spread_radius_number").attr("disabled", false);
     }
     else{
         ChangeCSS("box_shadow_inset_offset_x", "0px"); 
@@ -718,7 +829,12 @@ function StaticShadowInsetEnable(){
         $("#range_box_shadow_inset_offset_y").attr("disabled", true);
         $("#range_box_shadow_inset_blur_radius").attr("disabled", true);
         $("#range_box_shadow_inset_spread_radius").attr("disabled", true); 
-        $("#shadow_inset_color_selector").attr("disabled", true);   
+        $("#shadow_inset_color_selector").attr("disabled", true);
+
+        $("#box_shadow_inset_offset_x_number").attr("disabled", true);
+        $("#box_shadow_inset_offset_y_number").attr("disabled", true);
+        $("#box_shadow_inset_blur_radius_number").attr("disabled", true);
+        $("#box_shadow_inset_spread_radius_number").attr("disabled", true);
         
         $("#range_box_shadow_inset_offset_x").val(0);
         $("#range_box_shadow_inset_offset_y").val(0);
@@ -726,10 +842,10 @@ function StaticShadowInsetEnable(){
         $("#range_box_shadow_inset_spread_radius").val(0);       
         $("#shadow_inset_color_selector").val("#525757");       
 
-        $("#span_box_shadow_inset_offset_x").text("0px");
-        $("#span_box_shadow_inset_offset_y").text("0px");
-        $("#span_box_shadow_inset_blur_radius").text("0px");
-        $("#span_box_shadow_inset_spread_radius").text("0px");
+        $("#box_shadow_inset_offset_x_number").val(0);
+        $("#box_shadow_inset_offset_y_number").val(0);
+        $("#box_shadow_inset_blur_radius_number").val(0);
+        $("#box_shadow_inset_spread_radius_number").val(0);
     
     }
    
@@ -738,39 +854,71 @@ function StaticShadowInsetEnable(){
 
 //CHANGE BOX SHADOW INSET OFFSET X
 function BoxShadowInsetOffsetX(input){
-    let span_box_shadow_inset_offset_x = document.getElementById("span_box_shadow_inset_offset_x"); 
+    let box_shadow_inset_offset_x_number = document.getElementById("box_shadow_inset_offset_x_number"); 
     let offset = input.value + "px";
 
-    span_box_shadow_inset_offset_x.innerText = offset;
+    box_shadow_inset_offset_x_number.value = input.value;
     ChangeCSS("box_shadow_inset_offset_x", offset); 
+}
+
+function BoxShadowInsetOffsetXNumberChanged(input) {
+    let range_box_shadow_inset_offset_x = document.getElementById("range_box_shadow_inset_offset_x");
+    let offset = input.value + "px";
+
+    range_box_shadow_inset_offset_x.value = input.value;
+    ChangeCSS("box_shadow_inset_offset_x", offset);
 }
 
 //CHANGE BOX SHADOW INSET OFFSET Y
 function BoxShadowInsetOffsetY(input){
-    let span_box_shadow_inset_offset_y = document.getElementById("span_box_shadow_inset_offset_y"); 
+    let box_shadow_inset_offset_y_number = document.getElementById("box_shadow_inset_offset_y_number"); 
     let offset = input.value + "px";
     
-    span_box_shadow_inset_offset_y.innerText = offset;
+    box_shadow_inset_offset_y_number.value = input.value;
     ChangeCSS("box_shadow_inset_offset_y", offset); 
+}
+
+function BoxShadowInsetOffsetYNumberChanged(input) {
+    let range_box_shadow_inset_offset_y = document.getElementById("range_box_shadow_inset_offset_y");
+    let offset = input.value + "px";
+
+    range_box_shadow_inset_offset_y.value = input.value;
+    ChangeCSS("box_shadow_inset_offset_y", offset);
 }
 
 // CHANGE BOX SHADOW INSET BLUR RADIUS
 function BoxShadowInsetBlurRadius(input){
-    let span_box_shadow_inset_blur_radius = document.getElementById("span_box_shadow_inset_blur_radius");
+    let box_shadow_inset_blur_radius_number = document.getElementById("box_shadow_inset_blur_radius_number");
     let blur = input.value + "px";
 
-    span_box_shadow_inset_blur_radius.innerText = blur;
+    box_shadow_inset_blur_radius_number.value = input.value;
     ChangeCSS("box_shadow_inset_blur_radius", blur); 
+}
+
+function BoxShadowInsetBlurRadiusNumberChanged(input) {
+    let range_box_shadow_inset_blur_radius = document.getElementById("range_box_shadow_inset_blur_radius");
+    let offset = input.value + "px";
+
+    range_box_shadow_inset_blur_radius.value = input.value;
+    ChangeCSS("box_shadow_inset_blur_radius", offset);
 }
 
 
 // CHANGE BOX SHADOW INSET SPREAD RADIUS
 function BoxShadowInsetSpreadRadius(input){
-    let span_box_shadow_inset_spread_radius = document.getElementById("span_box_shadow_inset_spread_radius");
+    let box_shadow_inset_spread_radius_number = document.getElementById("box_shadow_inset_spread_radius_number");
     let spread = input.value + "px";
 
-    span_box_shadow_inset_spread_radius.innerText = spread;
+    box_shadow_inset_spread_radius_number.value = input.value;
     ChangeCSS("box_shadow_inset_spread_radius", spread); 
+}
+
+function BoxShadowInsetSpreadRadiusNumberChanged(input) {
+    let range_box_shadow_inset_spread_radius = document.getElementById("range_box_shadow_inset_spread_radius");
+    let offset = input.value + "px";
+
+    range_box_shadow_inset_spread_radius.value = input.value;
+    ChangeCSS("box_shadow_inset_spread_radius", offset);
 }
 
 // CHANGE BOX SHADOW INSET COLOR
