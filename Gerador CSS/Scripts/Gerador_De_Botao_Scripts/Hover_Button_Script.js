@@ -278,7 +278,8 @@ function FontShadowEnableHover(){
     else{
         ChangeCSS("font_shadow_offset_x_hover", "0px"); 
         ChangeCSS("font_shadow_offset_y_hover", "0px");
-        ChangeCSS("font_shadow_blur_radius_hover", "0px");         
+        ChangeCSS("font_shadow_blur_radius_hover", "0px");
+        ChangeCSS("font_shadow_color_hover", "#000000");
         
         $("#range_font_shadow_offset_x_hover").attr("disabled", true);
         $("#range_font_shadow_offset_y_hover").attr("disabled", true);
@@ -292,7 +293,7 @@ function FontShadowEnableHover(){
         $("#range_font_shadow_offset_x_hover").val(0);
         $("#range_font_shadow_offset_y_hover").val(0);
         $("#range_font_shadow_blur_radius_hover").val(0);
-        $("#shadow_color_selector_hover").val("black");
+        $("#shadow_color_selector_hover").val("#000000");
 
         $("#font_shadow_offset_x_hover_number").val(0);
         $("#font_shadow_offset_y_hover_number").val(0);
@@ -697,8 +698,9 @@ function HoverShadowEnable(){
         ChangeCSS("box_shadow_offset_x_hover", "0px"); 
         ChangeCSS("box_shadow_offset_y_hover", "0px");
         ChangeCSS("box_shadow_blur_radius_hover", "0px"); 
-        ChangeCSS("box_shadow_spread_radius_hover", "0px");         
-        
+        ChangeCSS("box_shadow_spread_radius_hover", "0px");
+        ChangeCSS("box_shadow_color", "#525757");
+       
         $("#range_box_shadow_offset_x_hover").attr("disabled", true);
         $("#range_box_shadow_offset_y_hover").attr("disabled", true);
         $("#range_box_shadow_blur_radius_hover").attr("disabled", true);
@@ -830,7 +832,8 @@ function HoverShadowInsetEnable(){
         ChangeCSS("box_shadow_inset_offset_x_hover", "0px"); 
         ChangeCSS("box_shadow_inset_offset_y_hover", "0px");
         ChangeCSS("box_shadow_inset_blur_radius_hover", "0px"); 
-        ChangeCSS("box_shadow_inset_spread_radius_hover", "0px");         
+        ChangeCSS("box_shadow_inset_spread_radius_hover", "0px");
+        ChangeCSS("box_shadow_inset_color_hover", "#525757");
         
         $("#range_box_shadow_inset_offset_x_hover").attr("disabled", true);
         $("#range_box_shadow_inset_offset_y_hover").attr("disabled", true);

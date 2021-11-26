@@ -14,89 +14,98 @@ namespace Gerador_CSS.Class
         public static List<Models.Button> GetAllButtons()
         {
 			string button_default_id = Class.Util.GetParam_Button_Default();
-
-			string SystemPath = ConfigurationManager.AppSettings.Get("SystemPath").ToString();
+						
             string StrConn = ConfigurationManager.AppSettings.Get("SqlServerConn").ToString();
 
             List<Models.Button> List_Buttons = new List<Models.Button>();
 
             ConnectionSQLServer conexao = new ConnectionSQLServer(StrConn);
 
-			string sql = $@"SELECT	BT.Button_Id,								
-									BTS.Static_Border_Top_Width,
-									BTS.Static_Border_Bottom_Width,
-									BTS.Static_Border_Left_Width,
-									BTS.Static_Border_Right_Width,
-									BTS.Static_Border_Top_Style,
-									BTS.Static_Border_Bottom_Style,
-									BTS.Static_Border_Left_Style,
-									BTS.Static_Border_Right_Style,
-									BTS.Static_Border_Top_Color,
-									BTS.Static_Border_Bottom_Color,
-									BTS.Static_Border_Left_Color,
-									BTS.Static_Border_Right_Color,
-									BTS.Static_Top_Left_Radius,
-									BTS.Static_Top_Right_Radius,
-									BTS.Static_Bottom_Left_Radius,
-									BTS.Static_Bottom_Right_Radius,
-									BTS.Static_Padding_Top,
-									BTS.Static_Padding_Bottom,
-									BTS.Static_Padding_Left,
-									BTS.Static_Padding_Right,
-									BTS.Static_Font_Size,
-									BTS.Static_Font_Style,
-									BTS.Static_Font_Weight,									
-									BTS.Static_Background_Color,
-									BTS.Static_Color,
-									BTS.Static_Box_Shadow,
-									BTS.Static_Text_Shadow,			
-									BTS.Static_Box_Shadow_Offset_X,
-									BTS.Static_Box_Shadow_Offset_Y,
-									BTS.Static_Box_Shadow_Blur_Radius,
-									BTS.Static_Box_Shadow_Spread_Radius,
-									BTS.Static_Box_Shadow_Color,
-									BTS.Static_Box_Shadow_Inset_Offset_X,
-									BTS.Static_Box_Shadow_Inset_Offset_Y,
-									BTS.Static_Box_Shadow_Inset_Blur_Radius,
-									BTS.Static_Box_Shadow_Inset_Spread_Radius,
-									BTS.Static_Box_Shadow_Inset_Color,
-									BTH.Hover_Border_Top_Width,
-									BTH.Hover_Border_Bottom_Width,
-									BTH.Hover_Border_Left_Width,
-									BTH.Hover_Border_Right_Width,
-									BTH.Hover_Border_Top_Style,
-									BTH.Hover_Border_Bottom_Style,
-									BTH.Hover_Border_Left_Style,
-									BTH.Hover_Border_Right_Style,
-									BTH.Hover_Border_Top_Color,
-									BTH.Hover_Border_Bottom_Color,
-									BTH.Hover_Border_Left_Color,
-									BTH.Hover_Border_Right_Color,
-									BTH.Hover_Top_Left_Radius,
-									BTH.Hover_Top_Right_Radius,
-									BTH.Hover_Bottom_Left_Radius,
-									BTH.Hover_Bottom_Right_Radius,
-									BTH.Hover_Padding_Top,
-									BTH.Hover_Padding_Bottom,
-									BTH.Hover_Padding_Left,
-									BTH.Hover_Padding_Right,
-									BTH.Hover_Font_Size,
-									BTH.Hover_Font_Style,
-									BTH.Hover_Font_Weight,
-									BTH.Hover_Color,
-									BTH.Hover_Background_Color,
-									BTH.Hover_Box_Shadow,
-									BTH.Hover_Text_Shadow
+			string sql = $@"SELECT	Button_Id,								
+									Static_Border_Top_Width,
+									Static_Border_Bottom_Width,
+									Static_Border_Left_Width,
+									Static_Border_Right_Width,
+									Static_Border_Top_Style,
+									Static_Border_Bottom_Style,
+									Static_Border_Left_Style,
+									Static_Border_Right_Style,
+									Static_Border_Top_Color,
+									Static_Border_Bottom_Color,
+									Static_Border_Left_Color,
+									Static_Border_Right_Color,
+									Static_Top_Left_Radius,
+									Static_Top_Right_Radius,
+									Static_Bottom_Left_Radius,
+									Static_Bottom_Right_Radius,
+									Static_Padding_Top,
+									Static_Padding_Bottom,
+									Static_Padding_Left,
+									Static_Padding_Right,
+									Static_Font_Size,
+									Static_Font_Style,
+									Static_Font_Weight,									
+									Static_Background_Color,
+									Static_Color,												
+									Static_Box_Shadow_Offset_X,
+									Static_Box_Shadow_Offset_Y,
+									Static_Box_Shadow_Blur_Radius,
+									Static_Box_Shadow_Spread_Radius,
+									Static_Box_Shadow_Color,
+									Static_Box_Shadow_Inset_Offset_X,
+									Static_Box_Shadow_Inset_Offset_Y,
+									Static_Box_Shadow_Inset_Blur_Radius,
+									Static_Box_Shadow_Inset_Spread_Radius,
+									Static_Box_Shadow_Inset_Color,
+									Static_Text_Shadow_Offset_X,
+									Static_Text_Shadow_Offset_Y,
+									Static_Text_Shadow_Blur_Radius,									
+									Static_Text_Shadow_Color,
+									Hover_Border_Top_Width,
+									Hover_Border_Bottom_Width,
+									Hover_Border_Left_Width,
+									Hover_Border_Right_Width,
+									Hover_Border_Top_Style,
+									Hover_Border_Bottom_Style,
+									Hover_Border_Left_Style,
+									Hover_Border_Right_Style,
+									Hover_Border_Top_Color,
+									Hover_Border_Bottom_Color,
+									Hover_Border_Left_Color,
+									Hover_Border_Right_Color,
+									Hover_Top_Left_Radius,
+									Hover_Top_Right_Radius,
+									Hover_Bottom_Left_Radius,
+									Hover_Bottom_Right_Radius,
+									Hover_Padding_Top,
+									Hover_Padding_Bottom,
+									Hover_Padding_Left,
+									Hover_Padding_Right,
+									Hover_Font_Size,
+									Hover_Font_Style,
+									Hover_Font_Weight,
+									Hover_Color,
+									Hover_Text_Shadow_Offset_X,
+									Hover_Text_Shadow_Offset_Y,
+									Hover_Text_Shadow_Blur_Radius,									
+									Hover_Text_Shadow_Color,
+									Hover_Background_Color,
+									Hover_Box_Shadow_Offset_X,
+									Hover_Box_Shadow_Offset_Y,
+									Hover_Box_Shadow_Blur_Radius,
+									Hover_Box_Shadow_Spread_Radius,
+									Hover_Box_Shadow_Color,
+									Hover_Box_Shadow_Inset_Offset_X,
+									Hover_Box_Shadow_Inset_Offset_Y,
+									Hover_Box_Shadow_Inset_Blur_Radius,
+									Hover_Box_Shadow_Inset_Spread_Radius,
+									Hover_Box_Shadow_Inset_Color									
 									FROM 
-									dbo.Button AS BT 
-									JOIN dbo.Button_Static_Properties AS BTS 
-									ON(BT.Button_Static_Id = BTS.Static_Button_Id) 
-									JOIN dbo.Button_Hover_Properties AS BTH 
-									ON(BT.Button_Hover_Id = BTH.Hover_Button_Id)";
+									dbo.Button_Properties";
 
 				if (!string.IsNullOrEmpty(button_default_id))
 				{
-					sql += $@"WHERE BT.Button_Id != '{button_default_id}'";
+					sql += $@" WHERE Button_Id != '{button_default_id}'";
 				}
 
 			try
@@ -108,73 +117,86 @@ namespace Gerador_CSS.Class
 					Models.Button Button = new Models.Button();
 
 					Button.Button_id = Convert.ToInt32(row["Button_Id"]);
-					Button.Static_Border_Top_Width = row["Static_Border_Top_Width"].ToString();
-					Button.Static_Border_Bottom_Width = row["Static_Border_Bottom_Width"].ToString();
-					Button.Static_Border_Left_Width = row["Static_Border_Left_Width"].ToString();
-					Button.Static_Border_Right_Width = row["Static_Border_Right_Width"].ToString();
-					Button.Static_Border_Top_Style = row["Static_Border_Top_Style"].ToString();
-					Button.Static_Border_Bottom_Style = row["Static_Border_Bottom_Style"].ToString();
-					Button.Static_Border_Left_Style = row["Static_Border_Left_Style"].ToString();
-					Button.Static_Border_Right_Style = row["Static_Border_Right_Style"].ToString();
-					Button.Static_Border_Top_Color = row["Static_Border_Top_Color"].ToString();
-					Button.Static_Border_Bottom_Color = row["Static_Border_Bottom_Color"].ToString();
-					Button.Static_Border_Left_Color = row["Static_Border_Left_Color"].ToString();
-					Button.Static_Border_Right_Color = row["Static_Border_Right_Color"].ToString();
-					Button.Static_Border_Top_Left_Radius = row["Static_Top_Left_Radius"].ToString();
-					Button.Static_Border_Top_Right_Radius = row["Static_Top_Right_Radius"].ToString();
-					Button.Static_Border_Bottom_Left_Radius = row["Static_Bottom_Left_Radius"].ToString();
-					Button.Static_Border_Bottom_Right_Radius = row["Static_Bottom_Right_Radius"].ToString();
-					Button.Static_Padding_Top = row["Static_Padding_Top"].ToString();
-					Button.Static_Padding_Bottom = row["Static_Padding_Bottom"].ToString();
-					Button.Static_Padding_Left = row["Static_Padding_Left"].ToString();
-					Button.Static_Padding_Right = row["Static_Padding_Right"].ToString();
-					Button.Static_Font_Size = row["Static_Font_Size"].ToString();
-					Button.Static_Font_Style = row["Static_Font_Style"].ToString();
-					Button.Static_Font_Weight = row["Static_Font_Weight"].ToString();
-					Button.Static_Background_Color = row["Static_Background_Color"].ToString();
-					Button.Static_Color = row["Static_Color"].ToString();
-					Button.Static_Box_Shadow = row["Static_Box_Shadow"].ToString();
-					Button.Static_Text_Shadow = row["Static_Text_Shadow"].ToString();
-					Button.Static_Box_Shadow_Offset_X = row["Static_Box_Shadow_Offset_X"].ToString();
-					Button.Static_Box_Shadow_Offset_Y = row["Static_Box_Shadow_Offset_Y"].ToString();
-					Button.Static_Box_Shadow_Blur_Radius = row["Static_Box_Shadow_Blur_Radius"].ToString();
-					Button.Static_Box_Shadow_Spread_Radius = row["Static_Box_Shadow_Spread_Radius"].ToString();
-					Button.Static_Box_Shadow_Color = row["Static_Box_Shadow_Color"].ToString();
-					Button.Static_Box_Shadow_Inset_Offset_X = row["Static_Box_Shadow_Inset_Offset_X"].ToString();
-					Button.Static_Box_Shadow_Inset_Offset_Y = row["Static_Box_Shadow_Inset_Offset_Y"].ToString();
-					Button.Static_Box_Shadow_Inset_Blur_Radius = row["Static_Box_Shadow_Inset_Blur_Radius"].ToString();
-					Button.Static_Box_Shadow_Inset_Spread_Radius = row["Static_Box_Shadow_Inset_Spread_Radius"].ToString();
-					Button.Static_Box_Shadow_Inset_Color = row["Static_Box_Shadow_Inset_Color"].ToString();
+					Button.Static_Border_Top_Width = row["Static_Border_Top_Width"].ToString().ToLower();
+					Button.Static_Border_Bottom_Width = row["Static_Border_Bottom_Width"].ToString().ToLower();
+					Button.Static_Border_Left_Width = row["Static_Border_Left_Width"].ToString().ToLower();
+					Button.Static_Border_Right_Width = row["Static_Border_Right_Width"].ToString().ToLower();
+					Button.Static_Border_Top_Style = row["Static_Border_Top_Style"].ToString().ToLower();
+					Button.Static_Border_Bottom_Style = row["Static_Border_Bottom_Style"].ToString().ToLower();
+					Button.Static_Border_Left_Style = row["Static_Border_Left_Style"].ToString().ToLower();
+					Button.Static_Border_Right_Style = row["Static_Border_Right_Style"].ToString().ToLower();
+					Button.Static_Border_Top_Color = row["Static_Border_Top_Color"].ToString().ToLower();
+					Button.Static_Border_Bottom_Color = row["Static_Border_Bottom_Color"].ToString().ToLower();
+					Button.Static_Border_Left_Color = row["Static_Border_Left_Color"].ToString().ToLower();
+					Button.Static_Border_Right_Color = row["Static_Border_Right_Color"].ToString().ToLower();
+					Button.Static_Border_Top_Left_Radius = row["Static_Top_Left_Radius"].ToString().ToLower();
+					Button.Static_Border_Top_Right_Radius = row["Static_Top_Right_Radius"].ToString().ToLower();
+					Button.Static_Border_Bottom_Left_Radius = row["Static_Bottom_Left_Radius"].ToString().ToLower();
+					Button.Static_Border_Bottom_Right_Radius = row["Static_Bottom_Right_Radius"].ToString().ToLower();
+					Button.Static_Padding_Top = row["Static_Padding_Top"].ToString().ToLower();
+					Button.Static_Padding_Bottom = row["Static_Padding_Bottom"].ToString().ToLower();
+					Button.Static_Padding_Left = row["Static_Padding_Left"].ToString().ToLower();
+					Button.Static_Padding_Right = row["Static_Padding_Right"].ToString().ToLower();
+					Button.Static_Font_Size = row["Static_Font_Size"].ToString().ToLower();
+					Button.Static_Font_Style = row["Static_Font_Style"].ToString().ToLower();
+					Button.Static_Font_Weight = row["Static_Font_Weight"].ToString().ToLower();
+					Button.Static_Background_Color = row["Static_Background_Color"].ToString().ToLower();
+					Button.Static_Color = row["Static_Color"].ToString().ToLower();					
+					Button.Static_Box_Shadow_Offset_X = row["Static_Box_Shadow_Offset_X"].ToString().ToLower();
+					Button.Static_Box_Shadow_Offset_Y = row["Static_Box_Shadow_Offset_Y"].ToString().ToLower();
+					Button.Static_Box_Shadow_Blur_Radius = row["Static_Box_Shadow_Blur_Radius"].ToString().ToLower();
+					Button.Static_Box_Shadow_Spread_Radius = row["Static_Box_Shadow_Spread_Radius"].ToString().ToLower();
+					Button.Static_Box_Shadow_Color = row["Static_Box_Shadow_Color"].ToString().ToLower();
+					Button.Static_Box_Shadow_Inset_Offset_X = row["Static_Box_Shadow_Inset_Offset_X"].ToString().ToLower();
+					Button.Static_Box_Shadow_Inset_Offset_Y = row["Static_Box_Shadow_Inset_Offset_Y"].ToString().ToLower();
+					Button.Static_Box_Shadow_Inset_Blur_Radius = row["Static_Box_Shadow_Inset_Blur_Radius"].ToString().ToLower();
+					Button.Static_Box_Shadow_Inset_Spread_Radius = row["Static_Box_Shadow_Inset_Spread_Radius"].ToString().ToLower();
+					Button.Static_Box_Shadow_Inset_Color = row["Static_Box_Shadow_Inset_Color"].ToString().ToLower();
+					Button.Static_Text_Shadow_Offset_X = row["Static_Text_Shadow_Offset_X"].ToString().ToLower();
+					Button.Static_Text_Shadow_Offset_Y = row["Static_Text_Shadow_Offset_Y"].ToString().ToLower();
+					Button.Static_Text_Shadow_Blur_Radius = row["Static_Text_Shadow_Blur_Radius"].ToString().ToLower();					
+					Button.Static_Text_Shadow_Color = row["Static_Text_Shadow_Color"].ToString().ToLower();
 
 					//HOVER
-					Button.Hover_Border_Top_Width = row["Hover_Border_Top_Width"].ToString();
-					Button.Hover_Border_Bottom_Width = row["Hover_Border_Bottom_Width"].ToString();
-					Button.Hover_Border_Left_Width = row["Hover_Border_Left_Width"].ToString();
-					Button.Hover_Border_Right_Width = row["Hover_Border_Right_Width"].ToString();
-					Button.Hover_Border_Top_Style = row["Hover_Border_Top_Style"].ToString();
-					Button.Hover_Border_Bottom_Style = row["Hover_Border_Bottom_Style"].ToString();
-					Button.Hover_Border_Left_Style = row["Hover_Border_Left_Style"].ToString();
-					Button.Hover_Border_Right_Style = row["Hover_Border_Right_Style"].ToString();
-					Button.Hover_Border_Top_Color = row["Hover_Border_Top_Color"].ToString();
-					Button.Hover_Border_Bottom_Color = row["Hover_Border_Bottom_Color"].ToString();
-					Button.Hover_Border_Left_Color = row["Hover_Border_Left_Color"].ToString();
-					Button.Hover_Border_Right_Color = row["Hover_Border_Right_Color"].ToString();
-					Button.Hover_Border_Top_Left_Radius = row["Hover_Top_Left_Radius"].ToString();
-					Button.Hover_Border_Top_Right_Radius = row["Hover_Top_Right_Radius"].ToString();
-					Button.Hover_Border_Bottom_Left_Radius = row["Hover_Bottom_Left_Radius"].ToString();
-					Button.Hover_Border_Bottom_Right_Radius = row["Hover_Bottom_Right_Radius"].ToString();
-					Button.Hover_Padding_Top = row["Hover_Padding_Top"].ToString();
-					Button.Hover_Padding_Bottom = row["Hover_Padding_Bottom"].ToString();
-					Button.Hover_Padding_Left = row["Hover_Padding_Left"].ToString();
-					Button.Hover_Padding_Right = row["Hover_Padding_Right"].ToString();
-					Button.Hover_Font_Size = row["Hover_Font_Size"].ToString();
-					Button.Hover_Font_Style = row["Hover_Font_Style"].ToString();
-					Button.Hover_Font_Weight = row["Hover_Font_Weight"].ToString();
-					Button.Hover_Color = row["Hover_Color"].ToString();
-					Button.Hover_Background_Color = row["Hover_Background_Color"].ToString();
-					Button.Hover_Box_Shadow = row["Hover_Box_Shadow"].ToString();
-					Button.Hover_Text_Shadow = row["Hover_Text_Shadow"].ToString();
-
+					Button.Hover_Border_Top_Width = row["Hover_Border_Top_Width"].ToString().ToLower();
+					Button.Hover_Border_Bottom_Width = row["Hover_Border_Bottom_Width"].ToString().ToLower();
+					Button.Hover_Border_Left_Width = row["Hover_Border_Left_Width"].ToString().ToLower();
+					Button.Hover_Border_Right_Width = row["Hover_Border_Right_Width"].ToString().ToLower();
+					Button.Hover_Border_Top_Style = row["Hover_Border_Top_Style"].ToString().ToLower();
+					Button.Hover_Border_Bottom_Style = row["Hover_Border_Bottom_Style"].ToString().ToLower();
+					Button.Hover_Border_Left_Style = row["Hover_Border_Left_Style"].ToString().ToLower();
+					Button.Hover_Border_Right_Style = row["Hover_Border_Right_Style"].ToString().ToLower();
+					Button.Hover_Border_Top_Color = row["Hover_Border_Top_Color"].ToString().ToLower();
+					Button.Hover_Border_Bottom_Color = row["Hover_Border_Bottom_Color"].ToString().ToLower();
+					Button.Hover_Border_Left_Color = row["Hover_Border_Left_Color"].ToString().ToLower();
+					Button.Hover_Border_Right_Color = row["Hover_Border_Right_Color"].ToString().ToLower();
+					Button.Hover_Border_Top_Left_Radius = row["Hover_Top_Left_Radius"].ToString().ToLower();
+					Button.Hover_Border_Top_Right_Radius = row["Hover_Top_Right_Radius"].ToString().ToLower();
+					Button.Hover_Border_Bottom_Left_Radius = row["Hover_Bottom_Left_Radius"].ToString().ToLower();
+					Button.Hover_Border_Bottom_Right_Radius = row["Hover_Bottom_Right_Radius"].ToString().ToLower();
+					Button.Hover_Padding_Top = row["Hover_Padding_Top"].ToString().ToLower();
+					Button.Hover_Padding_Bottom = row["Hover_Padding_Bottom"].ToString().ToLower();
+					Button.Hover_Padding_Left = row["Hover_Padding_Left"].ToString().ToLower();
+					Button.Hover_Padding_Right = row["Hover_Padding_Right"].ToString().ToLower();
+					Button.Hover_Font_Size = row["Hover_Font_Size"].ToString().ToLower();
+					Button.Hover_Font_Style = row["Hover_Font_Style"].ToString().ToLower();
+					Button.Hover_Font_Weight = row["Hover_Font_Weight"].ToString().ToLower();
+					Button.Hover_Color = row["Hover_Color"].ToString().ToLower();
+					Button.Hover_Background_Color = row["Hover_Background_Color"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Offset_X = row["Hover_Box_Shadow_Offset_X"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Offset_Y = row["Hover_Box_Shadow_Offset_Y"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Blur_Radius = row["Hover_Box_Shadow_Blur_Radius"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Spread_Radius = row["Hover_Box_Shadow_Spread_Radius"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Color = row["Hover_Box_Shadow_Color"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Inset_Offset_X = row["Hover_Box_Shadow_Inset_Offset_X"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Inset_Offset_Y = row["Hover_Box_Shadow_Inset_Offset_Y"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Inset_Blur_Radius = row["Hover_Box_Shadow_Inset_Blur_Radius"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Inset_Spread_Radius = row["Hover_Box_Shadow_Inset_Spread_Radius"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Inset_Color = row["Hover_Box_Shadow_Inset_Color"].ToString().ToLower();
+					Button.Hover_Text_Shadow_Offset_X = row["Hover_Text_Shadow_Offset_X"].ToString().ToLower();
+					Button.Hover_Text_Shadow_Offset_Y = row["Hover_Text_Shadow_Offset_Y"].ToString().ToLower();
+					Button.Hover_Text_Shadow_Blur_Radius = row["Hover_Text_Shadow_Blur_Radius"].ToString().ToLower();
+					Button.Hover_Text_Shadow_Color = row["Hover_Text_Shadow_Color"].ToString().ToLower();
 
 					List_Buttons.Add(Button);
 				}
@@ -190,105 +212,97 @@ namespace Gerador_CSS.Class
 
 		public static Models.Button GetButtonById(string idButton)
 		{
-
-			string SystemPath = ConfigurationManager.AppSettings.Get("SystemPath").ToString();
+						
 			string StrConn = ConfigurationManager.AppSettings.Get("SqlServerConn").ToString();
 
 			Models.Button Button = new Models.Button();
 
 			ConnectionSQLServer conexao = new ConnectionSQLServer(StrConn);
 
-			string sql = $@"SELECT	BT.Button_Id,								
-									BTS.Static_Border_Top_Width,
-									BTS.Static_Border_Bottom_Width,
-									BTS.Static_Border_Left_Width,
-									BTS.Static_Border_Right_Width,
-									BTS.Static_Border_Top_Style,
-									BTS.Static_Border_Bottom_Style,
-									BTS.Static_Border_Left_Style,
-									BTS.Static_Border_Right_Style,
-									BTS.Static_Border_Top_Color,
-									BTS.Static_Border_Bottom_Color,
-									BTS.Static_Border_Left_Color,
-									BTS.Static_Border_Right_Color,
-									BTS.Static_Top_Left_Radius,
-									BTS.Static_Top_Right_Radius,
-									BTS.Static_Bottom_Left_Radius,
-									BTS.Static_Bottom_Right_Radius,
-									BTS.Static_Padding_Top,
-									BTS.Static_Padding_Bottom,
-									BTS.Static_Padding_Left,
-									BTS.Static_Padding_Right,
-									BTS.Static_Font_Size,
-									BTS.Static_Font_Style,
-									BTS.Static_Font_Weight,									
-									BTS.Static_Background_Color,
-									BTS.Static_Color,
-									BTS.Static_Box_Shadow,
-									BTS.Static_Text_Shadow,			
-									BTS.Static_Box_Shadow_Offset_X,
-									BTS.Static_Box_Shadow_Offset_Y,
-									BTS.Static_Box_Shadow_Blur_Radius,
-									BTS.Static_Box_Shadow_Spread_Radius,
-									BTS.Static_Box_Shadow_Color,
-									BTS.Static_Box_Shadow_Inset_Offset_X,
-									BTS.Static_Box_Shadow_Inset_Offset_Y,
-									BTS.Static_Box_Shadow_Inset_Blur_Radius,
-									BTS.Static_Box_Shadow_Inset_Spread_Radius,
-									BTS.Static_Box_Shadow_Inset_Color,
-									BTS.Static_Text_Shadow_Offset_X,
-									BTS.Static_Text_Shadow_Offset_Y,
-									BTS.Static_Text_Shadow_Blur_Radius,
-									BTS.Static_Text_Shadow_Color,
-									BTH.Hover_Border_Top_Width,
-									BTH.Hover_Border_Bottom_Width,
-									BTH.Hover_Border_Left_Width,
-									BTH.Hover_Border_Right_Width,
-									BTH.Hover_Border_Top_Style,
-									BTH.Hover_Border_Bottom_Style,
-									BTH.Hover_Border_Left_Style,
-									BTH.Hover_Border_Right_Style,
-									BTH.Hover_Border_Top_Color,
-									BTH.Hover_Border_Bottom_Color,
-									BTH.Hover_Border_Left_Color,
-									BTH.Hover_Border_Right_Color,
-									BTH.Hover_Top_Left_Radius,
-									BTH.Hover_Top_Right_Radius,
-									BTH.Hover_Bottom_Left_Radius,
-									BTH.Hover_Bottom_Right_Radius,
-									BTH.Hover_Padding_Top,
-									BTH.Hover_Padding_Bottom,
-									BTH.Hover_Padding_Left,
-									BTH.Hover_Padding_Right,
-									BTH.Hover_Font_Size,
-									BTH.Hover_Font_Style,
-									BTH.Hover_Font_Weight,
-									BTH.Hover_Color,
-									BTH.Hover_Background_Color,
-									BTH.Hover_Box_Shadow,
-									BTH.Hover_Text_Shadow,
-									BTH.Hover_Box_Shadow_Offset_X,
-									BTH.Hover_Box_Shadow_Offset_Y,
-									BTH.Hover_Box_Shadow_Blur_Radius,
-									BTH.Hover_Box_Shadow_Spread_Radius,
-									BTH.Hover_Box_Shadow_Color,
-									BTH.Hover_Box_Shadow_Inset_Offset_X,
-									BTH.Hover_Box_Shadow_Inset_Offset_Y,
-									BTH.Hover_Box_Shadow_Inset_Blur_Radius,
-									BTH.Hover_Box_Shadow_Inset_Spread_Radius,
-									BTH.Hover_Box_Shadow_Inset_Color,
-									BTH.Hover_Text_Shadow_Offset_X,
-									BTH.Hover_Text_Shadow_Offset_Y,
-									BTH.Hover_Text_Shadow_Blur_Radius,
-									BTH.Hover_Text_Shadow_Color
+			string sql = $@"SELECT	Button_Id,								
+									Static_Border_Top_Width,
+									Static_Border_Bottom_Width,
+									Static_Border_Left_Width,
+									Static_Border_Right_Width,
+									Static_Border_Top_Style,
+									Static_Border_Bottom_Style,
+									Static_Border_Left_Style,
+									Static_Border_Right_Style,
+									Static_Border_Top_Color,
+									Static_Border_Bottom_Color,
+									Static_Border_Left_Color,
+									Static_Border_Right_Color,
+									Static_Top_Left_Radius,
+									Static_Top_Right_Radius,
+									Static_Bottom_Left_Radius,
+									Static_Bottom_Right_Radius,
+									Static_Padding_Top,
+									Static_Padding_Bottom,
+									Static_Padding_Left,
+									Static_Padding_Right,
+									Static_Font_Size,
+									Static_Font_Style,
+									Static_Font_Weight,									
+									Static_Background_Color,
+									Static_Color,												
+									Static_Box_Shadow_Offset_X,
+									Static_Box_Shadow_Offset_Y,
+									Static_Box_Shadow_Blur_Radius,
+									Static_Box_Shadow_Spread_Radius,
+									Static_Box_Shadow_Color,
+									Static_Box_Shadow_Inset_Offset_X,
+									Static_Box_Shadow_Inset_Offset_Y,
+									Static_Box_Shadow_Inset_Blur_Radius,
+									Static_Box_Shadow_Inset_Spread_Radius,
+									Static_Box_Shadow_Inset_Color,
+									Static_Text_Shadow_Offset_X,
+									Static_Text_Shadow_Offset_Y,
+									Static_Text_Shadow_Blur_Radius,									
+									Static_Text_Shadow_Color,
+									Hover_Border_Top_Width,
+									Hover_Border_Bottom_Width,
+									Hover_Border_Left_Width,
+									Hover_Border_Right_Width,
+									Hover_Border_Top_Style,
+									Hover_Border_Bottom_Style,
+									Hover_Border_Left_Style,
+									Hover_Border_Right_Style,
+									Hover_Border_Top_Color,
+									Hover_Border_Bottom_Color,
+									Hover_Border_Left_Color,
+									Hover_Border_Right_Color,
+									Hover_Top_Left_Radius,
+									Hover_Top_Right_Radius,
+									Hover_Bottom_Left_Radius,
+									Hover_Bottom_Right_Radius,
+									Hover_Padding_Top,
+									Hover_Padding_Bottom,
+									Hover_Padding_Left,
+									Hover_Padding_Right,
+									Hover_Font_Size,
+									Hover_Font_Style,
+									Hover_Font_Weight,
+									Hover_Color,
+									Hover_Text_Shadow_Offset_X,
+									Hover_Text_Shadow_Offset_Y,
+									Hover_Text_Shadow_Blur_Radius,									
+									Hover_Text_Shadow_Color,
+									Hover_Background_Color,
+									Hover_Box_Shadow_Offset_X,
+									Hover_Box_Shadow_Offset_Y,
+									Hover_Box_Shadow_Blur_Radius,
+									Hover_Box_Shadow_Spread_Radius,
+									Hover_Box_Shadow_Color,
+									Hover_Box_Shadow_Inset_Offset_X,
+									Hover_Box_Shadow_Inset_Offset_Y,
+									Hover_Box_Shadow_Inset_Blur_Radius,
+									Hover_Box_Shadow_Inset_Spread_Radius,
+									Hover_Box_Shadow_Inset_Color
 									FROM 
-									dbo.Button AS BT 
-									JOIN dbo.Button_Static_Properties AS BTS 
-									ON(BT.Button_Static_Id = BTS.Static_Button_Id) 
-									JOIN dbo.Button_Hover_Properties AS BTH 
-									ON(BT.Button_Hover_Id = BTH.Hover_Button_Id)
+									dbo.Button_Properties
+									
 								WHERE 
-									BT.Button_Id = '{idButton}'";
+									Button_Id = '{idButton}'";
 
 
 			try
@@ -299,91 +313,87 @@ namespace Gerador_CSS.Class
                 {					
 
 					Button.Button_id = Convert.ToInt32(table.Rows[0]["Button_Id"]);
-					Button.Static_Border_Top_Width = table.Rows[0]["Static_Border_Top_Width"].ToString();
-					Button.Static_Border_Bottom_Width = table.Rows[0]["Static_Border_Bottom_Width"].ToString();
-					Button.Static_Border_Left_Width = table.Rows[0]["Static_Border_Left_Width"].ToString();
-					Button.Static_Border_Right_Width = table.Rows[0]["Static_Border_Right_Width"].ToString();
-					Button.Static_Border_Top_Style = table.Rows[0]["Static_Border_Top_Style"].ToString();
-					Button.Static_Border_Bottom_Style = table.Rows[0]["Static_Border_Bottom_Style"].ToString();
-					Button.Static_Border_Left_Style = table.Rows[0]["Static_Border_Left_Style"].ToString();
-					Button.Static_Border_Right_Style = table.Rows[0]["Static_Border_Right_Style"].ToString();
-					Button.Static_Border_Top_Color = table.Rows[0]["Static_Border_Top_Color"].ToString();
-					Button.Static_Border_Bottom_Color = table.Rows[0]["Static_Border_Bottom_Color"].ToString();
-					Button.Static_Border_Left_Color = table.Rows[0]["Static_Border_Left_Color"].ToString();
-					Button.Static_Border_Right_Color = table.Rows[0]["Static_Border_Right_Color"].ToString();
-					Button.Static_Border_Top_Left_Radius = table.Rows[0]["Static_Top_Left_Radius"].ToString();
-					Button.Static_Border_Top_Right_Radius = table.Rows[0]["Static_Top_Right_Radius"].ToString();
-					Button.Static_Border_Bottom_Left_Radius = table.Rows[0]["Static_Bottom_Left_Radius"].ToString();
-					Button.Static_Border_Bottom_Right_Radius = table.Rows[0]["Static_Bottom_Right_Radius"].ToString();
-					Button.Static_Padding_Top = table.Rows[0]["Static_Padding_Top"].ToString();
-					Button.Static_Padding_Bottom = table.Rows[0]["Static_Padding_Bottom"].ToString();
-					Button.Static_Padding_Left = table.Rows[0]["Static_Padding_Left"].ToString();
-					Button.Static_Padding_Right = table.Rows[0]["Static_Padding_Right"].ToString();
-					Button.Static_Font_Size = table.Rows[0]["Static_Font_Size"].ToString();
-					Button.Static_Font_Style = table.Rows[0]["Static_Font_Style"].ToString();
-					Button.Static_Font_Weight = table.Rows[0]["Static_Font_Weight"].ToString();
-					Button.Static_Background_Color = table.Rows[0]["Static_Background_Color"].ToString();
-					Button.Static_Color = table.Rows[0]["Static_Color"].ToString();
-					Button.Static_Box_Shadow = table.Rows[0]["Static_Box_Shadow"].ToString();					
-					Button.Static_Box_Shadow_Offset_X = table.Rows[0]["Static_Box_Shadow_Offset_X"].ToString();
-					Button.Static_Box_Shadow_Offset_Y = table.Rows[0]["Static_Box_Shadow_Offset_Y"].ToString();
-					Button.Static_Box_Shadow_Blur_Radius = table.Rows[0]["Static_Box_Shadow_Blur_Radius"].ToString();
-					Button.Static_Box_Shadow_Spread_Radius = table.Rows[0]["Static_Box_Shadow_Spread_Radius"].ToString();
-					Button.Static_Box_Shadow_Color = table.Rows[0]["Static_Box_Shadow_Color"].ToString();					
-					Button.Static_Box_Shadow_Inset_Offset_X = table.Rows[0]["Static_Box_Shadow_Inset_Offset_X"].ToString();
-					Button.Static_Box_Shadow_Inset_Offset_Y = table.Rows[0]["Static_Box_Shadow_Inset_Offset_Y"].ToString();
-					Button.Static_Box_Shadow_Inset_Blur_Radius = table.Rows[0]["Static_Box_Shadow_Inset_Blur_Radius"].ToString();
-					Button.Static_Box_Shadow_Inset_Spread_Radius = table.Rows[0]["Static_Box_Shadow_Inset_Spread_Radius"].ToString();
-					Button.Static_Box_Shadow_Inset_Color = table.Rows[0]["Static_Box_Shadow_Inset_Color"].ToString();					
-					Button.Static_Text_Shadow = table.Rows[0]["Static_Text_Shadow"].ToString();
-					Button.Static_Text_Shadow_Offset_X = table.Rows[0]["Static_Text_Shadow_Offset_X"].ToString();
-					Button.Static_Text_Shadow_Offset_Y = table.Rows[0]["Static_Text_Shadow_Offset_Y"].ToString();
-					Button.Static_Text_Shadow_Blur_Radius= table.Rows[0]["Static_Text_Shadow_Blur_Radius"].ToString();
-					Button.Static_Text_Shadow_Color = table.Rows[0]["Static_Text_Shadow_Color"].ToString();
+					Button.Static_Border_Top_Width = table.Rows[0]["Static_Border_Top_Width"].ToString().ToLower();
+					Button.Static_Border_Bottom_Width = table.Rows[0]["Static_Border_Bottom_Width"].ToString().ToLower();
+					Button.Static_Border_Left_Width = table.Rows[0]["Static_Border_Left_Width"].ToString().ToLower();
+					Button.Static_Border_Right_Width = table.Rows[0]["Static_Border_Right_Width"].ToString().ToLower();
+					Button.Static_Border_Top_Style = table.Rows[0]["Static_Border_Top_Style"].ToString().ToLower();
+					Button.Static_Border_Bottom_Style = table.Rows[0]["Static_Border_Bottom_Style"].ToString().ToLower();
+					Button.Static_Border_Left_Style = table.Rows[0]["Static_Border_Left_Style"].ToString().ToLower();
+					Button.Static_Border_Right_Style = table.Rows[0]["Static_Border_Right_Style"].ToString().ToLower();
+					Button.Static_Border_Top_Color = table.Rows[0]["Static_Border_Top_Color"].ToString().ToLower();
+					Button.Static_Border_Bottom_Color = table.Rows[0]["Static_Border_Bottom_Color"].ToString().ToLower();
+					Button.Static_Border_Left_Color = table.Rows[0]["Static_Border_Left_Color"].ToString().ToLower();
+					Button.Static_Border_Right_Color = table.Rows[0]["Static_Border_Right_Color"].ToString().ToLower();
+					Button.Static_Border_Top_Left_Radius = table.Rows[0]["Static_Top_Left_Radius"].ToString().ToLower();
+					Button.Static_Border_Top_Right_Radius = table.Rows[0]["Static_Top_Right_Radius"].ToString().ToLower();
+					Button.Static_Border_Bottom_Left_Radius = table.Rows[0]["Static_Bottom_Left_Radius"].ToString().ToLower();
+					Button.Static_Border_Bottom_Right_Radius = table.Rows[0]["Static_Bottom_Right_Radius"].ToString().ToLower();
+					Button.Static_Padding_Top = table.Rows[0]["Static_Padding_Top"].ToString().ToLower();
+					Button.Static_Padding_Bottom = table.Rows[0]["Static_Padding_Bottom"].ToString().ToLower();
+					Button.Static_Padding_Left = table.Rows[0]["Static_Padding_Left"].ToString().ToLower();
+					Button.Static_Padding_Right = table.Rows[0]["Static_Padding_Right"].ToString().ToLower();
+					Button.Static_Font_Size = table.Rows[0]["Static_Font_Size"].ToString().ToLower();
+					Button.Static_Font_Style = table.Rows[0]["Static_Font_Style"].ToString().ToLower();
+					Button.Static_Font_Weight = table.Rows[0]["Static_Font_Weight"].ToString().ToLower();
+					Button.Static_Background_Color = table.Rows[0]["Static_Background_Color"].ToString().ToLower();
+					Button.Static_Color = table.Rows[0]["Static_Color"].ToString().ToLower();
+					Button.Static_Box_Shadow_Offset_X = table.Rows[0]["Static_Box_Shadow_Offset_X"].ToString().ToLower();
+					Button.Static_Box_Shadow_Offset_Y = table.Rows[0]["Static_Box_Shadow_Offset_Y"].ToString().ToLower();
+					Button.Static_Box_Shadow_Blur_Radius = table.Rows[0]["Static_Box_Shadow_Blur_Radius"].ToString().ToLower();
+					Button.Static_Box_Shadow_Spread_Radius = table.Rows[0]["Static_Box_Shadow_Spread_Radius"].ToString().ToLower();
+					Button.Static_Box_Shadow_Color = table.Rows[0]["Static_Box_Shadow_Color"].ToString().ToLower();					
+					Button.Static_Box_Shadow_Inset_Offset_X = table.Rows[0]["Static_Box_Shadow_Inset_Offset_X"].ToString().ToLower();
+					Button.Static_Box_Shadow_Inset_Offset_Y = table.Rows[0]["Static_Box_Shadow_Inset_Offset_Y"].ToString().ToLower();
+					Button.Static_Box_Shadow_Inset_Blur_Radius = table.Rows[0]["Static_Box_Shadow_Inset_Blur_Radius"].ToString().ToLower();
+					Button.Static_Box_Shadow_Inset_Spread_Radius = table.Rows[0]["Static_Box_Shadow_Inset_Spread_Radius"].ToString().ToLower();
+					Button.Static_Box_Shadow_Inset_Color = table.Rows[0]["Static_Box_Shadow_Inset_Color"].ToString().ToLower();								
+					Button.Static_Text_Shadow_Offset_X = table.Rows[0]["Static_Text_Shadow_Offset_X"].ToString().ToLower();
+					Button.Static_Text_Shadow_Offset_Y = table.Rows[0]["Static_Text_Shadow_Offset_Y"].ToString().ToLower();
+					Button.Static_Text_Shadow_Blur_Radius= table.Rows[0]["Static_Text_Shadow_Blur_Radius"].ToString().ToLower();
+					Button.Static_Text_Shadow_Color = table.Rows[0]["Static_Text_Shadow_Color"].ToString().ToLower();
 
 
 					//----------------------------------------- HOVER----------------------------------------------------
-					Button.Hover_Border_Top_Width = table.Rows[0]["Hover_Border_Top_Width"].ToString();
-					Button.Hover_Border_Bottom_Width = table.Rows[0]["Hover_Border_Bottom_Width"].ToString();
-					Button.Hover_Border_Left_Width = table.Rows[0]["Hover_Border_Left_Width"].ToString();
-					Button.Hover_Border_Right_Width = table.Rows[0]["Hover_Border_Right_Width"].ToString();
-					Button.Hover_Border_Top_Style = table.Rows[0]["Hover_Border_Top_Style"].ToString();
-					Button.Hover_Border_Bottom_Style = table.Rows[0]["Hover_Border_Bottom_Style"].ToString();
-					Button.Hover_Border_Left_Style = table.Rows[0]["Hover_Border_Left_Style"].ToString();
-					Button.Hover_Border_Right_Style = table.Rows[0]["Hover_Border_Right_Style"].ToString();
-					Button.Hover_Border_Top_Color = table.Rows[0]["Hover_Border_Top_Color"].ToString();
-					Button.Hover_Border_Bottom_Color = table.Rows[0]["Hover_Border_Bottom_Color"].ToString();
-					Button.Hover_Border_Left_Color = table.Rows[0]["Hover_Border_Left_Color"].ToString();
-					Button.Hover_Border_Right_Color = table.Rows[0]["Hover_Border_Right_Color"].ToString();
-					Button.Hover_Border_Top_Left_Radius = table.Rows[0]["Hover_Top_Left_Radius"].ToString();
-					Button.Hover_Border_Top_Right_Radius = table.Rows[0]["Hover_Top_Right_Radius"].ToString();
-					Button.Hover_Border_Bottom_Left_Radius = table.Rows[0]["Hover_Bottom_Left_Radius"].ToString();
-					Button.Hover_Border_Bottom_Right_Radius = table.Rows[0]["Hover_Bottom_Right_Radius"].ToString();
-					Button.Hover_Padding_Top = table.Rows[0]["Hover_Padding_Top"].ToString();
-					Button.Hover_Padding_Bottom = table.Rows[0]["Hover_Padding_Bottom"].ToString();
-					Button.Hover_Padding_Left = table.Rows[0]["Hover_Padding_Left"].ToString();
-					Button.Hover_Padding_Right = table.Rows[0]["Hover_Padding_Right"].ToString();
-					Button.Hover_Font_Size = table.Rows[0]["Hover_Font_Size"].ToString();
-					Button.Hover_Font_Style = table.Rows[0]["Hover_Font_Style"].ToString();
-					Button.Hover_Font_Weight = table.Rows[0]["Hover_Font_Weight"].ToString();
-					Button.Hover_Color = table.Rows[0]["Hover_Color"].ToString();
-					Button.Hover_Background_Color = table.Rows[0]["Hover_Background_Color"].ToString();
-					Button.Hover_Box_Shadow = table.Rows[0]["Hover_Box_Shadow"].ToString();
-					Button.Hover_Box_Shadow_Offset_X = table.Rows[0]["Hover_Box_Shadow_Offset_X"].ToString();
-					Button.Hover_Box_Shadow_Offset_Y = table.Rows[0]["Hover_Box_Shadow_Offset_Y"].ToString();
-					Button.Hover_Box_Shadow_Blur_Radius = table.Rows[0]["Hover_Box_Shadow_Blur_Radius"].ToString();
-					Button.Hover_Box_Shadow_Spread_Radius = table.Rows[0]["Hover_Box_Shadow_Spread_Radius"].ToString();
-					Button.Hover_Box_Shadow_Color = table.Rows[0]["Hover_Box_Shadow_Color"].ToString();
-					Button.Hover_Box_Shadow_Inset_Offset_X = table.Rows[0]["Hover_Box_Shadow_Inset_Offset_X"].ToString();
-					Button.Hover_Box_Shadow_Inset_Offset_Y = table.Rows[0]["Hover_Box_Shadow_Inset_Offset_Y"].ToString();
-					Button.Hover_Box_Shadow_Inset_Blur_Radius = table.Rows[0]["Hover_Box_Shadow_Inset_Blur_Radius"].ToString();
-					Button.Hover_Box_Shadow_Inset_Spread_Radius = table.Rows[0]["Hover_Box_Shadow_Inset_Spread_Radius"].ToString();
-					Button.Hover_Box_Shadow_Inset_Color = table.Rows[0]["Hover_Box_Shadow_Inset_Color"].ToString();
-					Button.Hover_Text_Shadow = table.Rows[0]["Hover_Text_Shadow"].ToString();
-					Button.Hover_Text_Shadow_Offset_X = table.Rows[0]["Hover_Text_Shadow_Offset_X"].ToString();
-					Button.Hover_Text_Shadow_Offset_Y = table.Rows[0]["Hover_Text_Shadow_Offset_Y"].ToString();
-					Button.Hover_Text_Shadow_Blur_Radius = table.Rows[0]["Hover_Text_Shadow_Blur_Radius"].ToString();
-					Button.Hover_Text_Shadow_Color = table.Rows[0]["Hover_Text_Shadow_Color"].ToString();
+					Button.Hover_Border_Top_Width = table.Rows[0]["Hover_Border_Top_Width"].ToString().ToLower();
+					Button.Hover_Border_Bottom_Width = table.Rows[0]["Hover_Border_Bottom_Width"].ToString().ToLower();
+					Button.Hover_Border_Left_Width = table.Rows[0]["Hover_Border_Left_Width"].ToString().ToLower();
+					Button.Hover_Border_Right_Width = table.Rows[0]["Hover_Border_Right_Width"].ToString().ToLower();
+					Button.Hover_Border_Top_Style = table.Rows[0]["Hover_Border_Top_Style"].ToString().ToLower();
+					Button.Hover_Border_Bottom_Style = table.Rows[0]["Hover_Border_Bottom_Style"].ToString().ToLower();
+					Button.Hover_Border_Left_Style = table.Rows[0]["Hover_Border_Left_Style"].ToString().ToLower();
+					Button.Hover_Border_Right_Style = table.Rows[0]["Hover_Border_Right_Style"].ToString().ToLower();
+					Button.Hover_Border_Top_Color = table.Rows[0]["Hover_Border_Top_Color"].ToString().ToLower();
+					Button.Hover_Border_Bottom_Color = table.Rows[0]["Hover_Border_Bottom_Color"].ToString().ToLower();
+					Button.Hover_Border_Left_Color = table.Rows[0]["Hover_Border_Left_Color"].ToString().ToLower();
+					Button.Hover_Border_Right_Color = table.Rows[0]["Hover_Border_Right_Color"].ToString().ToLower();
+					Button.Hover_Border_Top_Left_Radius = table.Rows[0]["Hover_Top_Left_Radius"].ToString().ToLower();
+					Button.Hover_Border_Top_Right_Radius = table.Rows[0]["Hover_Top_Right_Radius"].ToString().ToLower();
+					Button.Hover_Border_Bottom_Left_Radius = table.Rows[0]["Hover_Bottom_Left_Radius"].ToString().ToLower();
+					Button.Hover_Border_Bottom_Right_Radius = table.Rows[0]["Hover_Bottom_Right_Radius"].ToString().ToLower();
+					Button.Hover_Padding_Top = table.Rows[0]["Hover_Padding_Top"].ToString().ToLower();
+					Button.Hover_Padding_Bottom = table.Rows[0]["Hover_Padding_Bottom"].ToString().ToLower();
+					Button.Hover_Padding_Left = table.Rows[0]["Hover_Padding_Left"].ToString().ToLower();
+					Button.Hover_Padding_Right = table.Rows[0]["Hover_Padding_Right"].ToString().ToLower();
+					Button.Hover_Font_Size = table.Rows[0]["Hover_Font_Size"].ToString().ToLower();
+					Button.Hover_Font_Style = table.Rows[0]["Hover_Font_Style"].ToString().ToLower();
+					Button.Hover_Font_Weight = table.Rows[0]["Hover_Font_Weight"].ToString().ToLower();
+					Button.Hover_Color = table.Rows[0]["Hover_Color"].ToString().ToLower();
+					Button.Hover_Background_Color = table.Rows[0]["Hover_Background_Color"].ToString().ToLower();					
+					Button.Hover_Box_Shadow_Offset_X = table.Rows[0]["Hover_Box_Shadow_Offset_X"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Offset_Y = table.Rows[0]["Hover_Box_Shadow_Offset_Y"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Blur_Radius = table.Rows[0]["Hover_Box_Shadow_Blur_Radius"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Spread_Radius = table.Rows[0]["Hover_Box_Shadow_Spread_Radius"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Color = table.Rows[0]["Hover_Box_Shadow_Color"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Inset_Offset_X = table.Rows[0]["Hover_Box_Shadow_Inset_Offset_X"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Inset_Offset_Y = table.Rows[0]["Hover_Box_Shadow_Inset_Offset_Y"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Inset_Blur_Radius = table.Rows[0]["Hover_Box_Shadow_Inset_Blur_Radius"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Inset_Spread_Radius = table.Rows[0]["Hover_Box_Shadow_Inset_Spread_Radius"].ToString().ToLower();
+					Button.Hover_Box_Shadow_Inset_Color = table.Rows[0]["Hover_Box_Shadow_Inset_Color"].ToString().ToLower();					
+					Button.Hover_Text_Shadow_Offset_X = table.Rows[0]["Hover_Text_Shadow_Offset_X"].ToString().ToLower();
+					Button.Hover_Text_Shadow_Offset_Y = table.Rows[0]["Hover_Text_Shadow_Offset_Y"].ToString().ToLower();
+					Button.Hover_Text_Shadow_Blur_Radius = table.Rows[0]["Hover_Text_Shadow_Blur_Radius"].ToString().ToLower();
+					Button.Hover_Text_Shadow_Color = table.Rows[0]["Hover_Text_Shadow_Color"].ToString().ToLower();
 
 					int Static_Box_Shadow_Offset_X = Convert.ToInt32(Button.Static_Box_Shadow_Offset_X.Replace("px", string.Empty));
 					int Static_Box_Shadow_Offset_Y = Convert.ToInt32(Button.Static_Box_Shadow_Offset_Y.Replace("px", string.Empty));
@@ -482,6 +492,273 @@ namespace Gerador_CSS.Class
 
 
 			return Button;
+		}
+
+		public static void InsertButtonToSuggestionBox(Models.Button button)
+        {
+			string StrConn = ConfigurationManager.AppSettings.Get("SqlServerConn").ToString();
+
+			ConnectionSQLServer conexao = new ConnectionSQLServer(StrConn);
+
+			conexao.BeginTransaction();
+
+			try
+            {
+				
+
+				string sql = @"INSERT INTO dbo.Button_Properties	(							
+									Static_Border_Top_Width,
+									Static_Border_Bottom_Width,
+									Static_Border_Left_Width,
+									Static_Border_Right_Width,
+									Static_Border_Top_Style,
+									Static_Border_Bottom_Style,
+									Static_Border_Left_Style,
+									Static_Border_Right_Style,
+									Static_Border_Top_Color,
+									Static_Border_Bottom_Color,
+									Static_Border_Left_Color,
+									Static_Border_Right_Color,
+									Static_Top_Left_Radius,
+									Static_Top_Right_Radius,
+									Static_Bottom_Left_Radius,
+									Static_Bottom_Right_Radius,
+									Static_Padding_Top,
+									Static_Padding_Bottom,
+									Static_Padding_Left,
+									Static_Padding_Right,
+									Static_Font_Size,
+									Static_Font_Style,
+									Static_Font_Weight,									
+									Static_Background_Color,
+									Static_Color,												
+									Static_Box_Shadow_Offset_X,
+									Static_Box_Shadow_Offset_Y,
+									Static_Box_Shadow_Blur_Radius,
+									Static_Box_Shadow_Spread_Radius,
+									Static_Box_Shadow_Color,
+									Static_Box_Shadow_Inset_Offset_X,
+									Static_Box_Shadow_Inset_Offset_Y,
+									Static_Box_Shadow_Inset_Blur_Radius,
+									Static_Box_Shadow_Inset_Spread_Radius,
+									Static_Box_Shadow_Inset_Color,
+									Static_Text_Shadow_Offset_X,
+									Static_Text_Shadow_Offset_Y,
+									Static_Text_Shadow_Blur_Radius,									
+									Static_Text_Shadow_Color,
+									Hover_Border_Top_Width,
+									Hover_Border_Bottom_Width,
+									Hover_Border_Left_Width,
+									Hover_Border_Right_Width,
+									Hover_Border_Top_Style,
+									Hover_Border_Bottom_Style,
+									Hover_Border_Left_Style,
+									Hover_Border_Right_Style,
+									Hover_Border_Top_Color,
+									Hover_Border_Bottom_Color,
+									Hover_Border_Left_Color,
+									Hover_Border_Right_Color,
+									Hover_Top_Left_Radius,
+									Hover_Top_Right_Radius,
+									Hover_Bottom_Left_Radius,
+									Hover_Bottom_Right_Radius,
+									Hover_Padding_Top,
+									Hover_Padding_Bottom,
+									Hover_Padding_Left,
+									Hover_Padding_Right,
+									Hover_Font_Size,
+									Hover_Font_Style,
+									Hover_Font_Weight,
+									Hover_Color,
+									Hover_Text_Shadow_Offset_X,
+									Hover_Text_Shadow_Offset_Y,
+									Hover_Text_Shadow_Blur_Radius,									
+									Hover_Text_Shadow_Color,
+									Hover_Background_Color,
+									Hover_Box_Shadow_Offset_X,
+									Hover_Box_Shadow_Offset_Y,
+									Hover_Box_Shadow_Blur_Radius,
+									Hover_Box_Shadow_Spread_Radius,
+									Hover_Box_Shadow_Color,
+									Hover_Box_Shadow_Inset_Offset_X,
+									Hover_Box_Shadow_Inset_Offset_Y,
+									Hover_Box_Shadow_Inset_Blur_Radius,
+									Hover_Box_Shadow_Inset_Spread_Radius,
+									Hover_Box_Shadow_Inset_Color)
+									VALUES(																	
+									@Static_Border_Top_Width,
+									@Static_Border_Bottom_Width,
+									@Static_Border_Left_Width,
+									@Static_Border_Right_Width,
+									@Static_Border_Top_Style,
+									@Static_Border_Bottom_Style,
+									@Static_Border_Left_Style,
+									@Static_Border_Right_Style,
+									@Static_Border_Top_Color,
+									@Static_Border_Bottom_Color,
+									@Static_Border_Left_Color,
+									@Static_Border_Right_Color,
+									@Static_Top_Left_Radius,
+									@Static_Top_Right_Radius,
+									@Static_Bottom_Left_Radius,
+									@Static_Bottom_Right_Radius,
+									@Static_Padding_Top,
+									@Static_Padding_Bottom,
+									@Static_Padding_Left,
+									@Static_Padding_Right,
+									@Static_Font_Size,
+									@Static_Font_Style,
+									@Static_Font_Weight,									
+									@Static_Background_Color,
+									@Static_Color,												
+									@Static_Box_Shadow_Offset_X,
+									@Static_Box_Shadow_Offset_Y,
+									@Static_Box_Shadow_Blur_Radius,
+									@Static_Box_Shadow_Spread_Radius,
+									@Static_Box_Shadow_Color,
+									@Static_Box_Shadow_Inset_Offset_X,
+									@Static_Box_Shadow_Inset_Offset_Y,
+									@Static_Box_Shadow_Inset_Blur_Radius,
+									@Static_Box_Shadow_Inset_Spread_Radius,
+									@Static_Box_Shadow_Inset_Color,
+									@Static_Text_Shadow_Offset_X,
+									@Static_Text_Shadow_Offset_Y,
+									@Static_Text_Shadow_Blur_Radius,									
+									@Static_Text_Shadow_Color,
+									@Hover_Border_Top_Width,
+									@Hover_Border_Bottom_Width,
+									@Hover_Border_Left_Width,
+									@Hover_Border_Right_Width,
+									@Hover_Border_Top_Style,
+									@Hover_Border_Bottom_Style,
+									@Hover_Border_Left_Style,
+									@Hover_Border_Right_Style,
+									@Hover_Border_Top_Color,
+									@Hover_Border_Bottom_Color,
+									@Hover_Border_Left_Color,
+									@Hover_Border_Right_Color,
+									@Hover_Top_Left_Radius,
+									@Hover_Top_Right_Radius,
+									@Hover_Bottom_Left_Radius,
+									@Hover_Bottom_Right_Radius,
+									@Hover_Padding_Top,
+									@Hover_Padding_Bottom,
+									@Hover_Padding_Left,
+									@Hover_Padding_Right,
+									@Hover_Font_Size,
+									@Hover_Font_Style,
+									@Hover_Font_Weight,
+									@Hover_Color,
+									@Hover_Text_Shadow_Offset_X,
+									@Hover_Text_Shadow_Offset_Y,
+									@Hover_Text_Shadow_Blur_Radius,									
+									@Hover_Text_Shadow_Color,
+									@Hover_Background_Color,
+									@Hover_Box_Shadow_Offset_X,
+									@Hover_Box_Shadow_Offset_Y,
+									@Hover_Box_Shadow_Blur_Radius,
+									@Hover_Box_Shadow_Spread_Radius,
+									@Hover_Box_Shadow_Color,
+									@Hover_Box_Shadow_Inset_Offset_X,
+									@Hover_Box_Shadow_Inset_Offset_Y,
+									@Hover_Box_Shadow_Inset_Blur_Radius,
+									@Hover_Box_Shadow_Inset_Spread_Radius,
+									@Hover_Box_Shadow_Inset_Color)";
+
+
+				conexao.StartCommandTransaction(sql);
+
+				conexao.mCommand.Parameters.AddWithValue("Static_Border_Top_Width", button.Static_Border_Top_Width + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Border_Bottom_Width", button.Static_Border_Bottom_Width + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Border_Left_Width", button.Static_Border_Left_Width + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Border_Right_Width", button.Static_Border_Right_Width + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Border_Top_Style", button.Static_Border_Top_Style.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Static_Border_Bottom_Style", button.Static_Border_Bottom_Style.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Static_Border_Left_Style", button.Static_Border_Left_Style.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Static_Border_Right_Style", button.Static_Border_Right_Style.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Static_Border_Top_Color", button.Static_Border_Top_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Static_Border_Bottom_Color", button.Static_Border_Bottom_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Static_Border_Left_Color", button.Static_Border_Left_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Static_Border_Right_Color", button.Static_Border_Right_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Static_Top_Left_Radius", button.Static_Border_Top_Left_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Top_Right_Radius", button.Static_Border_Top_Right_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Bottom_Left_Radius", button.Static_Border_Bottom_Left_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Bottom_Right_Radius", button.Static_Border_Bottom_Right_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Padding_Top", button.Static_Padding_Top + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Padding_Bottom", button.Static_Padding_Bottom + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Padding_Left", button.Static_Padding_Left + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Padding_Right", button.Static_Padding_Right + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Font_Size", button.Static_Font_Size + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Font_Style", button.Static_Font_Style.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Static_Font_Weight", button.Static_Font_Weight);
+				conexao.mCommand.Parameters.AddWithValue("Static_Background_Color", button.Static_Background_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Static_Color", button.Static_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Static_Box_Shadow_Offset_X", button.Static_Box_Shadow_Offset_X + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Box_Shadow_Offset_Y", button.Static_Box_Shadow_Offset_Y + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Box_Shadow_Blur_Radius", button.Static_Box_Shadow_Blur_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Box_Shadow_Spread_Radius", button.Static_Box_Shadow_Spread_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Box_Shadow_Color", button.Static_Box_Shadow_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Static_Box_Shadow_Inset_Offset_X", button.Static_Box_Shadow_Inset_Offset_X + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Box_Shadow_Inset_Offset_Y", button.Static_Box_Shadow_Inset_Offset_Y + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Box_Shadow_Inset_Blur_Radius", button.Static_Box_Shadow_Inset_Blur_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Box_Shadow_Inset_Spread_Radius", button.Static_Box_Shadow_Inset_Spread_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Box_Shadow_Inset_Color", button.Static_Box_Shadow_Inset_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Static_Text_Shadow_Offset_X", button.Static_Text_Shadow_Offset_X + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Text_Shadow_Offset_Y", button.Static_Text_Shadow_Offset_Y + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Text_Shadow_Blur_Radius", button.Static_Text_Shadow_Blur_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Static_Text_Shadow_Color", button.Static_Text_Shadow_Color.ToLower());
+
+				//-------------------------------HOVER-----------------------------
+				conexao.mCommand.Parameters.AddWithValue("Hover_Border_Top_Width", button.Hover_Border_Top_Width + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Border_Bottom_Width", button.Hover_Border_Bottom_Width + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Border_Left_Width", button.Hover_Border_Left_Width + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Border_Right_Width", button.Hover_Border_Right_Width + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Border_Top_Style", button.Hover_Border_Top_Style.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Hover_Border_Bottom_Style", button.Hover_Border_Bottom_Style.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Hover_Border_Left_Style", button.Hover_Border_Left_Style.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Hover_Border_Right_Style", button.Hover_Border_Right_Style.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Hover_Border_Top_Color", button.Hover_Border_Top_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Hover_Border_Bottom_Color", button.Hover_Border_Bottom_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Hover_Border_Left_Color", button.Hover_Border_Left_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Hover_Border_Right_Color", button.Hover_Border_Right_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Hover_Top_Left_Radius", button.Hover_Border_Top_Left_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Top_Right_Radius", button.Hover_Border_Top_Right_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Bottom_Left_Radius", button.Hover_Border_Bottom_Left_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Bottom_Right_Radius", button.Hover_Border_Bottom_Right_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Padding_Top", button.Hover_Padding_Top + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Padding_Bottom", button.Hover_Padding_Bottom + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Padding_Left", button.Hover_Padding_Left + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Padding_Right", button.Hover_Padding_Right + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Font_Size", button.Hover_Font_Size + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Font_Style", button.Hover_Font_Style.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Hover_Font_Weight", button.Hover_Font_Weight);
+				conexao.mCommand.Parameters.AddWithValue("Hover_Color", button.Hover_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Hover_Text_Shadow_Offset_X", button.Hover_Text_Shadow_Offset_X + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Text_Shadow_Offset_Y", button.Hover_Text_Shadow_Offset_Y + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Text_Shadow_Blur_Radius", button.Hover_Text_Shadow_Blur_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Text_Shadow_Color", button.Hover_Text_Shadow_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Hover_Background_Color", button.Hover_Background_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Hover_Box_Shadow_Offset_X", button.Hover_Box_Shadow_Offset_X + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Box_Shadow_Offset_Y", button.Hover_Box_Shadow_Offset_Y + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Box_Shadow_Blur_Radius", button.Hover_Box_Shadow_Blur_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Box_Shadow_Spread_Radius", button.Hover_Box_Shadow_Spread_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Box_Shadow_Color", button.Hover_Box_Shadow_Color.ToLower());
+				conexao.mCommand.Parameters.AddWithValue("Hover_Box_Shadow_Inset_Offset_X", button.Hover_Box_Shadow_Inset_Offset_X + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Box_Shadow_Inset_Offset_Y", button.Hover_Box_Shadow_Inset_Offset_Y + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Box_Shadow_Inset_Blur_Radius", button.Hover_Box_Shadow_Inset_Blur_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Box_Shadow_Inset_Spread_Radius", button.Hover_Box_Shadow_Inset_Spread_Radius + "px");
+				conexao.mCommand.Parameters.AddWithValue("Hover_Box_Shadow_Inset_Color", button.Hover_Box_Shadow_Inset_Color.ToLower());
+
+
+				conexao.ExecuteTransaction();
+				conexao.CommitTransaction();
+			}
+            catch (Exception ex)
+            {
+				conexao.RollbackTransaction();
+				throw ex;
+            }
+
 		}
 	}
 }
