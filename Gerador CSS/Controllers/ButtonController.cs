@@ -47,6 +47,15 @@ namespace Gerador_CSS.Controllers
         [HttpPost]
         public ActionResult InsertButtonToSuggestionBox(Button button)
         {
+            try
+            {
+                Class.Button.InsertButtonToSuggestionBox(button);                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
             return RedirectToAction("Index", "Home");
         }
     }

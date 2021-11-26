@@ -81,25 +81,25 @@
 
     <tr>
         <td>Deslocamento Horizontal:</td>
-        <td> <input id="range_font_shadow_offset_x" name="Static_Text_Shadow_Offset_X" type="range" class="range" value="0" min="0" max="100" onchange="FontShadowOffsetX(this)" /> </td>
-        <td><input id="font_shadow_offset_x_number" onchange="FontShadowOffsetXNumberChanged(this)" min="0" max="100" value="0" class="input-number" type="number" /></td>
+        <td> <input id="range_font_shadow_offset_x" name="Static_Text_Shadow_Offset_X" type="range" class="range" value="@Model.Static_Text_Shadow_Offset_X.Replace("px", string.Empty)" min="0" max="100" onchange="FontShadowOffsetX(this)" /> </td>
+        <td><input id="font_shadow_offset_x_number" onchange="FontShadowOffsetXNumberChanged(this)" min="0" max="100" value="@Model.Static_Text_Shadow_Offset_X.Replace("px", string.Empty)" class="input-number" type="number" /></td>
         <td><span>px</span></td>
     </tr>
     <tr>
         <td>Deslocamento Vertical:</td>
-        <td> <input id="range_font_shadow_offset_y" name="Static_Text_Shadow_Offset_Y" type="range" class="range" value="0" min="0" max="100" onchange="FontShadowOffsetY(this)" /> </td>
-        <td><input id="font_shadow_offset_y_number" onchange="FontShadowOffsetYNumberChanged(this)" min="0" max="100" value="0" class="input-number" type="number" /></td>
+        <td> <input id="range_font_shadow_offset_y" name="Static_Text_Shadow_Offset_Y" type="range" class="range" value="@Model.Static_Text_Shadow_Offset_Y.Replace("px", string.Empty)" min="0" max="100" onchange="FontShadowOffsetY(this)" /> </td>
+        <td><input id="font_shadow_offset_y_number" onchange="FontShadowOffsetYNumberChanged(this)" min="0" max="100" value="@Model.Static_Text_Shadow_Offset_Y.Replace("px", string.Empty)" class="input-number" type="number" /></td>
         <td><span>px</span></td>
     </tr>
     <tr>
         <td>Raio de Borrão:</td>
-        <td> <input id="range_font_shadow_blur_radius" name="Static_Text_Shadow_Blur_Radius" type="range" class="range" value="0" min="0" max="100" onchange="FontShadowBlurRadius(this)" /> </td>
-        <td><input id="font_shadow_blur_radius_number" onchange="FontShadowBlurRadiusNumberChanged(this)" min="0" max="100" value="0" class="input-number" type="number" /></td>
+        <td> <input id="range_font_shadow_blur_radius" name="Static_Text_Shadow_Blur_Radius" type="range" class="range" value="@Model.Static_Text_Shadow_Blur_Radius.Replace("px", string.Empty)" min="0" max="100" onchange="FontShadowBlurRadius(this)" /> </td>
+        <td><input id="font_shadow_blur_radius_number" onchange="FontShadowBlurRadiusNumberChanged(this)" min="0" max="100" value="@Model.Static_Text_Shadow_Blur_Radius.Replace("px", string.Empty)" class="input-number" type="number" /></td>
         <td><span id="">px</span></td>
     </tr>
     <tr>
         <td>Cor da Sombra:</td>
-        <td> <input id="font_shadow_color_selector" name="Static_Text_Shadow_Color" style="width: 100px; height: 30px;" onchange="FontShadowColorSelector(this)" type="color" /> </td>
+        <td> <input id="font_shadow_color_selector" name="Static_Text_Shadow_Color" value="@Model.Static_Text_Shadow_Color" style="width: 100px; height: 30px;" onchange="FontShadowColorSelector(this)" type="color" /> </td>
     </tr>
 </table>
 

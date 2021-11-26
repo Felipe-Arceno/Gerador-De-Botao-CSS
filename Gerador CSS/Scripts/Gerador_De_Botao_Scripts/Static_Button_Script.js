@@ -246,7 +246,8 @@ function FontShadowEnable(){
     else{
         ChangeCSS("font_shadow_offset_x", "0px"); 
         ChangeCSS("font_shadow_offset_y", "0px");
-        ChangeCSS("font_shadow_blur_radius", "0px");         
+        ChangeCSS("font_shadow_blur_radius", "0px");
+        ChangeCSS("font_shadow_color", "#000000");
         
         $("#range_font_shadow_offset_x").attr("disabled", true);
         $("#range_font_shadow_offset_y").attr("disabled", true);
@@ -259,7 +260,7 @@ function FontShadowEnable(){
         $("#range_font_shadow_offset_x").val(0);
         $("#range_font_shadow_offset_y").val(0);
         $("#range_font_shadow_blur_radius").val(0);
-        $("#font_shadow_color_selector").val("black");
+        $("#font_shadow_color_selector").val("#000000");
 
         $("#font_shadow_offset_x_number").val(0);
         $("#font_shadow_offset_y_number").val(0);
@@ -691,7 +692,8 @@ function StaticShadowEnable(){
         ChangeCSS("box_shadow_offset_x", "0px"); 
         ChangeCSS("box_shadow_offset_y", "0px");
         ChangeCSS("box_shadow_blur_radius", "0px"); 
-        ChangeCSS("box_shadow_spread_radius", "0px");         
+        ChangeCSS("box_shadow_spread_radius", "0px");
+        ChangeCSS("box_shadow_color", "#525757");
         
         $("#range_box_shadow_offset_x").attr("disabled", true);
         $("#range_box_shadow_offset_y").attr("disabled", true);
@@ -823,7 +825,8 @@ function StaticShadowInsetEnable(){
         ChangeCSS("box_shadow_inset_offset_x", "0px"); 
         ChangeCSS("box_shadow_inset_offset_y", "0px");
         ChangeCSS("box_shadow_inset_blur_radius", "0px"); 
-        ChangeCSS("box_shadow_inset_spread_radius", "0px");         
+        ChangeCSS("box_shadow_inset_spread_radius", "0px");
+        ChangeCSS("box_shadow_inset_color", "#525757");
         
         $("#range_box_shadow_inset_offset_x").attr("disabled", true);
         $("#range_box_shadow_inset_offset_y").attr("disabled", true);

@@ -44,10 +44,10 @@ var font_weight = document.getElementById("static_font_weight_range").value;
     var box_shadow_inset_spread_radius = document.getElementById("range_box_shadow_inset_spread_radius").value + "px";
     var box_shadow_inset_color = document.getElementById("shadow_inset_color_selector").value;
 //// STATIC > FONT SHADOW
-    var font_shadow_offset_x = "0px";
-    var font_shadow_offset_y = "0px";
-    var font_shadow_blur_radius = "0px";    
-    var font_shadow_color = "#525757";    
+    var font_shadow_offset_x = document.getElementById("range_font_shadow_offset_x").value + "px";
+    var font_shadow_offset_y = document.getElementById("range_font_shadow_offset_y").value + "px";
+    var font_shadow_blur_radius = document.getElementById("range_font_shadow_blur_radius").value + "px"; 
+    var font_shadow_color = document.getElementById("font_shadow_color_selector").value;
 
 //-----------------------------------------//    
 
@@ -339,5 +339,7 @@ function CopyToClipboardCSS(){
     CSS.setSelectionRange(0, 99999);
     document.execCommand('copy');
 }
+
+
 
 

@@ -43,14 +43,14 @@
 
 
     <div style=" width: 50%; float: right; z-index: 2; margin-top: 50px; max-height: 450px; overflow: auto ">
-        <form action="@Url.Action("InsertButtonToSuggestionBox", "Button")" method="post">
+        <form id="form-button" action="@Url.Action("InsertButtonToSuggestionBox", "Button")" method="post">
 
             @Html.Partial("_Static_Button_Partial", Model)
 
             @Html.Partial("_Hover_Button_Partial", Model)
 
             <div>
-                <button type="submit">Inserir</button>
+                <button type="button" onclick="InsertButtonToSuggestionBox()">Inserir</button>
             </div>
         </form>
 
@@ -58,3 +58,27 @@
     </div>
 </body>
 </html>
+
+
+<script>
+    function InsertButtonToSuggestionBox() {
+       
+
+        document.getElementById('checkbox_font_shadow_enable').checked = true;
+        document.getElementById('checkbox_static_shadow_enable').checked = true;
+        document.getElementById('checkbox_static_inset_shadow_enable').checked = true;
+
+        document.getElementById('checkbox_font_shadow_enable_hover').checked = true;
+        document.getElementById('checkbox_hover_shadow_enable').checked = true;
+        document.getElementById('checkbox_hover_inset_shadow_enable').checked = true;
+
+        FontShadowEnable();        
+        StaticShadowEnable();        
+        StaticShadowInsetEnable();
+        FontShadowEnableHover();
+        HoverShadowEnable();        
+        HoverShadowInsetEnable();
+
+        $("#form-button").submit();
+    }
+</script>
