@@ -44,6 +44,7 @@ namespace Gerador_CSS.Controllers
             
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult InsertButtonToSuggestionBox(Button button)
         {

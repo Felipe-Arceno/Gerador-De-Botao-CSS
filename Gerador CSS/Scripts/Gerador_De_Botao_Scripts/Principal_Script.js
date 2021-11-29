@@ -65,7 +65,7 @@ var border_width_hover = "1px";
     var font_shadow_offset_x_hover = document.getElementById("range_font_shadow_offset_x_hover").value + "px";
     var font_shadow_offset_y_hover = document.getElementById("range_font_shadow_offset_y_hover").value + "px";
     var font_shadow_blur_radius_hover = document.getElementById("range_font_shadow_blur_radius_hover").value + "px";
-    var font_shadow_color_hover = document.getElementById("shadow_color_selector_hover").value;
+    var font_shadow_color_hover = document.getElementById("text_shadow_color_selector_hover").value;
 //// :HOVER > PADDING
     var padding_top_hover = document.getElementById("padding_top_hover_range").value + "px";
     var padding_bottom_hover = document.getElementById("padding_bottom_hover_range").value + "px";

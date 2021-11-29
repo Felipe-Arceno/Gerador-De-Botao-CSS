@@ -6,14 +6,13 @@
     <span>Mouse Sobre o Botão &#9652;</span>
 </div>
 
-<table id="hover_options" style="display: none;">
+<table id="hover_options" style="display: none; width: 88%">
 
     <tbody>
         <tr>
-            <td>Cor de Fundo:</td>
+            <td style="width: 160px">Cor de Fundo:</td>
             <td> <input id="background_color_selector_hover" name="Hover_Background_Color" style="width: 100px; height: 30px;" onchange="BackgroundColorSelectorHover(this)" type="color" value="@Model.Hover_Background_Color" /> </td>
         </tr>
-
     </tbody>
 </table>
 
@@ -22,7 +21,7 @@
 <div id="div_hover_font_options" align="center" class="secondary_menu" onclick="OpenHoverFontButtonOptions()">
     <span>Fonte &#9652;</span>
 </div>
-<table id="hover_font_options" style="display: none;">
+<table id="hover_font_options" style="display: none; width: 88%">
     <tr>
         <td>Cor:</td>
         <td> <input id="color_selector_hover" name="Hover_Color" style="width: 100px; height: 30px;" onchange="ColorSelectorHover(this)" type="color" value="@Model.Hover_Color" /> </td>
@@ -89,7 +88,7 @@
     </tr>
     <tr>
         <td>Cor da Sombra:</td>
-        <td> <input id="shadow_color_selector_hover" name="Hover_Text_Shadow_Color" style="width: 100px; height: 30px;" onchange="FontShadowColorSelectorHover(this)" value="@Model.Hover_Text_Shadow_Color" type="color" /> </td>
+        <td> <input id="text_shadow_color_selector_hover" name="Hover_Text_Shadow_Color" style="width: 100px; height: 30px;" onchange="FontShadowColorSelectorHover(this)" value="@Model.Hover_Text_Shadow_Color" type="color" /> </td>
     </tr>
 </table>
        
@@ -99,7 +98,7 @@
 <div id="div_hover_padding_options" align="center" class="secondary_menu" onclick="OpenHoverPaddingButtonOptions()">
     <span>Preenchimento &#9652;</span>
 </div>
-<table id="hover_padding_options" style="display: none;">
+<table id="hover_padding_options" style="display: none; width: 88%">
     <tr>
         <td>Preenchimento Superior:</td>
         <td> <input id="padding_top_hover_range" name="Hover_Padding_Top" type="range" class="range" value="@Model.Hover_Padding_Top.Replace("px", string.Empty)" min="1" max="100" onchange="PaddingTopHover(this)" /> </td>
@@ -133,7 +132,7 @@
 <div id="div_hover_border_options" align="center" class="secondary_menu" onclick="OpenHoverBorderButtonOptions()">
     <span>Bordas &#9652;</span>
 </div>
-<table id="hover_border_options" style="display: none;">
+<table id="hover_border_options" style="display: none; width: 88%">
     <tr>
         <td style="text-align: center;" colspan="4">TODAS</td>
     </tr>
@@ -160,7 +159,7 @@
     </tr>
     <tr>
         <td>Espessura:</td>
-        <td> <input id="border_top_width_range_hover" name="Hover_Border_Top_Width" type="range" class="range" value="@Model.Hover_Border_Top_Width.Replace("px", string.Empty)" min="1" max="100" onchange="BorderTopWidthHover(this)" /> </td>
+        <td> <input id="border_top_width_range_hover" name="Hover_Border_Top_Width" type="range" class="range" value="@Model.Hover_Border_Top_Width.Replace("px", string.Empty)" min="0" max="100" onchange="BorderTopWidthHover(this)" /> </td>
         <td><input id="border_top_width_number_hover" onchange="BorderTopWidthHoverNumberChanged(this)" min="0" max="100" value="@Model.Hover_Border_Top_Width.Replace("px", string.Empty)" class="input-number" type="number" /></td>
         <td><span>px</span></td>
     </tr>
@@ -203,7 +202,7 @@
     </tr>
     <tr>
         <td>Espessura:</td>
-        <td> <input id="border_bottom_width_range_hover" name="Hover_Border_Bottom_Width" type="range" class="range" value="@Model.Hover_Border_Bottom_Width.Replace("px", string.Empty)" min="1" max="100" onchange="BorderBottomWidthHover(this)" /> </td>
+        <td> <input id="border_bottom_width_range_hover" name="Hover_Border_Bottom_Width" type="range" class="range" value="@Model.Hover_Border_Bottom_Width.Replace("px", string.Empty)" min="0" max="100" onchange="BorderBottomWidthHover(this)" /> </td>
         <td><input id="border_bottom_width_number_hover" onchange="BorderBottomWidthHoverNumberChanged(this)" min="0" max="100" value="@Model.Hover_Border_Bottom_Width.Replace("px", string.Empty)" class="input-number" type="number" /></td>
         <td><span>px</span></td>
     </tr>
@@ -246,7 +245,7 @@
     </tr>
     <tr>
         <td>Espessura:</td>
-        <td> <input id="border_left_width_range_hover" name="Hover_Border_Left_Width" type="range" class="range" value="@Model.Hover_Border_Left_Width.Replace("px", string.Empty)" min="1" max="100" onchange="BorderLeftWidthHover(this)" /> </td>
+        <td> <input id="border_left_width_range_hover" name="Hover_Border_Left_Width" type="range" class="range" value="@Model.Hover_Border_Left_Width.Replace("px", string.Empty)" min="0" max="100" onchange="BorderLeftWidthHover(this)" /> </td>
         <td><input id="border_left_width_number_hover" onchange="BorderLeftWidthHoverNumberChanged(this)" min="0" max="100" value="@Model.Hover_Border_Left_Width.Replace("px", string.Empty)" class="input-number" type="number" /></td>
         <td><span>px</span></td>
     </tr>
@@ -277,7 +276,7 @@
     </tr>
     <tr>
         <td>Espessura:</td>
-        <td> <input id="border_right_width_range_hover" name="Hover_Border_Right_Width" type="range" class="range" value="@Model.Hover_Border_Right_Width.Replace("px", string.Empty)" min="1" max="100" onchange="BorderRightWidthHover(this)" /> </td>
+        <td> <input id="border_right_width_range_hover" name="Hover_Border_Right_Width" type="range" class="range" value="@Model.Hover_Border_Right_Width.Replace("px", string.Empty)" min="0" max="100" onchange="BorderRightWidthHover(this)" /> </td>
         <td><input id="border_right_width_number_hover" onchange="BorderRightWidthHoverNumberChanged(this)" min="0" max="100" value="@Model.Hover_Border_Right_Width.Replace("px", string.Empty)" class="input-number" type="number" /></td>
         <td><span>px</span></td>
     </tr>
@@ -307,7 +306,7 @@
 <div id="div_hover_shadow_options" align="center" class="secondary_menu" onclick="OpenHoverShadowButtonOptions()">
     <span>Sombra Externa &#9652;</span>
 </div>
-<table id="hover_shadow_options" style="display: none;">
+<table id="hover_shadow_options" style="display: none; width: 88%">
     <tr>
         <td>Habilitar Sombras:</td>
         <td>
@@ -348,7 +347,7 @@
     </tr>
     <tr>
         <td>Cor da Sombra:</td>
-        <td> <input id="shadow_color_selector_hover" name="Hover_Box_Shadow_Color" style="width: 100px; height: 30px;" value="@Model.Hover_Box_Shadow_Color.Replace("px", string.Empty)" onchange="BoxShadowColorSelectorHover(this)" type="color" /> </td>
+        <td> <input id="shadow_color_selector_hover" name="Hover_Box_Shadow_Color" style="width: 100px; height: 30px;" value="@Model.Hover_Box_Shadow_Color" onchange="BoxShadowColorSelectorHover(this)" type="color" /> </td>
     </tr>
 </table>
 
@@ -357,7 +356,7 @@
 <div id="div_hover_shadow_inset_options" align="center" class="secondary_menu" onclick="OpenHoverShadowInsetButtonOptions()">
     <span>Sombra Interna &#9652;</span>
 </div>
-<table id="hover_shadow_inset_options" style="display: none;">
+<table id="hover_shadow_inset_options" style="display: none; width: 88%">
     <tr>
         <td>Habilitar Sombras:</td>
         <td>
