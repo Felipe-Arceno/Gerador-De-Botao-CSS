@@ -752,6 +752,9 @@ namespace Gerador_CSS.Class
 
 				conexao.ExecuteTransaction();
 				conexao.CommitTransaction();
+
+				Util.Log("INSERÇÃO DE BOTÃO");
+
 			}
             catch (Exception ex)
             {

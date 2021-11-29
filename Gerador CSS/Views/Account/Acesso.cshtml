@@ -1,0 +1,30 @@
+﻿
+
+@{
+    ViewBag.Title = "Acesso";
+}
+
+<form action="@Url.Action("Acesso", "Account")" method="post">
+    <div align="center">
+        <div style="margin: 50px; width: 30%; padding: 10px; background-color: #5c5a5a; color: white; box-shadow: #2c2b2b 0px 0px 6px 4px;" align="center">
+            <h3 style="color: orange">Acesso Administrativo</h3>
+
+            <div style="margin: 10px">
+                <label>Email</label><br />
+                <input style="color: black" placeholder="Email" name="Email" type="text" />
+            </div>
+            <div style="margin: 10px">
+                <label>Senha</label><br />
+                <input style="color: black" placeholder="Password" name="Password" type="password" />
+            </div>
+            <div style="margin: 10px">
+                <button type="submit">Entrar</button>
+            </div>
+
+        </div>
+    </div>
+
+</form>
+
+
+

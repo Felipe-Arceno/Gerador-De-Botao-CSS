@@ -1,7 +1,6 @@
 ﻿
 body {
-    margin-right: 50px;
-    margin-left: 50px;
+   
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
 }
@@ -12,7 +11,7 @@ tr {
 }
 
 .range {
-    width: 220px;
+    width: 220px !important;
 }
 
 
@@ -103,7 +102,7 @@ tr {
     border-color: #abaaaa;
     border-width: 1px;
     font-size: 16px;
-    width: 300px;
+    width: 90%;
 }
 
     .my_input:focus {
@@ -114,12 +113,13 @@ tr {
 .primary_menu {
     background-color: #add8e6;
     padding: 5px;
-    height: 30px;
+    height: 40px;
     width: 90%;
     margin-bottom: 10px;
     border-width: 1px;
     border-style: dashed;
     cursor: pointer;
+    font-size: 18px;
 }
 
 .secondary_menu {
@@ -254,13 +254,140 @@ tr {
 
 
 .div-recomends {    
-    padding: 20px;
+    padding: 30px 20px;
     border-style: dashed;
-    box-shadow: black 2px 2px 15px 2px
+    box-shadow: black 2px 2px 15px 2px;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 
+.td-label{
+    width: 170px !important;
+}
 
 
+.btn-logout {
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-top-style: double;
+    border-bottom-style: double;
+    border-left-style: double;
+    border-right-style: double;
+    border-top-color: #645e5e;
+    border-bottom-color: #645e5e;
+    border-left-color: #645e5e;
+    border-right-color: #645e5e;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 0;
+    background-color: #ffffff;
+    color: #827d7d;
+    box-shadow: 0px 0px 6px 2px #525757, inset 0px 0px 0px 0px #525757;
+    text-shadow: 0px 0px 0px #000000;
+}
 
+    .btn-logout:hover {
+        background-color: #645e5e;
+        font-size: 14px;
+        color: #ffffff;
+        font-weight: 0px;
+        font-style: normal;
+        text-shadow: 0px 0px 0px #000000;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-top-width: 5px;
+        border-bottom-width: 5px;
+        border-left-width: 5px;
+        border-right-width: 5px;
+        border-top-style: double;
+        border-bottom-style: double;
+        border-left-style: double;
+        border-right-style: double;
+        border-top-color: #ffffff;
+        border-bottom-color: #ffffff;
+        border-left-color: #ffffff;
+        border-right-color: #ffffff;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        box-shadow: 0px 0px 6px 2px #525757, inset 0px 0px 0px 0px #525757;
+        text-decoration: solid !important;
+        /* Thanks for using my generator! 
+ by Felipe Arceno */
+    }
 
+.btn-inserir {
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+    border-left-color: #ffffff;
+    border-right-color: #ffffff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 0;
+    background-color: #0fd2d2;
+    color: #ffffff;
+    box-shadow: 0px 0px 0px 0px #525757, inset 2px 3px 9px 0px #78ded7;
+    text-shadow: 0px 0px 0px #000000;
+}
+
+    .btn-inserir:hover {
+        background-color: #40d1d4;
+        font-size: 18px;
+        color: #ffffff;
+        font-weight: 0px;
+        font-style: normal;
+        text-shadow: 0px 0px 0px #000000;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-top-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+        border-right-width: 0px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-right-style: solid;
+        border-top-color: #ffffff;
+        border-bottom-color: #ffffff;
+        border-left-color: #ffffff;
+        border-right-color: #ffffff;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        box-shadow: 0px 0px 0px 0px #525757, inset 2px 3px 9px 0px #27c5ec;
+        /* Thanks for using my generator! 
+ by Felipe Arceno */
+    }
