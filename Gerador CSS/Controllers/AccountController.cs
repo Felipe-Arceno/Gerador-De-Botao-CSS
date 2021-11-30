@@ -32,12 +32,10 @@ namespace Gerador_CSS.Controllers
                 {
                     FormsAuthentication.SetAuthCookie(user.Email, false);
 
-                    Util.Log("LOGIN REALIZADO");
+                    Util.Log("LOGIN REALIZADO: " + user.Email);
 
                     return RedirectToAction("Index", "Home");
-                }
-
-                Util.Log("TENTATIVA DE LOGIN");
+                }               
 
             }
 
