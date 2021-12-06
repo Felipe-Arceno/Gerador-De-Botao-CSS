@@ -1,4 +1,4 @@
-﻿@model Gerador_CSS.Models.Button
+﻿@model Gerador_CSS.Models.ButtonModel
 @using Gerador_CSS.Models;
 
 
@@ -35,7 +35,7 @@
     <tr>
         <td>Negrito:</td>
         <td> <input id="font_weight_hover_range" name="Hover_Font_Weight" type="range" class="range" value="@Model.Hover_Font_Weight" min="0" max="1000" step="100" onchange="FontWeightHover(this)" /> </td>
-        <td><input id="hover_font_weight_number" onchange="FontWeightHoverNumberChanged(this)" step="100" min="0" max="1000" value="@Model.Hover_Font_Weight" class="input-number" type="number" /></td>        
+        <td><input id="hover_font_weight_number" onchange="FontWeightHoverNumberChanged(this)" step="100" min="0" max="1000" value="@Model.Hover_Font_Weight" class="input-number" type="number" /></td>
     </tr>
     <tr>
         <td>Estilo:</td>
@@ -91,7 +91,7 @@
         <td> <input id="text_shadow_color_selector_hover" name="Hover_Text_Shadow_Color" style="width: 100px; height: 30px;" onchange="FontShadowColorSelectorHover(this)" value="@Model.Hover_Text_Shadow_Color" type="color" /> </td>
     </tr>
 </table>
-       
+
 
 
 
@@ -179,7 +179,7 @@
         <td>Estilo:</td>
         <td>
             <input type="hidden" id="select_border_top_style_hover_hidden" value="@Model.Hover_Border_Top_Style" />
-            <select class="select" id="select_border_top_style_hover"  name="Hover_Border_Top_Style" onchange="BorderTopStyleHover(this)">
+            <select class="select" id="select_border_top_style_hover" name="Hover_Border_Top_Style" onchange="BorderTopStyleHover(this)">
                 <option value="none">Nenhuma</option>
                 <option value="dotted">Pontilhada</option>
                 <option value="dashed">Tracejada</option>
@@ -312,7 +312,7 @@
         <td>
             @if (Model.Hover_Box_Shadow_Enable == true)
             {
-                <input id="checkbox_hover_shadow_enable" type="checkbox" onchange="HoverShadowEnable(this)" checked/>
+                <input id="checkbox_hover_shadow_enable" type="checkbox" onchange="HoverShadowEnable(this)" checked />
             }
             else
             {
@@ -398,4 +398,72 @@
         <td>Cor da Sombra:</td>
         <td> <input id="shadow_inset_color_selector_hover" name="Hover_Box_Shadow_Inset_Color" style="width: 100px; height: 30px;" value="@Model.Hover_Box_Shadow_Inset_Color" onchange="BoxShadowInsetColorSelectorHover(this)" type="color" /> </td>
     </tr>
+</table>
+
+
+<div id="div_hover_animation_options" align="center" class="secondary_menu" onclick="OpenHoverAnimationButtonOptions()">
+    <span>Animação &#9652;</span>
+</div>
+<table id="hover_animation_options" style="display: none; width: 88%">
+    <tr>
+        <td class="td-label">Animação:</td>
+        <td>
+            <input type="hidden" id="hover_animation_hidden" name="Hover_Animation" value="@Model.Hover_Animation" />
+            <input type="hidden" id="select_hover_animation_type_hidden" name="Hover_Animation_Type" value="@Model.Hover_Animation_Type" />
+
+            <select class="select" id="select_hover_animation_type" onchange="AnimationHoverType(this)">
+                <option value="none">Nenhuma</option>
+
+                <optgroup label="Bounce (X)">
+                    <option value="slow-bounce-x">Slow Bounce</option>
+                    <option value="normal-bounce-x">Normal Bounce</option>
+                    <option value="fast-bounce-x">Fast Bounce</option>
+                </optgroup>
+
+                <optgroup label="Bounce (Y)">
+                    <option value="slow-bounce-y">Slow Bounce</option>
+                    <option value="normal-bounce-y">Normal Bounce</option>
+                    <option value="fast-bounce-y">Fast Bounce</option>
+                </optgroup>
+
+
+                <optgroup label="Rotate (X)">
+                    <option value="slow-rotate-x">Slow Rotate</option>
+                    <option value="normal-rotate-x">Normal Rotate</option>
+                    <option value="fast-rotate-x">Fast Rotate</option>
+                </optgroup>
+
+
+                <optgroup label="Rotate (Y)">
+                    <option value="slow-rotate-y">Slow Rotate</option>
+                    <option value="normal-rotate-y">Normal Rotate</option>
+                    <option value="fast-rotate-y">Fast Rotate</option>
+                </optgroup>
+
+                <optgroup label="Rotate (Z)">
+                    <option value="slow-rotate-z">Slow Rotate</option>
+                    <option value="normal-rotate-z">Normal Rotate</option>
+                    <option value="fast-rotate-z">Fast Rotate</option>
+                </optgroup>
+
+                <optgroup label="Swing">
+                    <option value="slow-swing">Slow Swing</option>
+                    <option value="normal-swing">Normal Swing</option>
+                    <option value="fast-swing">Fast Swing</option>
+                </optgroup>
+
+                <optgroup label="Change Colors">
+                    <option value="color-rainbow">Rainbow Palette</option>
+                    <option value="color-blue">Blue Palette</option>
+                    <option value="color-red">Red Palette</option>
+                    <option value="color-green">Green Palette</option>
+                    <option value="color-dark">Dark Palette</option>
+
+                </optgroup>
+
+
+            </select>
+        </td>
+    </tr>
+
 </table>

@@ -50,10 +50,23 @@ namespace Gerador_CSS.Class
 
 
 				conexao.StartCommandTransaction(sql);
+				IPAddress[] addresses = Dns.GetHostAddresses(Dns.GetHostName());
+				IPHostEntry Ip_Entry = Dns.GetHostEntry(Dns.GetHostName());
+
+				IPAddress[] addr = Ip_Entry.AddressList;
+
+				string Address = "";
+
+				for (int i = 0; i < addr.Length; i++)
+				{
+					Address += addr[i].ToString() + " - ";
+				}
+
+				
 
 				conexao.mCommand.Parameters.AddWithValue("Dh_Log", TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("E. South America Standard Time")));
 				conexao.mCommand.Parameters.AddWithValue("Info", info);
-				conexao.mCommand.Parameters.AddWithValue("User_Ip", Dns.GetHostAddresses(Dns.GetHostName())[2].ToString());
+				conexao.mCommand.Parameters.AddWithValue("User_Ip", Address);
 
 
 

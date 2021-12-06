@@ -15,14 +15,26 @@ tr {
 }
 
 
-#div-button {       
+#div-button {
     border: white solid 2px;
     box-shadow: gray 2px 2px 2px;
     background-color: #ffffff;
     margin-bottom: 20px;
+    animation: fadein 1s;
 }
 
+#div-css {
+    padding: 10px;
+    box-shadow: grey 2px 2px 2px;
+    animation: fadein 1s;
+}
 
+#div-properties {
+    overflow: auto;
+    max-height: 450px;
+    margin-top: 30px;
+    animation: fadein 1s;
+}
 
 .btn-copy {
     border-top-width: 2px;
@@ -53,6 +65,7 @@ tr {
     margin: 5px;
     box-shadow: 0px 0px 0px 0px #525757, inset 3px 3px 15px 0px #09c31f;
     text-shadow: 0px 0px 0px #525757;
+    
 }
 
     .btn-copy:hover {
@@ -120,6 +133,18 @@ tr {
     border-style: dashed;
     cursor: pointer;
     font-size: 18px;
+    transition: 1s;    
+
+}
+
+.display {
+    animation: fadein 1s;
+    display: block;
+}
+
+.closed {
+    animation: fadein 1s;
+    display: none;
 }
 
 .secondary_menu {
@@ -131,6 +156,7 @@ tr {
     border-width: 1px;
     border-style: dashed;
     cursor: pointer;
+    transition: 1s;
 }
 
 
@@ -218,6 +244,8 @@ tr {
     margin: 5px;
     box-shadow: 0px 4px 5px 0px #7cfb13, inset 0px 0px 0px 0px #525757;
     text-shadow: 0px 0px 0px #525757;
+    animation: bounce 1s infinite alternate;
+    /*-webkit-animation: bounce 1s infinite alternate;*/
 }
 
     .btn-criar-novo:hover {
@@ -248,6 +276,8 @@ tr {
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
         box-shadow: 0px 4px 5px 0px #0db701, inset 0px 0px 0px 0px #525757;
+        animation: bounce 500ms infinite alternate;
+        -webkit-animation: bounce 500ms infinite alternate;
         /* Thanks for using my generator! 
  by Felipe Arceno */
     }
@@ -330,7 +360,7 @@ tr {
  by Felipe Arceno */
     }
 
-.btn-inserir {
+.btn-insert {
     border-top-width: 0px;
     border-bottom-width: 0px;
     border-left-width: 0px;
@@ -360,7 +390,7 @@ tr {
     text-shadow: 0px 0px 0px #000000;
 }
 
-    .btn-inserir:hover {
+    .btn-insert:hover {
         background-color: #40d1d4;
         font-size: 18px;
         color: #ffffff;
@@ -391,3 +421,18 @@ tr {
         /* Thanks for using my generator! 
  by Felipe Arceno */
     }
+
+
+
+
+@keyframes fadein {
+
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

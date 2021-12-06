@@ -137,7 +137,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Button.cs" />
+    <Compile Include="Models\ButtonModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -154,6 +154,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\Gerador_De_Botao_Scripts\Animations_Button_Hover_Script.js" />
+    <Content Include="Scripts\Gerador_De_Botao_Scripts\Animations_Button_Static_Script.js" />
     <Content Include="Scripts\Gerador_De_Botao_Scripts\Hover_Button_Script.js" />
     <Content Include="Scripts\Gerador_De_Botao_Scripts\Principal_Script.js" />
     <Content Include="Scripts\Gerador_De_Botao_Scripts\Static_Button_Script.js" />

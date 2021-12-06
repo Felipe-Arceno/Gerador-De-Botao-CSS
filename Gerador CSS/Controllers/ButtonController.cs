@@ -16,7 +16,7 @@ namespace Gerador_CSS.Controllers
             {
                 try
                 {
-                    Models.Button button = Class.Button.GetButtonById(idButton);
+                    Models.ButtonModel button = Class.Button.GetButtonById(idButton);
 
                     return View(button);
                 }
@@ -31,7 +31,7 @@ namespace Gerador_CSS.Controllers
 
                 if (!string.IsNullOrEmpty(button_default_id))
                 {
-                    Models.Button button_padrao = Class.Button.GetButtonById(button_default_id);
+                    Models.ButtonModel button_padrao = Class.Button.GetButtonById(button_default_id);
 
                     return View(button_padrao);
                 }
@@ -46,11 +46,18 @@ namespace Gerador_CSS.Controllers
 
         [Authorize]
         [HttpPost]
-        public ActionResult InsertButtonToSuggestionBox(Button button)
+        public ActionResult InsertButtonToSuggestionBox(ButtonModel button, bool Atualiza_Button)
         {
             try
             {
-                Class.Button.InsertButtonToSuggestionBox(button);                
+                if (!Atualiza_Button)
+                {
+                    Class.Button.InsertButtonToSuggestionBox(button);
+                }
+                else
+                {
+                    Class.Button.UpdateButton(button);
+                }                                
             }
             catch (Exception ex)
             {

@@ -1,4 +1,4 @@
-﻿@model Gerador_CSS.Models.Button
+﻿@model Gerador_CSS.Models.ButtonModel
 @using Gerador_CSS.Models;
 
 <div>
@@ -50,7 +50,7 @@
     <tr>
         <td class="td-label">Estilo:</td>
         <td>
-            <input type="hidden" id="select_font_style_hidden" value="@Model.Static_Font_Style"/>
+            <input type="hidden" id="select_font_style_hidden" value="@Model.Static_Font_Style" />
             <select class="select" id="select_font_style" name="Static_Font_Style" onchange="FontStyle(this)">
                 <option value="normal">Normal</option>
                 <option value="italic">Itálico</option>
@@ -112,7 +112,7 @@
 <table id="static_padding_options" style="display: none; width: 88%">
     <tr>
         <td class="td-label">Preenchimento Superior:</td>
-        <td> <input type="range" class="range" id="static_padding_top_range" name="Static_Padding_Top"  value="@Model.Static_Padding_Top.Replace("px", string.Empty)" min="1" max="100" onchange="PaddingTop(this)" /> </td>
+        <td> <input type="range" class="range" id="static_padding_top_range" name="Static_Padding_Top" value="@Model.Static_Padding_Top.Replace("px", string.Empty)" min="1" max="100" onchange="PaddingTop(this)" /> </td>
         <td><input id="padding_top_number" onchange="PaddingTopNumberChanged(this)" min="0" max="100" value="@Model.Static_Padding_Top.Replace("px", string.Empty)" class="input-number" type="number" /></td>
         <td><span>px</span></td>
     </tr>
@@ -379,7 +379,7 @@
             }
             else
             {
-                <input id="checkbox_static_inset_shadow_enable" type="checkbox" onchange="StaticShadowInsetEnable(this)"/>
+                <input id="checkbox_static_inset_shadow_enable" type="checkbox" onchange="StaticShadowInsetEnable(this)" />
             }
 
         </td>
@@ -388,7 +388,7 @@
         <td class="td-label">Deslocamento Horizontal:</td>
         <td> <input id="range_box_shadow_inset_offset_x" name="Static_Box_Shadow_Inset_Offset_X" type="range" class="range" value="@Model.Static_Box_Shadow_Inset_Offset_X.Replace("px", string.Empty)" min="0" max="100" onchange="BoxShadowInsetOffsetX(this)" /> </td>
         <td><input id="box_shadow_inset_offset_x_number" onchange="BoxShadowInsetOffsetXNumberChanged(this)" min="0" max="100" value="@Model.Static_Box_Shadow_Inset_Offset_X.Replace("px", string.Empty)" class="input-number" type="number" /></td>
-        <td><span >px</span></td>
+        <td><span>px</span></td>
     </tr>
     <tr>
         <td class="td-label">Deslocamento Vertical:</td>
@@ -412,4 +412,72 @@
         <td class="td-label">Cor da Sombra:</td>
         <td> <input id="shadow_inset_color_selector" name="Static_Box_Shadow_Inset_Color" style="width: 100px; height: 30px;" value="@Model.Static_Box_Shadow_Inset_Color" onchange="BoxShadowInsetColorSelector(this)" type="color" /> </td>
     </tr>
+</table>
+
+
+<div id="div_static_animation_options" align="center" class="secondary_menu" onclick="OpenStaticAnimationButtonOptions()">
+    <span>Animação &#9652;</span>
+</div>
+<table id="static_animation_options" style="display: none; width: 88%">   
+    <tr>
+        <td class="td-label">Animação:</td>
+        <td>
+            <input type="hidden" id="static_animation_hidden" name="Static_Animation" value="@Model.Static_Animation" />
+            <input type="hidden" id="select_static_animation_type_hidden" name="Static_Animation_Type" value="@Model.Static_Animation_Type" />
+
+            <select class="select" id="select_static_animation_type"  onchange="AnimationStaticType(this)">
+                <option value="none">Nenhuma</option>
+
+                <optgroup label="Bounce (X)">
+                    <option value="slow-bounce-x">Slow Bounce</option>
+                    <option value="normal-bounce-x">Normal Bounce</option>
+                    <option value="fast-bounce-x">Fast Bounce</option>
+                </optgroup>
+
+                <optgroup label="Bounce (Y)">
+                    <option value="slow-bounce-y">Slow Bounce</option>
+                    <option value="normal-bounce-y">Normal Bounce</option>
+                    <option value="fast-bounce-y">Fast Bounce</option>
+                </optgroup>
+
+
+                <optgroup label="Rotate (X)">
+                    <option value="slow-rotate-x">Slow Rotate</option>
+                    <option value="normal-rotate-x">Normal Rotate</option>
+                    <option value="fast-rotate-x">Fast Rotate</option>
+                </optgroup>
+
+
+                <optgroup label="Rotate (Y)">
+                    <option value="slow-rotate-y">Slow Rotate</option>
+                    <option value="normal-rotate-y">Normal Rotate</option>
+                    <option value="fast-rotate-y">Fast Rotate</option>
+                </optgroup>
+
+                <optgroup label="Rotate (Z)">
+                    <option value="slow-rotate-z">Slow Rotate</option>
+                    <option value="normal-rotate-z">Normal Rotate</option>
+                    <option value="fast-rotate-z">Fast Rotate</option>
+                </optgroup>
+
+                <optgroup label="Swing">
+                    <option value="slow-swing">Slow Swing</option>
+                    <option value="normal-swing">Normal Swing</option>
+                    <option value="fast-swing">Fast Swing</option>
+                </optgroup>
+
+                <optgroup label="Change Colors">
+                    <option value="color-rainbow">Rainbow Palette</option>
+                    <option value="color-blue">Blue Palette</option>
+                    <option value="color-red">Red Palette</option>
+                    <option value="color-green">Green Palette</option>
+                    <option value="color-dark">Dark Palette</option>
+
+                </optgroup>
+
+
+            </select>
+        </td>
+    </tr>    
+
 </table>

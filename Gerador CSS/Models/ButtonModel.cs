@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Gerador_CSS.Models
 {
-    public class Button
+    public class ButtonModel
     {
         public int Button_id { get; set; }
 
@@ -62,6 +62,10 @@ namespace Gerador_CSS.Models
         public string Static_Text_Shadow_Offset_Y { get; set; }
         public string Static_Text_Shadow_Blur_Radius { get; set; }
         public string Static_Text_Shadow_Color { get; set; }
+        // ANIMATION
+        public string Static_Animation { get; set; }
+        public string Static_Animation_Type { get; set; }
+
 
         //HOVER
 
@@ -119,6 +123,9 @@ namespace Gerador_CSS.Models
         public string Hover_Text_Shadow_Offset_Y { get; set; }
         public string Hover_Text_Shadow_Blur_Radius { get; set; }
         public string Hover_Text_Shadow_Color { get; set; }
+        // ANIMATION
+        public string Hover_Animation { get; set; }
+        public string Hover_Animation_Type { get; set; }
     }
 
 }
