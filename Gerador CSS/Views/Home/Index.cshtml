@@ -1,4 +1,4 @@
-﻿@model List<Gerador_CSS.Models.Button>
+﻿@model List<Gerador_CSS.Models.ButtonModel>
 @using Gerador_CSS.Models;
 
 
@@ -9,7 +9,8 @@
 <div align="center">   
     <h2>Crie seu botão em CSS Agora Mesmo !</h2>
     <h4>Rápido e Fácil</h4>
-    <button class="btn-criar-novo" onclick="GoToGerarBotao()">Criar Novo !</button>
+    <button style="margin-top: 10px" class="btn-criar-novo" onclick="GoToGerarBotao()">Criar Novo !</button>
+       
 </div>
 
 
@@ -55,6 +56,7 @@
                     color: @Button.Static_Color;
                     box-shadow:@Button.Static_Box_Shadow_Offset_X @Button.Static_Box_Shadow_Offset_Y @Button.Static_Box_Shadow_Blur_Radius @Button.Static_Box_Shadow_Spread_Radius @Button.Static_Box_Shadow_Color, inset @Button.Static_Box_Shadow_Inset_Offset_X @Button.Static_Box_Shadow_Inset_Offset_Y @Button.Static_Box_Shadow_Inset_Blur_Radius @Button.Static_Box_Shadow_Inset_Spread_Radius @Button.Static_Box_Shadow_Inset_Color;
                     text-shadow: @Button.Static_Text_Shadow_Offset_X @Button.Static_Text_Shadow_Offset_Y @Button.Static_Text_Shadow_Blur_Radius @Button.Static_Text_Shadow_Color;
+                    animation: @Button.Static_Animation;
                     }
 
                         .btn-@contador:hover {
@@ -62,7 +64,7 @@
                             font-size: @Button.Hover_Font_Size;
                             color: @Button.Hover_Color;
                             font-weight: @Button.Hover_Font_Weight;
-                            font-style: @Button.Hover_Font_Style;                            
+                            font-style: @Button.Hover_Font_Style;
                             padding-top: @Button.Hover_Padding_Top;
                             padding-bottom: @Button.Hover_Padding_Bottom;
                             padding-left: @Button.Hover_Padding_Left;
@@ -85,6 +87,7 @@
                             border-bottom-left-radius: @Button.Hover_Border_Bottom_Right_Radius;
                             box-shadow:@Button.Hover_Box_Shadow_Offset_X @Button.Hover_Box_Shadow_Offset_Y @Button.Hover_Box_Shadow_Blur_Radius @Button.Hover_Box_Shadow_Spread_Radius  @Button.Hover_Box_Shadow_Color, inset @Button.Hover_Box_Shadow_Inset_Offset_X @Button.Hover_Box_Shadow_Inset_Offset_Y @Button.Hover_Box_Shadow_Inset_Blur_Radius @Button.Hover_Box_Shadow_Inset_Spread_Radius @Button.Hover_Box_Shadow_Inset_Color;
                             text-shadow: @Button.Hover_Text_Shadow_Offset_X @Button.Hover_Text_Shadow_Offset_Y @Button.Hover_Text_Shadow_Blur_Radius @Button.Hover_Text_Shadow_Color;
+                            animation: @Button.Hover_Animation;
                         }
                 </style>                
                     <button style="margin: 5px" onclick="GoToGerarBotao('@Button.Button_id')" class="btn-@contador">
@@ -114,3 +117,24 @@
     }
 
 </script>
+
+
+<style>
+    @@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+  /*  @@-webkit-keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}*/
+</style>

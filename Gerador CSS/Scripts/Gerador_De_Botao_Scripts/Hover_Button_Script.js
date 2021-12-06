@@ -25,6 +25,9 @@ function OpenHoverButtonOptions(){
     //SHADOW INSET
     let div_hover_shadow_inset_options = document.getElementById('div_hover_shadow_inset_options');
     let table_shadow_inset = document.getElementById("hover_shadow_inset_options");
+    //ANIMATION
+    let div_hover_animation_options = document.getElementById('div_hover_animation_options');
+    let table_animation = document.getElementById("hover_animation_options");
 
     if(table.style.display == "none"){
         table.style.display = "block";
@@ -35,6 +38,7 @@ function OpenHoverButtonOptions(){
         div_hover_border_options.style.display = "block";
         div_hover_shadow_options.style.display = "block";
         div_hover_shadow_inset_options.style.display = "block";
+        div_hover_animation_options.style.display = "block";
     }
     else{
         table.style.display = "none";
@@ -69,7 +73,13 @@ function OpenHoverButtonOptions(){
         div_hover_shadow_inset_options.style.display = 'none';  
         table_shadow_inset.style.display = 'none';
         div_hover_shadow_inset_options.innerHTML = "<span>Sombra Interna &#9652;</span>";
-        div_hover_shadow_inset_options.style.backgroundColor = '#fafb90'; 
+        div_hover_shadow_inset_options.style.backgroundColor = '#fafb90';
+
+        //CLOSE TABLE ANIMATION HOVER TOO
+        div_hover_animation_options.style.display = 'none';
+        table_animation.style.display = 'none';
+        div_hover_animation_options.innerHTML = "<span>Animação &#9652;</span>";
+        div_hover_animation_options.style.backgroundColor = '#fafb90';
     }        
 }
 
@@ -147,6 +157,21 @@ function OpenHoverShadowInsetButtonOptions(){
         table.style.display = "none";
         div_shadow_inset_options_hover.innerHTML = "<span>Sombra Interna &#9652;</span>";        
         div_shadow_inset_options_hover.style.backgroundColor = '#fafb90'; 
+    }
+}
+
+function OpenHoverAnimationButtonOptions() {
+    let table = document.getElementById("hover_animation_options");
+    let div_animation_options_hover = document.getElementById('div_hover_animation_options');
+    if (table.style.display == "none") {
+        table.style.display = "block";
+        div_animation_options_hover.innerHTML = "<span>Animação &#9662;</span>";
+        div_animation_options_hover.style.backgroundColor = '#f0f300';
+    }
+    else {
+        table.style.display = "none";
+        div_animation_options_hover.innerHTML = "<span>Animação &#9652;</span>";
+        div_animation_options_hover.style.backgroundColor = '#fafb90';
     }
 }
 
@@ -936,4 +961,131 @@ function BoxShadowInsetColorSelectorHover(input){
     let color = input.value;
 
     ChangeCSS("box_shadow_inset_color_hover", color);
+}
+
+
+
+//--------------------------------------------------------------------
+//--------------------------HOVER ANIMATION--------------------------
+//--------------------------------------------------------------------
+
+
+
+function AnimationHoverType(input, Type) {
+    let type = "";
+
+    if (input == null) {
+        type = document.getElementById('select_hover_animation_type').value;
+    }
+    else {
+        type = input.value;
+    }
+    
+    document.getElementById("select_hover_animation_type_hidden").value = type;
+
+    //------- BOUNCE Y
+    if (type == "slow-bounce-y") {
+        animation_hover = "hover-bounce-y 2s infinite alternate"
+        type = "hover-bounce-y";
+    }
+    else if (type == "normal-bounce-y") {
+        animation_hover = "hover-bounce-y 1s infinite alternate"
+        type = "hover-bounce-y";
+    }
+    else if (type == "fast-bounce-y") {
+        animation_hover = "hover-bounce-y 500ms infinite alternate"
+        type = "hover-bounce-y";
+    }
+    //------- BOUNCE X
+    else if (type == "slow-bounce-x") {
+        animation_hover = "hover-bounce-x 2s infinite alternate"
+        type = "hover-bounce-x";
+    }
+    else if (type == "normal-bounce-x") {
+        animation_hover = "hover-bounce-x 1s infinite alternate"
+        type = "hover-bounce-x";
+    }
+    else if (type == "fast-bounce-x") {
+        animation_hover = "hover-bounce-x 500ms infinite alternate"
+        type = "hover-bounce-x";
+    }
+    //------- ROTATE X
+    else if (type == "slow-rotate-x") {
+        animation_hover = "hover-rotate-x 2s infinite alternate"
+        type = "hover-rotate-x";
+    }
+    else if (type == "normal-rotate-x") {
+        animation_hover = "hover-rotate-x 1s infinite alternate"
+        type = "hover-rotate-x";
+    }
+    else if (type == "fast-rotate-x") {
+        animation_hover = "hover-rotate-x 500ms infinite alternate"
+        type = "hover-rotate-x";
+    }
+    //------- ROTATE X
+    else if (type == "slow-rotate-y") {
+        animation_hover = "hover-rotate-y 2s infinite alternate"
+        type = "hover-rotate-y";
+    }
+    else if (type == "normal-rotate-y") {
+        animation_hover = "hover-rotate-y 1s infinite alternate"
+        type = "hover-rotate-y";
+    }
+    else if (type == "fast-rotate-y") {
+        animation_hover = "hover-rotate-y 500ms infinite alternate"
+        type = "hover-rotate-y";
+    }
+
+    //------- ROTATE Z
+    else if (type == "slow-rotate-z") {
+        animation_hover = "hover-rotate-z 4s infinite alternate"
+        type = "hover-rotate-z";
+    }
+    else if (type == "normal-rotate-z") {
+        animation_hover = "hover-rotate-z 3s infinite alternate"
+        type = "hover-rotate-z";
+    }
+    else if (type == "fast-rotate-z") {
+        animation_hover = "hover-rotate-z 2s infinite alternate"
+        type = "hover-rotate-z";
+    }
+    //------- SWING
+    else if (type == "slow-swing") {
+        animation_hover = "hover-swing 2s infinite alternate"
+        type = "hover-swing";
+    }
+    else if (type == "normal-swing") {
+        animation_hover = "hover-swing 1s infinite alternate"
+        type = "hover-swing";
+    }
+    else if (type == "fast-swing") {
+        animation_hover = "hover-swing 500ms infinite alternate"
+        type = "hover-swing";
+    }
+    //------- COLORS 
+    else if (type == "color-rainbow") {
+        animation_hover = "hover-color-rainbow 10s linear infinite alternate"
+        type = "hover-color-rainbow";
+    }
+    else if (type == "color-blue") {
+        animation_hover = "hover-color-blue 4s linear infinite alternate"
+        type = "hover-color-blue";
+    }
+    else if (type == "color-red") {
+        animation_hover = "hover-color-red 4s linear infinite alternate"
+        type = "hover-color-red";
+    }
+    else if (type == "color-green") {
+        animation_hover = "hover-color-green 4s linear infinite alternate"
+        type = "hover-color-green";
+    }
+    else if (type == "color-dark") {
+        animation_hover = "hover-color-dark 3s linear infinite alternate"
+        type = "hover-color-dark";
+    }
+
+    
+    
+
+    ChangeCSS("animation_hover_type", type);
 }

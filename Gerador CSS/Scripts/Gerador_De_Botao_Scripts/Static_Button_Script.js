@@ -24,7 +24,9 @@ function OpenStaticButtonOptions(){
     //FONT
     let div_static_font_options = document.getElementById('div_static_font_options');
     let table_font = document.getElementById("static_font_options");
-
+    //ANIMATION
+    let div_static_animation_options = document.getElementById('div_static_animation_options');
+    let table_animation = document.getElementById('static_animation_options');
 
 
     if(table.style.display == "none"){
@@ -34,8 +36,9 @@ function OpenStaticButtonOptions(){
         div_static_options.style.backgroundColor = '#6dc9e7';       
         div_shadow_inset_options.style.display = 'block';        
         div_padding_options.style.display = "block";
-        div_static_border_options.style.display = "block";
+        div_static_border_options.style.display = "block";       
         div_static_font_options.style.display = "block";
+        div_static_animation_options.style.display = "block";
     }
     else{
         table.style.display = "none";
@@ -70,7 +73,13 @@ function OpenStaticButtonOptions(){
         div_static_font_options.style.display = 'none';  
         table_font.style.display = 'none';
         div_static_font_options.innerHTML = "<span>Fonte &#9652;</span>";
-        div_static_font_options.style.backgroundColor = '#fafb90'; 
+        div_static_font_options.style.backgroundColor = '#fafb90';
+
+        //CLOSE TABLE ANIMATION TOO
+        div_static_animation_options.style.display = 'none';
+        table_animation.style.display = 'none';
+        div_static_animation_options.innerHTML = "<span>Animação &#9652;</span>";
+        div_static_animation_options.style.backgroundColor = '#fafb90';
     }        
 }
 
@@ -150,6 +159,24 @@ function OpenStaticFontButtonOptions(){
         div_static_font_options.style.backgroundColor = '#fafb90'; 
     }
 }
+
+function OpenStaticAnimationButtonOptions() {
+    let table = document.getElementById("static_animation_options");
+    let div_static_animation_options = document.getElementById('div_static_animation_options');
+    if (table.style.display == "none") {
+        table.style.display = "block";
+        div_static_animation_options.innerHTML = "<span>Animação &#9662;</span>";
+        div_static_animation_options.style.backgroundColor = '#f0f300';
+    }
+    else {
+        table.style.display = "none";
+        div_static_animation_options.innerHTML = "<span>Animação &#9652;</span>";
+        div_static_animation_options.style.backgroundColor = '#fafb90';
+    }
+}
+
+
+
 
 
 //CHANGE BUTTON BACKGROUND COLOR
@@ -931,3 +958,128 @@ function BoxShadowInsetColorSelector(input){
     ChangeCSS("box_shadow_inset_color", color);
 }
 
+
+
+
+//--------------------------------------------------------------------
+//--------------------------STATIC ANIMATION--------------------------
+//--------------------------------------------------------------------
+
+function AnimationStaticType(input) {
+    let type = "";
+
+    if (input == null) {
+        type = document.getElementById('select_static_animation_type').value;
+    }
+    else {
+        type = input.value;
+    }
+          
+
+    document.getElementById("select_static_animation_type_hidden").value = type;
+
+        //------- BOUNCE Y
+    if (type == "slow-bounce-y") {
+        animation_static = "static-bounce-y 2s infinite alternate"
+        type = "static-bounce-y";
+    }
+    else if (type == "normal-bounce-y") {
+        animation_static = "static-bounce-y 1s infinite alternate"
+        type = "static-bounce-y";
+    }    
+    else if (type == "fast-bounce-y") {
+        animation_static = "static-bounce-y 500ms infinite alternate"
+        type = "static-bounce-y";
+    }
+        //------- BOUNCE X
+    else if (type == "slow-bounce-x") {
+        animation_static = "static-bounce-x 2s infinite alternate"
+        type = "static-bounce-x";
+    }
+    else if (type == "normal-bounce-x") {
+        animation_static = "static-bounce-x 1s infinite alternate"
+        type = "static-bounce-x";
+    }
+    else if (type == "fast-bounce-x") {
+        animation_static = "static-bounce-x 500ms infinite alternate"
+        type = "static-bounce-x";
+    }
+        //------- ROTATE X
+    else if (type == "slow-rotate-x") {
+        animation_static = "static-rotate-x 2s infinite alternate"
+        type = "static-rotate-x";
+    }    
+    else if (type == "normal-rotate-x") {
+        animation_static = "static-rotate-x 1s infinite alternate"
+        type = "static-rotate-x";
+    }
+    else if (type == "fast-rotate-x") {
+        animation_static = "static-rotate-x 500ms infinite alternate"
+        type = "static-rotate-x";
+    }
+        //------- ROTATE X
+    else if (type == "slow-rotate-y") {
+        animation_static = "static-rotate-y 2s infinite alternate"
+        type = "static-rotate-y";
+    }
+    else if (type == "normal-rotate-y") {
+        animation_static = "static-rotate-y 1s infinite alternate"
+        type = "static-rotate-y";
+    }
+    else if (type == "fast-rotate-y") {
+        animation_static = "static-rotate-y 500ms infinite alternate"
+        type = "static-rotate-y";
+    }
+
+        //------- ROTATE Z
+    else if (type == "slow-rotate-z") {
+        animation_static = "static-rotate-z 4s infinite alternate"
+        type = "static-rotate-z";
+    }
+    else if (type == "normal-rotate-z") {
+        animation_static = "static-rotate-z 3s infinite alternate"
+        type = "static-rotate-z";
+    }
+    else if (type == "fast-rotate-z") {
+        animation_static = "static-rotate-z 2s infinite alternate"
+        type = "static-rotate-z";
+    }
+    //------- SWING
+    else if (type == "slow-swing") {
+        animation_static = "static-swing 2s infinite alternate"
+        type = "static-swing";
+    }
+    else if (type == "normal-swing") {
+        animation_static = "static-swing 1s infinite alternate"
+        type = "static-swing";
+    }
+    else if (type == "fast-swing") {
+        animation_static = "static-swing 500ms infinite alternate"
+        type = "static-swing";
+    }
+        //------- COLORS 
+    else if (type == "color-rainbow") {
+        animation_static = "static-color-rainbow 10s linear infinite alternate"
+        type = "static-color-rainbow";
+    }
+    else if (type == "color-blue") {
+        animation_static = "static-color-blue 4s linear infinite alternate"
+        type = "static-color-blue";
+    }
+    else if (type == "color-red") {
+        animation_static = "static-color-red 4s linear infinite alternate"
+        type = "static-color-red";
+    }
+    else if (type == "color-green") {
+        animation_static = "static-color-green 4s linear infinite alternate"
+        type = "static-color-green";
+    }
+    else if (type == "color-dark") {
+        animation_static = "static-color-dark 3s linear infinite alternate"
+        type = "static-color-dark";
+    }
+
+   
+
+    ChangeCSS("animation_static_type", type);
+}

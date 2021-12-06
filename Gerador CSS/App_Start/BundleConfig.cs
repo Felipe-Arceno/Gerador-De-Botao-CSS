@@ -27,8 +27,10 @@ namespace Gerador_CSS
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/GeradorDeBotoes").Include(
+            bundles.Add(new ScriptBundle("~/bundles/GeradorDeBotoes").Include(                      
                        "~/Scripts/Gerador_De_Botao_Scripts/Principal_Script.js",
+                        "~/Scripts/Gerador_De_Botao_Scripts/Animations_Button_Static_Script.js",
+                         "~/Scripts/Gerador_De_Botao_Scripts/Animations_Button_Hover_Script.js",
                        "~/Scripts/Gerador_De_Botao_Scripts/Hover_Button_Script.js",
                        "~/Scripts/Gerador_De_Botao_Scripts/Static_Button_Script.js"));
         }

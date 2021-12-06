@@ -1,4 +1,4 @@
-﻿@model Gerador_CSS.Models.Button
+﻿@model Gerador_CSS.Models.ButtonModel
 @using Gerador_CSS.Models;
 
 
@@ -25,7 +25,7 @@
                     <input title="Mudar Cor de Fundo" style="width: 30px; height: 30px; float: right" onchange="BackgroundDivColorSelector(this)" value="#ffffff" type="color" />
                 </div>
             </div>
-            <div style="padding: 10px; box-shadow: grey 2px 2px 2px">
+            <div id="div-css">
                 <div align="center">
                     <h3>CSS do seu botão aqui</h3>
                 </div>
@@ -36,7 +36,15 @@
                     <button class="btn-copy" onclick="CopyToClipboardCSS()">Copiar CSS</button>
                     @if (Request.IsAuthenticated)
                     {
-                        <button class="btn-inserir" type="button" onclick="InsertButtonToSuggestionBox()">Inserir Botão</button>
+                        if (Model.Button_id == 1)
+                        {
+                            <button class="btn-insert" type="button" onclick="InsertOrUpdateButtonToSuggestionBox('0')">Inserir Botão</button>
+                        }
+                        else
+                        {
+                            <button class="btn-insert" type="button" onclick="InsertOrUpdateButtonToSuggestionBox('1')">Atualizar Botão</button>
+                        }
+
                     }
 
                 </div>
@@ -44,8 +52,11 @@
             </div>
         </div>
 
-        <div class="col-md-6" align="center"  style="overflow: auto; max-height: 450px; margin-top: 30px ">
+        <div id="div-properties" class="col-md-6" align="center">
             <form id="form-button" action="@Url.Action("InsertButtonToSuggestionBox", "Button")" method="post">
+                
+                <input type="hidden" name="Atualiza_Button" id="Atualiza_Button" />
+                <input type="hidden" name="Button_Id" value="@Model.Button_id" />
 
                 @Html.Partial("_Static_Button_Partial", Model)
 
@@ -65,8 +76,13 @@
 
 
 <script>
-    function InsertButtonToSuggestionBox() {
-       
+    function InsertOrUpdateButtonToSuggestionBox(Update) {
+                
+
+        let Atualiza_Button = Update == '1' ? true : false;
+
+        document.getElementById('Atualiza_Button').value = Atualiza_Button;
+        
 
         document.getElementById('checkbox_font_shadow_enable').checked = true;
         document.getElementById('checkbox_static_shadow_enable').checked = true;

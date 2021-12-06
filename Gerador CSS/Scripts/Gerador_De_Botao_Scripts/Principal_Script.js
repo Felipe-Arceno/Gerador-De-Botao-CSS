@@ -1,3 +1,6 @@
+//const { animation } = require("modernizr");
+
+
 
 // STATIC
 var border_radius = "10%";
@@ -104,6 +107,16 @@ var border_width_hover = "1px";
 
 
 
+var animation_static = document.getElementById("static_animation_hidden").value;
+var animation_static_type = document.getElementById("select_static_animation_type_hidden").value;
+
+var animation_hover = document.getElementById("hover_animation_hidden").value;
+var animation_hover_type = document.getElementById("select_hover_animation_type_hidden").value;
+
+
+
+
+
 
 $(window).on("load", function(){
     //STATIC
@@ -147,10 +160,33 @@ $(window).on("load", function(){
     HoverShadowEnable();
     //STATIC > SHADOW INSET
     HoverShadowInsetEnable();
+
+    if (animation_static_type == "") {
+        $("#select_static_animation_type").val("none");
+    }
+    else {
+        $("#select_static_animation_type").val(animation_static_type);
+    }
+
+    if (animation_hover_type == "") {
+        $("#select_hover_animation_type").val("none");
+    }
+    else {
+
+        $("#select_hover_animation_type").val(animation_hover_type);
+    }
+   
+
+    
+        AnimationStaticType();      
+        AnimationHoverType();
+   
     
     
    ChangeCSS();   
 });
+
+
 
 
 function ChangeCSS(param, value){
@@ -255,67 +291,123 @@ function ChangeCSS(param, value){
     box_shadow_inset_color_hover               = param == "box_shadow_inset_color_hover"               ? value : box_shadow_inset_color_hover;
 
 
+    animation_static                           = param == "animation_static"                           ? value : animation_static;
+    animation_static_type                      = param == "animation_static_type"                      ? value : animation_static_type;
 
-    let css = ".mybtn{\n"+    
-    "border-top-width: "+border_top_width+";\n"+
-    "border-bottom-width: "+border_bottom_width+";\n"+
-    "border-left-width: "+border_left_width+";\n"+
-    "border-right-width: "+border_right_width+";\n"+
-    "border-top-style: "+border_top_style+";\n"+
-    "border-bottom-style: "+border_bottom_style+";\n"+
-    "border-left-style: "+border_left_style+";\n"+
-    "border-right-style: "+border_right_style+";\n"+
-    "border-top-color: "+border_top_color+";\n"+
-    "border-bottom-color: "+border_bottom_color+";\n"+
-    "border-left-color: "+border_left_color+";\n"+
-    "border-right-color: "+border_right_color+";\n"+   
-    "border-top-left-radius: "+border_top_left_radius+";\n"+ 
-    "border-top-right-radius: "+border_top_right_radius+";\n"+ 
-    "border-bottom-right-radius: "+border_bottom_right_radius+";\n"+  
-    "border-bottom-left-radius: "+border_bottom_left_radius+";\n"+ 
-    "padding-top: "+padding_top+";\n"+
-    "padding-bottom: "+padding_bottom+";\n"+
-    "padding-left: "+padding_left+";\n"+
-    "padding-right: "+padding_right+";\n"+
-    "font-size: "+font_size+";\n"+
-    "font-style: "+font_style+";\n"+
-    "font-weight: "+font_weight+";\n"+
-    "background-color: "+background_color+";\n"+
-    "color: "+color+";\n"+    
-    "box-shadow: "+box_shadow_offset_x+" "+box_shadow_offset_y+" "+box_shadow_blur_radius+" "+box_shadow_spread_radius+" "+box_shadow_color+", inset "+box_shadow_inset_offset_x+" "+box_shadow_inset_offset_y+" "+box_shadow_inset_blur_radius+" "+box_shadow_inset_spread_radius+" "+box_shadow_inset_color+";\n"+
-    "text-shadow: "+font_shadow_offset_x+" "+font_shadow_offset_y+" "+font_shadow_blur_radius+" "+font_shadow_color+";\n"+
+    animation_hover                            = param == "animation_hover"                            ? value : animation_hover;
+    animation_hover_type                       = param == "animation_hover_type"                       ? value : animation_hover_type;
+   
 
-    "}\n"+
-    ".mybtn:hover{\n"+
-    "background-color: "+background_color_hover+";\n"+
-    "font-size: "+font_size_hover+";\n"+
-    "color: "+color_hover+";\n"+
-    "font-weight: "+font_weight_hover+";\n"+
-    "font-style: "+font_style_hover+";\n"+
-    "text-shadow: "+font_shadow_offset_x_hover+" "+font_shadow_offset_y_hover+" "+font_shadow_blur_radius_hover+" "+font_shadow_color_hover+";\n"+
-    "padding-top: "+padding_top_hover+";\n"+
-    "padding-bottom: "+padding_bottom_hover+";\n"+
-    "padding-left: "+padding_left_hover+";\n"+
-    "padding-right: "+padding_right_hover+";\n"+
-    "border-top-width: "+border_top_width_hover+";\n"+
-    "border-bottom-width: "+border_bottom_width_hover+";\n"+
-    "border-left-width: "+border_left_width_hover+";\n"+
-    "border-right-width: "+border_right_width_hover+";\n"+
-    "border-top-style: "+border_top_style_hover+";\n"+
-    "border-bottom-style: "+border_bottom_style_hover+";\n"+
-    "border-left-style: "+border_left_style_hover+";\n"+
-    "border-right-style: "+border_right_style_hover+";\n"+
-    "border-top-color: "+border_top_color_hover+";\n"+
-    "border-bottom-color: "+border_bottom_color_hover+";\n"+
-    "border-left-color: "+border_left_color_hover+";\n"+
-    "border-right-color: "+border_right_color_hover+";\n"+   
-    "border-top-left-radius: "+border_top_left_radius_hover+";\n"+ 
-    "border-top-right-radius: "+border_top_right_radius_hover+";\n"+ 
-    "border-bottom-right-radius: "+border_bottom_right_radius_hover+";\n"+  
-    "border-bottom-left-radius: "+border_bottom_left_radius_hover+";\n"+ 
-    "box-shadow: "+box_shadow_offset_x_hover+" "+box_shadow_offset_y_hover+" "+box_shadow_blur_radius_hover+" "+box_shadow_spread_radius_hover+" "+box_shadow_color_hover+", inset "+box_shadow_inset_offset_x_hover+" "+box_shadow_inset_offset_y_hover+" "+box_shadow_inset_blur_radius_hover+" "+box_shadow_inset_spread_radius_hover+" "+box_shadow_inset_color_hover+";\n"+
+
+    let css = ".mybtn{\n" +
+        "border-top-width: " + border_top_width + ";\n" +
+        "border-bottom-width: " + border_bottom_width + ";\n" +
+        "border-left-width: " + border_left_width + ";\n" +
+        "border-right-width: " + border_right_width + ";\n" +
+        "border-top-style: " + border_top_style + ";\n" +
+        "border-bottom-style: " + border_bottom_style + ";\n" +
+        "border-left-style: " + border_left_style + ";\n" +
+        "border-right-style: " + border_right_style + ";\n" +
+        "border-top-color: " + border_top_color + ";\n" +
+        "border-bottom-color: " + border_bottom_color + ";\n" +
+        "border-left-color: " + border_left_color + ";\n" +
+        "border-right-color: " + border_right_color + ";\n" +
+        "border-top-left-radius: " + border_top_left_radius + ";\n" +
+        "border-top-right-radius: " + border_top_right_radius + ";\n" +
+        "border-bottom-right-radius: " + border_bottom_right_radius + ";\n" +
+        "border-bottom-left-radius: " + border_bottom_left_radius + ";\n" +
+        "padding-top: " + padding_top + ";\n" +
+        "padding-bottom: " + padding_bottom + ";\n" +
+        "padding-left: " + padding_left + ";\n" +
+        "padding-right: " + padding_right + ";\n" +
+        "font-size: " + font_size + ";\n" +
+        "font-style: " + font_style + ";\n" +
+        "font-weight: " + font_weight + ";\n" +
+        "background-color: " + background_color + ";\n" +
+        "color: " + color + ";\n" +
+        "box-shadow: " + box_shadow_offset_x + " " + box_shadow_offset_y + " " + box_shadow_blur_radius + " " + box_shadow_spread_radius + " " + box_shadow_color + ", inset " + box_shadow_inset_offset_x + " " + box_shadow_inset_offset_y + " " + box_shadow_inset_blur_radius + " " + box_shadow_inset_spread_radius + " " + box_shadow_inset_color + ";\n" +
+        "text-shadow: " + font_shadow_offset_x + " " + font_shadow_offset_y + " " + font_shadow_blur_radius + " " + font_shadow_color + ";\n" +
+        "animation: " + animation_static + ";\n" +
+        "}\n" +
+        ".mybtn:hover{\n" +
+        "background-color: " + background_color_hover + ";\n" +
+        "font-size: " + font_size_hover + ";\n" +
+        "color: " + color_hover + ";\n" +
+        "font-weight: " + font_weight_hover + ";\n" +
+        "font-style: " + font_style_hover + ";\n" +
+        "text-shadow: " + font_shadow_offset_x_hover + " " + font_shadow_offset_y_hover + " " + font_shadow_blur_radius_hover + " " + font_shadow_color_hover + ";\n" +
+        "padding-top: " + padding_top_hover + ";\n" +
+        "padding-bottom: " + padding_bottom_hover + ";\n" +
+        "padding-left: " + padding_left_hover + ";\n" +
+        "padding-right: " + padding_right_hover + ";\n" +
+        "border-top-width: " + border_top_width_hover + ";\n" +
+        "border-bottom-width: " + border_bottom_width_hover + ";\n" +
+        "border-left-width: " + border_left_width_hover + ";\n" +
+        "border-right-width: " + border_right_width_hover + ";\n" +
+        "border-top-style: " + border_top_style_hover + ";\n" +
+        "border-bottom-style: " + border_bottom_style_hover + ";\n" +
+        "border-left-style: " + border_left_style_hover + ";\n" +
+        "border-right-style: " + border_right_style_hover + ";\n" +
+        "border-top-color: " + border_top_color_hover + ";\n" +
+        "border-bottom-color: " + border_bottom_color_hover + ";\n" +
+        "border-left-color: " + border_left_color_hover + ";\n" +
+        "border-right-color: " + border_right_color_hover + ";\n" +
+        "border-top-left-radius: " + border_top_left_radius_hover + ";\n" +
+        "border-top-right-radius: " + border_top_right_radius_hover + ";\n" +
+        "border-bottom-right-radius: " + border_bottom_right_radius_hover + ";\n" +
+        "border-bottom-left-radius: " + border_bottom_left_radius_hover + ";\n" +
+        "box-shadow: " + box_shadow_offset_x_hover + " " + box_shadow_offset_y_hover + " " + box_shadow_blur_radius_hover + " " + box_shadow_spread_radius_hover + " " + box_shadow_color_hover + ", inset " + box_shadow_inset_offset_x_hover + " " + box_shadow_inset_offset_y_hover + " " + box_shadow_inset_blur_radius_hover + " " + box_shadow_inset_spread_radius_hover + " " + box_shadow_inset_color_hover + ";\n" +
+        "animation: " + animation_hover + ";\n" +
         "/* Thanks for using my generator! \n by Felipe Arceno */" +
-    "}\n"
+        "}\n";
+
+    if (animation_static_type == "static-bounce-y")
+        css += static_bounce_y_css;
+    else if (animation_static_type == "static-bounce-x")
+        css += static_bounce_x_css;
+    else if (animation_static_type == "static-rotate-x")
+        css += static_rotate_x_css;
+    else if (animation_static_type == "static-rotate-y")
+        css += static_rotate_y_css;
+    else if (animation_static_type == "static-rotate-z")
+        css += static_rotate_z_css
+    else if (animation_static_type == "static-swing")
+        css += static_swing_css;  
+    else if (animation_static_type == "static-color-rainbow")
+        css += static_color_rainbow_css;
+    else if (animation_static_type == "static-color-blue")
+        css += static_color_blue_css;
+    else if (animation_static_type == "static-color-dark")
+        css += static_color_dark_css;
+    else if (animation_static_type == "static-color-red")
+        css += static_color_red_css;
+    else if (animation_static_type == "static-color-green")
+        css += static_color_green_css;
+
+
+    if (animation_hover_type == "hover-bounce-y")
+        css += hover_bounce_y_css;
+    else if (animation_hover_type == "hover-bounce-x")
+        css += hover_bounce_x_css;
+    else if (animation_hover_type == "hover-rotate-x")
+        css += hover_rotate_x_css;
+    else if (animation_hover_type == "hover-rotate-y")
+        css += hover_rotate_y_css;
+    else if (animation_hover_type == "hover-rotate-z")
+        css += hover_rotate_z_css
+    else if (animation_hover_type == "hover-swing")
+        css += hover_swing_css;
+    else if (animation_hover_type == "hover-color-rainbow")
+        css += hover_color_rainbow_css;
+    else if (animation_hover_type == "hover-color-blue")
+        css += hover_color_blue_css;
+    else if (animation_hover_type == "hover-color-dark")
+        css += hover_color_dark_css;
+    else if (animation_hover_type == "hover-color-red")
+        css += hover_color_red_css;
+    else if (animation_hover_type == "hover-color-green")
+        css += hover_color_green_css;
+                                              
     
 
 
@@ -332,6 +424,9 @@ function ChangeCSS(param, value){
    }
 }
 
+
+   
+
 // COPY CSS TO CLIPBOARD
 function CopyToClipboardCSS(){
     let CSS = document.getElementById('css_code');    
@@ -339,7 +434,5 @@ function CopyToClipboardCSS(){
     CSS.setSelectionRange(0, 99999);
     document.execCommand('copy');
 }
-
-
 
 
